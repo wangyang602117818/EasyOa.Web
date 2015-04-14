@@ -1,0 +1,4 @@
+2015-03-26 10:04:55,029 [INFO]=========
+   EasyOa.Web.Models.SysLog
+2015-03-26 15:28:19,257 [ERROR]=========
+   System.Exception: ´íÎó

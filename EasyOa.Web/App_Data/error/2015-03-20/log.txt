@@ -1,0 +1,23 @@
+2015-03-20 14:10:31,053 [ERROR]=========
+   System.Exception: sss
+2015-03-20 14:14:46,798 [ERROR]=========
+   System.DivideByZeroException: 尝试除以零。
+   在 EasyOa.Web.Controllers.HomeController.Index() 位置 d:\02_project_test\EasyOa.Web\EasyOa.Web\Controllers\HomeController.cs:行号 21
+2015-03-20 14:20:08,718 [ERROR]=========
+   System.DivideByZeroException: 尝试除以零。
+   在 EasyOa.Web.Controllers.HomeController.Index() 位置 d:\02_project_test\EasyOa.Web\EasyOa.Web\Controllers\HomeController.cs:行号 21
+2015-03-20 14:23:44,243 [ERROR]=========
+   System.DivideByZeroException: 尝试除以零。
+   在 EasyOa.Web.Controllers.HomeController.Index() 位置 d:\02_project_test\EasyOa.Web\EasyOa.Web\Controllers\HomeController.cs:行号 21
+2015-03-20 14:32:09,839 [ERROR]=========
+   System.DivideByZeroException: 尝试除以零。
+   在 EasyOa.Web.Controllers.HomeController.Index() 位置 d:\02_project_test\EasyOa.Web\EasyOa.Web\Controllers\HomeController.cs:行号 21
+2015-03-20 14:32:31,331 [ERROR]=========
+   System.DivideByZeroException: 尝试除以零。
+   在 EasyOa.Web.Controllers.HomeController.Index() 位置 d:\02_project_test\EasyOa.Web\EasyOa.Web\Controllers\HomeController.cs:行号 21
+2015-03-20 14:32:33,951 [ERROR]=========
+   System.DivideByZeroException: 尝试除以零。
+   在 EasyOa.Web.Controllers.HomeController.Index() 位置 d:\02_project_test\EasyOa.Web\EasyOa.Web\Controllers\HomeController.cs:行号 21
+2015-03-20 14:32:34,108 [ERROR]=========
+   System.DivideByZeroException: 尝试除以零。
+   在 EasyOa.Web.Controllers.HomeController.Index() 位置 d:\02_project_test\EasyOa.Web\EasyOa.Web\Controllers\HomeController.cs:行号 21

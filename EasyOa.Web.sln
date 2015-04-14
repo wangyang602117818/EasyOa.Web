@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyOa.Web", "EasyOa.Web\EasyOa.Web.csproj", "{7B8D8F9D-765B-49E7-AF72-38EABC189603}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyOa.Common", "EasyOa.Common\EasyOa.Common.csproj", "{0EB2687E-21AF-478F-8201-09B709A45F7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyOa.Model", "EasyOa.Model\EasyOa.Model.csproj", "{61EA6AF3-65DD-4A24-9B06-232D164981EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B8D8F9D-765B-49E7-AF72-38EABC189603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B8D8F9D-765B-49E7-AF72-38EABC189603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B8D8F9D-765B-49E7-AF72-38EABC189603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B8D8F9D-765B-49E7-AF72-38EABC189603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB2687E-21AF-478F-8201-09B709A45F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB2687E-21AF-478F-8201-09B709A45F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB2687E-21AF-478F-8201-09B709A45F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB2687E-21AF-478F-8201-09B709A45F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61EA6AF3-65DD-4A24-9B06-232D164981EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61EA6AF3-65DD-4A24-9B06-232D164981EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61EA6AF3-65DD-4A24-9B06-232D164981EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61EA6AF3-65DD-4A24-9B06-232D164981EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

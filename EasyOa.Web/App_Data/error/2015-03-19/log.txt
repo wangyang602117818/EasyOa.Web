@@ -1,0 +1,14 @@
+2015-03-19 18:38:05,638 [FileAppender]-[WARN] log日志信息
+2015-03-19 18:38:05,638 [FileAppender]-[WARN] log日志信息
+2015-03-19 18:38:05,638 [FileAppender]-[WARN] log日志信息
+2015-03-19 18:38:05,638 [FileAppender]-[WARN] log日志信息
+2015-03-19 18:38:05,638 [FileAppender]-[WARN] log日志信息
+2015-03-19 18:38:05,638 [FileAppender]-[WARN] log日志信息
+2015-03-19 18:38:05,638 [FileAppender]-[WARN] log日志信息
+2015-03-19 18:38:05,638 [FileAppender]-[WARN] log日志信息
+2015-03-19 18:38:05,638 [FileAppender]-[WARN] log日志信息
+2015-03-19 18:38:05,638 [FileAppender]-[WARN] log日志信息
+2015-03-19 18:45:43,597 [FileAppender]-[ERROR] System.DivideByZeroException: 尝试除以零。
+   在 EasyOa.Web.Controllers.HomeController.Index() 位置 d:\02_project_test\EasyOa.Web\EasyOa.Web\Controllers\HomeController.cs:行号 20
+2015-03-19 18:47:50,822 [FileAppender]-[ERROR] System.DivideByZeroException: 尝试除以零。
+   在 EasyOa.Web.Controllers.HomeController.Index() 位置 d:\02_project_test\EasyOa.Web\EasyOa.Web\Controllers\HomeController.cs:行号 20
