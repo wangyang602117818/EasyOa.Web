@@ -128,7 +128,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="config\" />
     <Folder Include="Models\" />
+    <Folder Include="uploadfile\" />
+    <Folder Include="xsd\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
