@@ -111,7 +111,7 @@
    System.Net.Mail.SmtpFailedRecipientException: 邮箱不可用。 服务器响应为: Mailbox not found or access denied
    在 System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
    在 System.Net.Mail.SmtpClient.Send(MailMessage message)
-   在 EasyOa.Common.MailHelper.Send(String subject, String message, Boolean isHtml, List`1 fileCollection, String[] to) 位置 d:\02_project_test\EasyOa.Web\EasyOa.Common\Helpers\MailHelper.cs:行号 92
+   在 EasyOa.Common.MailHelper.Send(String subject, String message, Boolean isHtml, List`1 fileCollection, String[] to) 位置 d:\02_project_test\EasyOa.Web\EasyOa.Common\Helpers\MailHelper.cs:行号 92  
 
 2015-04-28 17:19:47,336 [ERROR]=========
    System.Net.Mail.SmtpFailedRecipientException: 邮箱不可用。 服务器响应为: Mailbox not found or access denied
