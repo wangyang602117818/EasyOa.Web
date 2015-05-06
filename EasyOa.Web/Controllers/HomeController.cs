@@ -16,10 +16,15 @@ namespace EasyOa.Web.Controllers
         // GET: /Home/
         public ActionResult Index()
         {
-            
-            
-            
-            Response.Write("11");
+            try
+            {
+                int a = 1;
+                int b = 0;
+                int c = a / b;
+            }
+            catch (Exception ex) {
+                LogHelper.WriteException(ex);
+            }
             return View();
         }
 

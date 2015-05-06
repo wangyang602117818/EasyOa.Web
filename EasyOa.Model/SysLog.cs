@@ -11,5 +11,9 @@ namespace EasyOa.Model
         public string name { get; set; }
         public string remark { get; set; }
         public DateTime logDate { get; set; }
+        public string M1(string i)
+        {
+            return "M1" + i;
+        }
     }
 }
