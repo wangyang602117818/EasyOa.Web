@@ -9,7 +9,7 @@ namespace EasyOa.Common
 {
     public static class AppConfig
     {
-        public static string appPath = AppDomain.CurrentDomain.BaseDirectory; //网站的根目录
+        public static string basePath = AppDomain.CurrentDomain.BaseDirectory; //网站的根目录
         public static string GetConfig(string key)
         {
             return ConfigurationManager.AppSettings[key];

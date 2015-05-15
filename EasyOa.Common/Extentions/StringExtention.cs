@@ -10,7 +10,6 @@ namespace EasyOa.Common
 {
     public static class StringExtention
     {
-
         public static string ToMD5(this string str)
         {
             return EncryptHelper.Md5String(str);
@@ -18,7 +17,7 @@ namespace EasyOa.Common
         public static string ToSpell(this string str, bool simple = false)
         {
             if (string.IsNullOrEmpty(str)) return "";
-            string fullPath = AppConfig.appPath + AppConfig.GetConfig("pinypath");
+            string fullPath = AppConfig.basePath + AppConfig.GetConfig("pinypath");
             Dictionary<string, string> dict = FileHelper.ReadFileSpaceSplit(fullPath);
             if (dict != null && dict.Count > 0)
             {

@@ -49,7 +49,7 @@ namespace EasyOa.Web.Controllers
             Dictionary<string, string> dict = new Dictionary<string, string>();
             dict.Add("我行", "woxing");
             dict.Add("银行", "yinhang");
-            string s = "中国人民银行，我行";
+            string s = "大学生";
 
             Response.Write(s.ToSpell());
             return View();
