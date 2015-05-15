@@ -17,10 +17,10 @@ namespace EasyOa.Common
 
     public static class SMSHelper
     {
-        private static string baseurl = ConfigurationManager.AppSettings["baseurl"];
-        private static string accountsid = ConfigurationManager.AppSettings["accountsid"];
-        private static string autotoken = ConfigurationManager.AppSettings["autotoken"];
-        private static string appid = ConfigurationManager.AppSettings["appid"];
+        private static string baseurl = AppConfig.GetConfig("baseurl");
+        private static string accountsid = AppConfig.GetConfig("accountsid");
+        private static string autotoken = AppConfig.GetConfig("autotoken");
+        private static string appid = AppConfig.GetConfig("appid");
         private const string appversion = "2013-12-26";
         /// <summary>
         /// 发送短信

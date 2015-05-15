@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\AppConfig.cs" />
     <Compile Include="Enum\AcceptType.cs" />
     <Compile Include="Enum\ContentType.cs" />
     <Compile Include="Enum\SMSParaType.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Extentions\RandomExtention.cs" />
     <Compile Include="Util\EncryptHelper.cs" />
     <Compile Include="Serializer\JsonHelper.cs" />
+    <Compile Include="Util\FileHelper.cs" />
     <Compile Include="Util\MailHelper.cs" />
     <Compile Include="Util\HttpRequestHelper.cs" />
     <Compile Include="Util\SMSHelper.cs" />

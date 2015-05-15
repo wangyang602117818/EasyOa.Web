@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -12,12 +11,12 @@ namespace EasyOa.Common
 {
     public static class MailHelper
     {
-        private static string smtphost = ConfigurationManager.AppSettings["smtphost"];
-        private static string port = ConfigurationManager.AppSettings["port"];
-        private static string timeout = ConfigurationManager.AppSettings["timeout"];
-        private static string sendemail = ConfigurationManager.AppSettings["sendemail"];
-        private static string username = ConfigurationManager.AppSettings["username"];
-        private static string userpwd = ConfigurationManager.AppSettings["userpwd"];
+        private static string smtphost =AppConfig.GetConfig("smtphost");
+        private static string port = AppConfig.GetConfig("port");
+        private static string timeout = AppConfig.GetConfig("timeout");
+        private static string sendemail = AppConfig.GetConfig("sendemail");
+        private static string username = AppConfig.GetConfig("username");
+        private static string userpwd = AppConfig.GetConfig("userpwd");
         private static SmtpClient client;
         /// <summary>
         /// 初始化参数

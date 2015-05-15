@@ -13,15 +13,9 @@ namespace EasyOa.Common
 {
     public static class LogHelper
     {
-        private static readonly ILog exceptionLog = null;
-        private static readonly ILog mailLog = null;
-        private static readonly ILog operateLog = null;
-        static LogHelper()
-        {
-            exceptionLog = LogManager.GetLogger("FileAppender");
-            mailLog = LogManager.GetLogger("MailAppender");
-            operateLog = LogManager.GetLogger("SqlServerAppender");
-        }
+        private static readonly ILog exceptionLog = LogManager.GetLogger("FileAppender");
+        private static readonly ILog mailLog = LogManager.GetLogger("MailAppender");
+        private static readonly ILog operateLog = LogManager.GetLogger("SqlServerAppender");
         /// <summary>
         /// 错误日志
         /// </summary>

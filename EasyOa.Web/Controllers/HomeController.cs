@@ -45,7 +45,13 @@ namespace EasyOa.Web.Controllers
             //        }
             //    }
             //}
-            Response.Write("区".ToSpell());
+
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            dict.Add("我行", "woxing");
+            dict.Add("银行", "yinhang");
+            string s = "中国人民银行，我行";
+
+            Response.Write(s.ToSpell());
             return View();
         }
 
