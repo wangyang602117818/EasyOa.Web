@@ -12,24 +12,18 @@ namespace EasyOa.Common
 {
     public static class MailHelper
     {
-        private static string smtphost;
-        private static string port;
-        private static string timeout;
-        private static string sendemail;
-        private static string username;
-        private static string userpwd;
+        private static string smtphost = ConfigurationManager.AppSettings["smtphost"];
+        private static string port = ConfigurationManager.AppSettings["port"];
+        private static string timeout = ConfigurationManager.AppSettings["timeout"];
+        private static string sendemail = ConfigurationManager.AppSettings["sendemail"];
+        private static string username = ConfigurationManager.AppSettings["username"];
+        private static string userpwd = ConfigurationManager.AppSettings["userpwd"];
         private static SmtpClient client;
         /// <summary>
         /// 初始化参数
         /// </summary>
         static MailHelper()
         {
-            smtphost = ConfigurationManager.AppSettings["smtphost"];
-            port = ConfigurationManager.AppSettings["port"];
-            timeout = ConfigurationManager.AppSettings["timeout"];
-            sendemail = ConfigurationManager.AppSettings["sendemail"];
-            username = ConfigurationManager.AppSettings["username"];
-            userpwd = ConfigurationManager.AppSettings["userpwd"];
             initClient();
         }
         /// <summary>
