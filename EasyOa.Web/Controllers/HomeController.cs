@@ -17,10 +17,10 @@ namespace EasyOa.Web.Controllers
         // GET: /Home/
         public ActionResult Index()
         {
-            string[] str = { " ", "  ", "   ", "    ", "     " };
-            string[] lines = System.IO.File.ReadAllLines(Server.MapPath("01.txt"));
-            string aname = "", acode = "", sql = "";
-            string connStr = "Data Source=127.0.0.1;Initial Catalog=easyoa;User ID=sa;Password=123";
+            //string[] str = { " ", "  ", "   ", "    ", "     " };
+            //string[] lines = System.IO.File.ReadAllLines(Server.MapPath("01.txt"));
+            //string aname = "", acode = "", sql = "";
+            //string connStr = "Data Source=127.0.0.1;Initial Catalog=easyoa;User ID=sa;Password=123";
             //using (SqlConnection conn = new SqlConnection(connStr))
             //{
             //    foreach (string line in lines)
@@ -46,12 +46,12 @@ namespace EasyOa.Web.Controllers
             //    }
             //}
 
-            Dictionary<string, string> dict = new Dictionary<string, string>();
-            dict.Add("我行", "woxing");
-            dict.Add("银行", "yinhang");
-            string s = "大学生a";
+            for (int i = 0; i <= 100; i++)
+            {
+                string s = "中国 人民'银行,我行,辖 的区" + i;
 
-            Response.Write(s.ToSpell());
+                Response.Write("全拼" + s.ToSpell() + "<br>简拼:" + s.ToSpell(true)+"<br>");
+            }
             return View();
         }
 

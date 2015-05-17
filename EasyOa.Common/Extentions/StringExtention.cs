@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace EasyOa.Common
@@ -23,7 +24,16 @@ namespace EasyOa.Common
             {
                 foreach (string key in dict.Keys)
                 {
-                    if (str.Contains(key)) str = str.Replace(key, dict[key]);
+                    string value = dict[key];
+                    if (str.Contains(key))
+                    {
+                        if (simple)
+                        {
+                            string[] pinys = value.Split(new string[] { "'" }, StringSplitOptions.RemoveEmptyEntries);
+                            value = string.Join("", pinys.Select(v => v.Substring(0, 1)));
+                        }
+                        str = str.Replace(key, value.Replace("'", ""));
+                    }
                 }
             }
             List<string> res = new List<string>();
