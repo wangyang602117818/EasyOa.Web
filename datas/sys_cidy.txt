@@ -1,0 +1,6 @@
+create table sys_city(
+    id          int     identity(1,1)  primary key   not null,     --主键id
+    c_name      nvarchar(20)                         not null,     --市名称
+    c_code      int       unique                     not null,     --市编号
+    p_id        int                                  not null,     --省编号
+)

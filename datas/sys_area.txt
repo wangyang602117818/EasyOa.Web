@@ -1,0 +1,7 @@
+create table sys_area(
+     id          int     identity(1,1)  primary key   not null,     --Ö÷¼üid
+     a_name      nvarchar(20)                         not null,     --Ãû³Æ
+     a_id        int     unique                       not null,     --±àÂë
+     qping       varchar(50)                          null,         --È«Æ´
+     jping       varchar(20)                          null,         --¼òÆ´
+)
