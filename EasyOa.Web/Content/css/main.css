@@ -1,0 +1,258 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+html .hidden {
+    display: block;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    font: 12px/1.5 Tahoma,Arial,\5b8b\4f53;
+}
+
+ul {
+    display: block;
+    list-style-type: none;
+}
+
+    ul li {
+        float: left;
+    }
+
+a {
+    text-decoration: none;
+}
+p {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6, input, textarea, select, button, label {
+    font-size: 100%;
+    vertical-align: middle;
+}
+
+.ico-icbc, .ico-cmb, .ico-ccb, .ico-abc, .ico-boc, .ico-spdb, .ico-sdb, .ico-cib, .ico-bob, .ico-cebb, .ico-boco, .ico-cmbc, .ico-ecitic, .ico-gdb, .ico-pingan, .ico-post, .ico-union {
+    background: url(../imgs/bank_ico.png) no-repeat;
+    display: inline-block;
+    position: relative;
+    height: 18px;
+    width: 18px;
+    overflow: hidden;
+    line-height: 999px;
+    vertical-align: top;
+}
+
+.bank_gray .ico-icbc {
+    background-position: -144px 0;
+}
+
+.ico-icbc:hover {
+    background-position: 0 0;
+}
+
+.bank_gray .ico-cmb {
+    background-position: -162px 0;
+}
+
+.ico-cmb:hover {
+    background-position: -18px 0;
+}
+
+.bank_gray .ico-ccb {
+    background-position: -180px 0;
+}
+
+.ico-ccb:hover {
+    background-position: -36px 0;
+}
+
+.bank_gray .ico-abc {
+    background-position: -198px 0;
+}
+
+.ico-abc:hover {
+    background-position: -54px 0;
+}
+
+.bank_gray .ico-boc {
+    background-position: -216px 0;
+}
+
+.ico-boc:hover {
+    background-position: -72px 0;
+}
+
+.bank_gray .ico-post {
+    background-position: -162px -18px;
+}
+
+.ico-post:hover {
+    background-position: -18px -18px;
+}
+
+.bank_gray .ico-boco {
+    background-position: -180px -18px;
+}
+
+.ico-boco:hover {
+    background-position: -36px -18px;
+}
+
+.bank_gray .ico-spdb {
+    background-position: -198px -18px;
+}
+
+.ico-spdb:hover {
+    background-position: -54px -18px;
+}
+
+.bank_gray .ico-gdb {
+    background-position: -216px -18px;
+}
+
+.ico-gdb:hover {
+    background-position: -72px -18px;
+}
+
+.bank_gray .ico-cmbc {
+    background-position: -234px -18px;
+}
+
+.ico-cmbc:hover {
+    background-position: -90px -18px;
+}
+
+.bank_gray .ico-cebb {
+    background-position: -234px 0;
+}
+
+.ico-cebb:hover {
+    background-position: -90px 0;
+}
+
+.bank_gray .ico-ecitic {
+    background-position: -270px 0;
+}
+
+.ico-ecitic:hover {
+    background-position: -126px 0;
+}
+
+.bank_gray .ico-cib {
+    background-position: -144px -18px;
+}
+
+.ico-cib:hover {
+    background-position: 0 -18px;
+}
+
+.bank_gray .ico-sdb {
+    background-position: -252px -18px;
+}
+
+.ico-sdb:hover {
+    background-position: -108px -18px;
+}
+
+.bank_gray .ico-pingan {
+    background-position: -144px -36px;
+}
+
+.ico-pingan:hover {
+    background-position: 0 -36px;
+}
+
+.bank_gray .ico-bob {
+    background-position: -270px -18px;
+}
+
+.ico-bob:hover {
+    background-position: -126px -18px;
+}
+
+.bank_gray .ico-union {
+    background-position: -171px -36px;
+    width: 27px;
+}
+
+.ico-union:hover {
+    background-position: -27px -36px;
+    width: 27px;
+}
+
+.logo-csair, .logo-qqbuy, .logo-qqshop, .logo-dangdang, .logo-dianping, .logo-jumei, .logo-vipshop, .logo-vancl, .logo-51buy {
+    background: url(../imgs/index_partner.png) no-repeat;
+    display: inline-block;
+    width: 73px;
+    height: 18px;
+    overflow: hidden;
+    vertical-align: top;
+    line-height: 999px;
+}
+
+.logo-51buy {
+    background-position: 0 -152px;
+}
+
+    .logo-51buy:hover {
+        background-position: -74px -152px;
+    }
+
+.logo-qqbuy {
+    background-position: 0 -19px;
+}
+
+    .logo-qqbuy:hover {
+        background-position: -74px -19px;
+    }
+
+.logo-csair {
+    background-position: 0 0;
+}
+
+    .logo-csair:hover {
+        background-position: -74px 0;
+    }
+
+.logo-dangdang {
+    background-position: 0 -57px;
+}
+
+    .logo-dangdang:hover {
+        background-position: -74px -57px;
+    }
+
+.logo-vancl {
+    background-position: 0 -133px;
+}
+
+    .logo-vancl:hover {
+        background-position: -74px -133px;
+    }
+
+.logo-jumei {
+    background-position: 0 -95px;
+}
+
+    .logo-jumei:hover {
+        background-position: -74px -95px;
+    }
+
+.logo-dianping {
+    background-position: 0 -76px;
+}
+
+    .logo-dianping:hover {
+        background-position: -74px -76px;
+    }
+
+.logo-vipshop {
+    background-position: 0 -114px;
+}
+
+    .logo-vipshop:hover {
+        background-position: -74px -114px;
+    }

@@ -3,15 +3,184 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>首页</title>
+    <link href="~/Content/css/icon.css" rel="stylesheet" />
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link href="~/Content/css/index.css" rel="stylesheet" />
 </head>
 <body>
- 
-
-    
+    <header>
+        <!--顶部提醒-->
+        <div class="top_tips">
+            <div class="toptips_wrap">
+                <strong>提醒：</strong>
+                <span><span>近期多家网站用户资料被泄露，为了您的账户安全，建议您立即修改密码信息</span></span>
+                <span class="btn_close">×</span>
+            </div>
+        </div>
+        <!--顶部导航-->
+        <div class="topnav">
+            <!--右侧导航-->
+            <div class="topnav_wrap">
+                <div class="user_zone">
+                    <div class="unlogin">
+                        <ul class="linkwrap">
+                            <li>
+                                <a href="#" class="link">自助服务</a>
+                                <span class="link_split"></span>
+                            </li>
+                            <li>
+                                <a href="#" class="link">客服<i class="iconfont" id="kefu" style="font-size: 12px;">&#xe603;</i></a>
+                            </li>
+                            <li>
+                                <span class="link_split"></span>
+                                <a href="#" class="link">注册</a>
+                                <span class="link_split"></span>
+                            </li>
+                            <li><a href="#" class="link">English</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--左侧导航-->
+                <ul class="linkwrap">
+                    <li>
+                        <a href="#" class="link">财付通首页</a>
+                        <span class="link_split"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--主导航-->
+        <div class="mainnav">
+            <div class="mainnav_wrap">
+                <div class="logo">
+                    <img src="~/Content/imgs/logo.png" style="width: 247px; height: 42px" />
+                </div>
+                <nav>
+                    <ul class="mainnav_link">
+                        <li>
+                            <a href="#">账户</a>
+                        </li>
+                        <li>
+                            <a href="#">理财通</a>
+                        </li>
+                        <li>
+                            <a href="#">生活</a>
+                        </li>
+                        <li>
+                            <a href="#">银行</a>
+                        </li>
+                        <li>
+                            <a href="#">企业</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="main_container">
+        <div class="login_layer">
+            <div class="login">
+                <div id="header" class="header">
+                    <div class="switch">
+                        快速登录
+                    </div>
+                </div>
+                <div class="loginTips">
+                    <div class="error_tips" id="error_tips" style="display: none">
+                        <span class="error_logo" id="error_logo"></span>
+                        <span class="error_m" id="err_m">用户名或密码不正确</span>
+                    </div>
+                </div>
+                <div class="login_form">
+                    <form id="loginform">
+                        <div class="uinarea" id="uinArea">
+                            <input type="text" class="inputstyle" id="u" name="u" placeholder="账号" value="" tabindex="1" />
+                            <input type="password" class="inputstyle password" id="p" name="p" value="" maxlength="16" tabindex="2" placeholder="密码" />
+                        </div>
+                        <div class="submit_con">
+                            <input type="submit" tabindex="3" value="登 录" class="login_button" id="login_button" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--背景图片-->
+        <div class="img_container">
+        </div>
+        <div class="bgnum">
+            <ul>
+                <li><i class="iconfont" id="i1">&#xe609;</i></li>
+                <li><i class="iconfont" id="i2">&#xe609;</i></li>
+                <li><i class="iconfont" id="i3">&#xe609;</i></li>
+            </ul>
+        </div>
+        <div class="page_bottom">
+            <div class="partner">
+                <div class="partner_col">
+                    <h2>合作银行</h2>
+                    <ul class="bank_gray">
+                        <li><a class="ico-icbc" title="中国工商银行" href="http://www.icbc.com.cn/icbc/" target="_blank">中国工商银行</a></li>
+                        <li><a class="ico-cmb" title="招商银行" href="http://www.cmbchina.com/" target="_blank">招商银行</a></li>
+                        <li><a class="ico-ccb" title="中国建设银行" href="http://www.ccb.com/cn/home/index.html" target="_blank">中国建设银行</a></li>
+                        <li><a class="ico-abc" title="中国农业银行" href="http://www.abchina.com/cn/" target="_blank">中国农业银行</a></li>
+                        <li><a class="ico-boc" title="中国银行" href="http://www.boc.cn/" target="_blank">中国银行</a></li>
+                        <li><a class="ico-post" title="中国邮政储蓄银行" href="http://www.psbc.com/portal/zh_CN/index.html" target="_blank">中国邮政储蓄银行</a></li>
+                        <li><a class="ico-boco" title="交通银行" href="http://www.bankcomm.com/BankCommSite/cn/index.html" target="_blank">交通银行</a></li>
+                        <li><a class="ico-spdb" title="上海浦东发展银行" href="http://www.spdb.com.cn/chpage/c1/" target="_blank">上海浦东发展银行</a></li>
+                        <li><a class="ico-gdb" title="广发银行" href="http://www.cgbchina.com.cn/" target="_blank">广发银行</a></li>
+                        <li><a class="ico-cmbc" title="中国民生银行" href="http://www.cmbc.com.cn/" target="_blank">中国民生银行</a></li>
+                        <li><a class="ico-cebb" title="中国光大银行" href="http://www.cebbank.com/Site/ceb/cn" target="_blank">中国光大银行</a></li>
+                        <li><a class="ico-ecitic" title="中信银行" href="http://bank.ecitic.com/" target="_blank">中信银行</a></li>
+                        <li><a class="ico-cib" title="兴业银行" href="http://www.cib.com.cn/netbank/cn/index.html" target="_blank">兴业银行</a></li>
+                        <li><a class="ico-sdb" title="深圳发展银行" href="http://www.sdb.com.cn/website/page" target="_blank">深圳发展银行</a></li>
+                        <li><a class="ico-pingan" title="平安银行" href="http://bank.pingan.com/pinganyinhang.shtml" target="_blank">平安银行</a></li>
+                        <li><a class="ico-bob" title="北京银行" href="http://www.bankofbeijing.com.cn/index.html" target="_blank">北京银行</a></li>
+                        <li><a class="ico-union" title="中国银联" href="http://www.unionpay.com/" target="_blank">中国银联</a></li>
+                    </ul>
+                </div>
+                <div class="partner_col partner_merchant">
+                    <h2>合作商户</h2>
+                    <ul>
+                        <li><a class="logo-51buy" title="易迅" href="http://www.51buy.com/?YTAG=0.1180400001300000" target="_blank">易迅</a></li>
+                        <li><a class="logo-qqbuy" title="QQ网购" href="http://buy.qq.com/" target="_blank">QQ网购</a></li>
+                        <li><a class="logo-csair" title="中国南方航空" href="http://www.csair.com/" target="_blank">中国南方航空</a></li>
+                        <li><a class="logo-dangdang" title="当当网" href="http://www.dangdang.com/" target="_blank">当当网</a></li>
+                        <li><a class="logo-vancl" title="凡客诚品" href="http://www.vancl.com/" target="_blank">凡客诚品</a></li>
+                        <li><a class="logo-jumei" title="聚美优品" href="http://www.jumei.com/" target="_blank">聚美优品</a></li>
+                        <li><a class="logo-dianping" title="大众点评网" href="http://www.dianping.com/" target="_blank">大众点评网</a></li>
+                        <li><a class="logo-vipshop" title="唯品会" href="http://shop.vipshop.com/" target="_blank">唯品会</a></li>
+                    </ul>
+                </div>
+                <div class="partner_col hot_action">
+                    <h2>公告</h2>
+                    <div class="hot_action_lists">
+                        <ul>
+                            <li>
+                                <a href="#" target="_blank">劳动节期间财付通提现还款时间通知</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">劳动节期间财付通提现还款时间通知</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="index_footer">
+                    <a href="#" target="_blank">关于财付通</a>
+                    <a href="#" target="_blank">诚征英才</a>
+                    <a href="#" target="_blank">联系我们</a>
+                    <a href="#" target="_blank">服务协议</a><br />
+                    <span>Copyright©2005-2015 Tenpay All Rights Reserved&nbsp;&nbsp;&nbsp;财付通公司 版权所有</span>
+                </div>
+                <div class="partner_auth_wrap">
+                </div>
+            </footer>
+        </div>
+    </div>
 </body>
 </html>

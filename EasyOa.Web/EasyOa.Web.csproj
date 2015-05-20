@@ -115,7 +115,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="App_Data\PinYWord.txt" />
+    <Content Include="Content\css\icon.css" />
+    <Content Include="Content\css\index.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\imgs\c01.jpg" />
+    <Content Include="Content\imgs\icon.png" />
+    <Content Include="Content\imgs\bank_ico.png" />
+    <Content Include="Content\imgs\index_partner.png" />
+    <Content Include="Content\imgs\logo.png" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -126,7 +136,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="01.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="config\" />
