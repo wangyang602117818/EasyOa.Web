@@ -64,7 +64,7 @@
     position:relative;
     width:100%;
     background-color:#f8f8f8;
-    border-bottom:1px solid red;
+    border-bottom:1px solid #bbb;
 }
 .mainnav_wrap {
     position: relative;
@@ -74,7 +74,7 @@
     .mainnav_wrap .logo {
         position: relative;
         display: inline-block;
-        margin-top: 24px;
+        margin-top: 27px;
     }
 
 .mainnav_link {
@@ -82,17 +82,24 @@
     right: 0;
     top: 35px;
 }
-
+mainnav_link li {
+    border:1px solid red;
+}
+mainnav_link ul {
+    border:1px solid red;
+}
     .mainnav_link a {
         position: relative;
         float: left;
         height: 36px;
         width: 70px;
+        line-height:30px;
         text-align: center;
         overflow: hidden;
         margin-left: 18px;
         color: #303030;
         font: 17px/36px \5fae\8f6f\96c5\9ed1,\5b8b\4f53;
+        border-bottom:1px;
     }
 
         .mainnav_link a:hover {
@@ -129,11 +136,11 @@
 }
 
 .img_container {
-    margin: 3px auto;
+    margin: 0 auto;
     width: 100%;
     min-width: 996px;
     height: 500px;
-    border-top: 1px solid #ccc;
+    /*border-top: 1px solid #ccc;*/
     /*border-bottom: 1px solid #ccc;*/
     overflow: hidden;
     background: url("../imgs/c01.jpg") repeat-x;
@@ -141,7 +148,8 @@
 
 .bgnum {
     width: 72px;
-    height: 25px;
+    height: 30px;
+    line-height:35px;
     margin: 0 auto;
     text-align: center;
     color: #D7D9DF;
@@ -263,7 +271,7 @@
     width: 100%;
     margin: 0 auto;
     bottom: 0px;
-    top: 850px;
+    top: 847px;
     background-color: #f5f5f5;
     /*background-color:#ccc;*/
 }
