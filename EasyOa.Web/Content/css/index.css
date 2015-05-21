@@ -156,12 +156,12 @@ mainnav_link ul {
 }
 
     .bgnum ul li {
-        cursor: pointer;
         width: 24px;
     }
 
         .bgnum ul li i {
             font-size: 10px;
+            cursor: pointer;
         }
 
             .bgnum ul li i:hover {
