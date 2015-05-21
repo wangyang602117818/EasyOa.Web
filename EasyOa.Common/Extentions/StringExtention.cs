@@ -19,20 +19,29 @@ namespace EasyOa.Common
         {
             if (string.IsNullOrEmpty(str)) return "";
             string fullPath = AppConfig.basePath + AppConfig.GetConfig("pinypath");
-            Dictionary<string, string> dict = FileHelper.ReadFileSpaceSplit(fullPath);
+            Dictionary<string, string[]> dict = FileHelper.ReadFileSplit(fullPath, "|");
             if (dict != null && dict.Count > 0)
             {
                 foreach (string key in dict.Keys)
                 {
-                    string value = dict[key];
+                    string[] value = dict[key];
                     if (str.Contains(key))
                     {
                         if (simple)
                         {
-                            string[] pinys = value.Split(new string[] { "'" }, StringSplitOptions.RemoveEmptyEntries);
-                            value = string.Join("", pinys.Select(v => v.Substring(0, 1)));
+                            if (value.Length > 1)
+                            {
+                                str = str.Replace(key, value[1]);
+                            }
+                            else
+                            {
+                                str = str.Replace(key, value[0].Substring(0, 1));
+                            }
                         }
-                        str = str.Replace(key, value.Replace("'", ""));
+                        else
+                        {
+                            str = str.Replace(key, value[0]);
+                        }
                     }
                 }
             }

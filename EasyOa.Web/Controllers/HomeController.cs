@@ -17,10 +17,26 @@ namespace EasyOa.Web.Controllers
         // GET: /Home/
         public ActionResult Index()
         {
-           
-            
+
             return View();
         }
+        public ActionResult Edit()
+        {
 
+            Dictionary<string, string[]> dict = FileHelper.ReadFileSplit(AppConfig.basePath + "01.txt");
+            foreach (string key in dict.Keys)
+            {
+                Department de = new Department()
+                {
+                    De_Name = dict[key][0],
+                    De_Code = key,
+                    QPin = dict[key][0].ToSpell(),
+                    JPin = dict[key][0].ToSpell(true)
+                };
+                Response.Write(de.Insert() + "<br>");
+            }
+
+            return View();
+        }
     }
 }

@@ -114,6 +114,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="01.txt" />
     <Content Include="App_Data\PinYWord.txt" />
     <Content Include="Content\css\icon.css" />
     <Content Include="Content\css\index.css" />
@@ -141,7 +142,6 @@
     <Folder Include="config\" />
     <Folder Include="Models\" />
     <Folder Include="uploadfile\" />
-    <Folder Include="xsd\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -163,6 +163,29 @@
       <Project>{61ea6af3-65dd-4a24-9b06-232d164981ee}</Project>
       <Name>EasyOa.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="properties.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="providers.config" />
+    <Content Include="sqlmap.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xsd\provider.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="xsd\SqlMap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="xsd\SqlMapConfig.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

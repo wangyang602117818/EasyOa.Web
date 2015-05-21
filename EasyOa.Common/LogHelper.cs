@@ -47,14 +47,9 @@ namespace EasyOa.Common
         /// <param name="path">绝对路口</param>
         /// <param name="name">文件名</param>
         /// <param name="logInfo">文件类容</param>
-        public static void WriteLog(string fullpath, string name, string logInfo)
-        {
-            string fileName = Path.Combine(fullpath, name);
-            if (!Directory.Exists(fullpath)) Directory.CreateDirectory(fullpath);
-            using (StreamWriter sw = new StreamWriter(fileName, true))
-            {
-                sw.WriteLine(logInfo);
-            }
+        public static void WriteFileLog(string fullpath, string filename, string logInfo)
+        {      
+            FileHelper.WriteString(fullpath, filename, logInfo);
         }
     }
     /// <summary>

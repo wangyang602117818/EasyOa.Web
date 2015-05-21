@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="AddressList" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="Department" type="EasyOa.Model.Department,EasyOa.Model"/>
+  </alias>
+  <statements>
+    <insert id="DepartmentInsert" parameterClass="Department" resultClass="int">
+      Insert into [Department](
+      De_Name
+      ,De_Code
+      <isNotEmpty prepend="," property="QPin">QPin</isNotEmpty>
+      <isNotEmpty prepend="," property="JPin">JPin</isNotEmpty>
+      <isNotEmpty prepend="," property="Sort">[Sort]</isNotEmpty>
+      )values(
+      #De_Name#
+      ,#De_Code#
+      <isNotEmpty prepend="," property="QPin">#QPin#</isNotEmpty>
+      <isNotEmpty prepend="," property="JPin">#JPin#</isNotEmpty>
+      <isNotEmpty prepend="," property="Sort">#Sort#</isNotEmpty>
+      )
+      <selectKey property="Id" type="post" resultClass="int">SELECT @@IDENTITY AS Id</selectKey>
+    </insert>
+  </statements>
+</sqlMap>
