@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\AppConfig.cs" />
+    <Compile Include="AppConfig.cs" />
     <Compile Include="Enum\AcceptType.cs" />
     <Compile Include="Enum\ContentType.cs" />
     <Compile Include="Enum\SMSParaType.cs" />
