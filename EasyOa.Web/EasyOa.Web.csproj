@@ -114,12 +114,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="01.txt" />
     <Content Include="App_Data\PinYWord.txt" />
     <Content Include="Content\css\icon.css" />
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\imgs\c01.jpg" />
+    <Content Include="Content\imgs\c02.jpg" />
+    <Content Include="Content\imgs\c03.jpg" />
     <Content Include="Content\imgs\icon.png" />
     <Content Include="Content\imgs\bank_ico.png" />
     <Content Include="Content\imgs\index_partner.png" />
