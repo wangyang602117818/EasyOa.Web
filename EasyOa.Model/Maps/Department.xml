@@ -4,7 +4,7 @@
     <typeAlias alias="Department" type="EasyOa.Model.Department,EasyOa.Model"/>
   </alias>
   <statements>
-    <insert id="DepartmentInsert" parameterClass="Department" resultClass="int">
+    <insert id="Department.Insert" parameterClass="Department" resultClass="int">
       Insert into [Department](
       De_Name
       ,De_Code

@@ -49,7 +49,7 @@ namespace EasyOa.Common
         /// <param name="logInfo">文件类容</param>
         public static void WriteFileLog(string fullpath, string filename, string logInfo)
         {      
-            FileHelper.WriteString(fullpath, filename, logInfo);
+            FileHelper.WriteFile(fullpath, filename, logInfo);
         }
     }
     /// <summary>

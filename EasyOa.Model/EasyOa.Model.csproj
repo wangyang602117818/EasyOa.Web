@@ -49,7 +49,12 @@
     <Compile Include="Department.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\EasyOa.Common\EasyOa.Common.csproj">
+      <Project>{0eb2687e-21af-478f-8201-09b709a45f7b}</Project>
+      <Name>EasyOa.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Maps\Department.xml">
       <SubType>Designer</SubType>

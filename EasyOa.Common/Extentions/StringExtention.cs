@@ -11,10 +11,21 @@ namespace EasyOa.Common
 {
     public static class StringExtention
     {
+        /// <summary>
+        /// Md5计算
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static string ToMD5(this string str)
         {
             return EncryptHelper.Md5String(str);
         }
+        /// <summary>
+        /// 拼音转换
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="simple"></param>
+        /// <returns></returns>
         public static string ToSpell(this string str, bool simple = false)
         {
             if (string.IsNullOrEmpty(str)) return "";
@@ -60,6 +71,17 @@ namespace EasyOa.Common
                 }
             }
             return simple ? string.Join("", res.Select(r => r.Substring(0, 1))) : string.Join("", res);
+        }
+        /// <summary>
+        /// 正则替换
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="regexp"></param>
+        /// <param name="replacement"></param>
+        /// <returns></returns>
+        public static string Replace2(this string str, string regexp, string replacement)
+        {
+            return Regex.Replace(str, regexp, replacement);
         }
     }
 }

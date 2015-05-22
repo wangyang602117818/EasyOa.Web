@@ -30,12 +30,12 @@ namespace EasyOa.Common
             return dict;
         }
         /// <summary>
-        /// 把字符串写入文件
+        /// 把字符串写入文件，文件不存在则创建，不会覆盖源文件内容
         /// </summary>
         /// <param name="fullpath"></param>
         /// <param name="filename"></param>
         /// <param name="msg"></param>
-        public static void WriteString(string fullpath, string filename, string msg)
+        public static void WriteFile(string fullpath, string filename, string msg)
         {
             if (!Directory.Exists(fullpath)) Directory.CreateDirectory(fullpath);
             string fileName = Path.Combine(fullpath, filename);
