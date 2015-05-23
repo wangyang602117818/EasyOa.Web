@@ -148,7 +148,7 @@ mainnav_link ul {
     /*border-top: 1px solid #ccc;*/
     /*border-bottom: 1px solid #ccc;*/
     overflow: hidden;
-    /*background: url("../imgs/c01.jpg") repeat-x;*/
+    background:url(../imgs/c01.jpg) repeat-x;
 }
 
 .bgnum {
@@ -172,7 +172,9 @@ mainnav_link ul {
             .bgnum ul li i:hover {
                 color: #92A9C3;
             }
-
+.selnum {
+    color: #92A9C3;
+}
 .page_bottom {
     min-width: 996px;
     border-top: 1px solid #E1E1E1;

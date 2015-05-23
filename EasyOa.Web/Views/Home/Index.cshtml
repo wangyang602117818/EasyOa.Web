@@ -113,7 +113,7 @@
         </div>
         <div class="bgnum">
             <ul>
-                <li><i class="iconfont" id="i1" value="~/Content/imgs/c01.jpg">&#xe609;</i></li>
+                <li><i class="iconfont selnum" id="i1" value="~/Content/imgs/c01.jpg">&#xe609;</i></li>
                 <li><i class="iconfont" id="i2" value="~/Content/imgs/c02.jpg">&#xe609;</i></li>
                 <li><i class="iconfont" id="i3" value="~/Content/imgs/c03.jpg">&#xe609;</i></li>
             </ul>
@@ -185,9 +185,30 @@
 </html>
 <script src="~/Scripts/jquery-1.7.1.js"></script>
 <script type="text/javascript">
-    var t = $(".bgnum i").click(function () {
-        var url = $(this).attr("value");
-        $(".img_container").css("background-image", "url(" + url + ")");
-    });
+    $(function () {
+        var first_item = $(".bgnum i").first();
+        var img_container = $(".img_container");
+        var all_items = $(".bgnum i");
+        all_items.click(function () {
+            first_item.removeClass("selnum");  //吧上一个颜色去掉
+            first_item = $(this).addClass("selnum");
+            img_container.fadeTo(500, 0.2, function () {
+                img_container.css("background-image", "url(" + first_item.attr("value") + ")");
+            }).fadeTo(800, 1);
+        });
+        var i = 0;  //当前被选中的item在all_items中的位置
+        var flag = 0;
+        img_container.mouseover(function () {
+            flag = 1;
+        })
+        img_container.mouseout(function () {
+            flag = 0;
+        })
+        setInterval(function () { //chrome中一开始还是正常的，后来跑的飞快
+            i = parseInt(first_item.attr("id").substring(1)) % all_items.length;
+            if (flag == 0) all_items[i].click();
+        }, 5000);
+    })
+
 
 </script>
