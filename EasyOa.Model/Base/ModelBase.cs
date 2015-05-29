@@ -38,6 +38,7 @@ namespace EasyOa.Model
                 RequestScope scope = statement.Statement.Sql.GetRequestScope(statement, paramObject, mapper.LocalSession);
                 statement.PreparedCommand.Create(scope, mapper.LocalSession, statement.Statement, paramObject);
                 string strSql = scope.PreparedStatement.PreparedSql;
+
                 for (int i = scope.IDbCommand.Parameters.Count - 1; i >= 0; i--)
                 {
                     IDataParameter pa = (IDataParameter)scope.IDbCommand.Parameters[i];
@@ -53,7 +54,7 @@ namespace EasyOa.Model
             }
         }
         /// <summary>
-        /// 美化sql语句
+        /// 美化sql语句,去掉空格
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
