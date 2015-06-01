@@ -1,0 +1,12 @@
+
+
+create table ContractType(
+       Id        int     primary key identity(1,1)       not null,    --主键id
+       ConName         nvarchar(10)                     not null,     --合同类型
+       ConCode         tinyint      unique              not null,     --类型code
+       Cdefault        bit          default(0)          not null,     --是否默认
+)
+insert into ContractType(ConName,ConCode)values('劳动合同',10)
+insert into ContractType(ConName,ConCode)values('保密合同',11)
+insert into ContractType(ConName,ConCode)values('其他合同',12)
+update ContractType set Cdefault=1 where ConCode=10

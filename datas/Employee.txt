@@ -1,6 +1,6 @@
 --人事基本信息
 create table Employee(
-       Id        int     primary key identity(1,1)       not null,    --主键id
+       Id        int     primary key identity(1,1)       not null,    --主键id（人员id）
        Name              nvarchar(10)                    not null,    --姓名
        QPin              varchar(30)                     not null,    --全拼
        JPin              varchar(10)                     not null,    --简拼
@@ -19,7 +19,7 @@ create table Employee(
        FamilyCode        tinyint   default(1)            not null,    --名族id
        PoliticalCode     char(2)                         not null,    --政治面貌id
        FinishSchool      nvarchar(30)                    null,        --毕业院校
-       EduCode           tinyint                         not null,    --学历id
+       EducationCode     tinyint                         not null,    --学历id
        Major             nvarchar(20)                    null,        --专业
        Height            tinyint                         null,        --身高cm
        Weight            tinyint                         null,        --体重kg
@@ -29,7 +29,31 @@ create table Employee(
 --人事-公司信息表
 create table EmpCompany(
        Id        int     primary key identity(1,1)       not null,    --主键id
-       EmpId            int                              not null,    --人事基本信息id
+       EmployeeId       int                              not null,    --人员id
        EmpCode          int                              null,        --工号
-
+       DepartmentCode   varchar(20)                      not null,    --部门代码
+       JobTitleCode     varchar(20)                      not null,    --职位代码
+       HrStateCode      int                              not null,    --状态代码
+       JoinDate         date                             not null,    --入职时间
+       RegularDate      date                             null,        --转正时间
+       LeaveDate        date                             null,        --离职时间
+       LogDate          datetime     default(getdate())  not null,    --录入时间
+)
+--人事-合同信息
+create table EmpContract(
+       Id        int     primary key identity(1,1)       not null,    --主键id
+       EmployeeId            int                         not null,    --人员id
+       ContractTypeCode      tinyint                     not null,    --合同类型
+       ContractId            varchar(20)                 not null,    --合同编号
+       ConBeginDate          date                        null,        --合同开始时间
+       ConEndDate            date                        null,        --合同结束时间
+       ConDepartmentCode     varchar(20)                 null,        --约定部门
+       ConJobTitleCode       varchar(20)                 null,        --约定职位
+       ConPay                smallmoney                  null,        --约定薪资
+       RelieveDate           date                        null,        --解除合同时间
+       RelieveReason         varchar(100)                null,        --解除原因
+       IsUsed                bit        default(1)       not null,    --是否生效
+       ModifyTime            datetime                    not null,    --最后一次修改时间
+       ModifyEmpId           int                         not null,    --修改人
+       LogTime               datetime                    not null,    --录入时间
 )
