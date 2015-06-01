@@ -1,0 +1,35 @@
+--人事基本信息
+create table Employee(
+       Id        int     primary key identity(1,1)       not null,    --主键id
+       Name              nvarchar(10)                    not null,    --姓名
+       QPin              varchar(30)                     not null,    --全拼
+       JPin              varchar(10)                     not null,    --简拼
+       Sex               char(1)                         not null,    --性别(f/m)
+       Birthday          date                            not null,    --出生年月
+       IdCard            varchar(20)                     null,        --身份证号
+       Telephone         varchar(30)                     null,        --联系电话
+       QQ                varchar(20)                     null,        --qq
+       Email             varchar(30)                     null,        --邮件
+       Homephone         varchar(30)                     null,        --家庭电话
+       AreaCode          int                             not null,    --家庭所在地id(区域id)
+       HomeAdress        nvarchar(50)                    not null,    --家庭住址
+       PeopleNumber      tinyint                         null,        --家庭人口数
+       IsMarried         bit                             not null,    --婚否
+       StateCode         char(3)                         not null,    --国籍代码
+       FamilyCode        tinyint   default(1)            not null,    --名族id
+       PoliticalCode     char(2)                         not null,    --政治面貌id
+       FinishSchool      nvarchar(30)                    null,        --毕业院校
+       EduCode           tinyint                         not null,    --学历id
+       Major             nvarchar(20)                    null,        --专业
+       Height            tinyint                         null,        --身高cm
+       Weight            tinyint                         null,        --体重kg
+       BeginWorkDate     date                            null,        --参加工作时间
+       LogDate           datetime     default(getdate()) not null,    --入库时间
+)
+--人事-公司信息表
+create table EmpCompany(
+       Id        int     primary key identity(1,1)       not null,    --主键id
+       EmpId            int                              not null,    --人事基本信息id
+       EmpCode          int                              null,        --工号
+
+)

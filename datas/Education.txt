@@ -1,12 +1,12 @@
 
 create table Education(
     Id          int     identity(1,1)  primary key   not null,     --主键id
-    Edu_Name    nvarchar(20)                         not null,     --学历名称
-    Edu_Code    tinyint    unique                    not null,     --学历代码
-    C_Default   bit     default(0)                   null,         --是否默认   
+    EduName    nvarchar(20)                         not null,     --学历名称
+    EduCode    tinyint    unique                    not null,     --学历代码
+    CDefault   bit     default(0)                   null,         --是否默认   
 )
 
-insert into Education(Edu_Name,Edu_Code)
+insert into Education(EduName,EduCode)
 values
 ('研究生',10),
 ('博士',11),

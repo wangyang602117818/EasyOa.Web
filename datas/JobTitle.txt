@@ -1,0 +1,21 @@
+--职位表
+create table JobTitle(
+        Id          int     identity(1,1)  primary key   not null,     --主键id
+	JTName      nvarchar(20)                         not null,     --职位名称
+	JTCode      varchar(20) unique                   not null,     --职位代码（一个职位占2位）
+	QPin        varchar(50)                          null,         --全拼
+	JPin        varchar(20)                          null,         --简拼
+        Sort        smallint  default(0)                 null,         --职位排序
+)
+insert into JobTitle(JTName,JTCode,QPin,JPin)values('总经理','10','zongjingli','zjl')
+insert into JobTitle(JTName,JTCode,QPin,JPin)values('技术总监','1010','jishuzongjian','jszj')
+insert into JobTitle(JTName,JTCode,QPin,JPin)values('项目经理','101010','xiangmujingli','xmjl')
+insert into JobTitle(JTName,JTCode,QPin,JPin)values('技术组长','10101010','jishuzuzhang','jszz')
+insert into JobTitle(JTName,JTCode,QPin,JPin)values('.net工程师','1010101010','.netgongchengshi','.netgcs')
+insert into JobTitle(JTName,JTCode,QPin,JPin)values('测试组长','10101011','ceshizuzhang','cszz')
+insert into JobTitle(JTName,JTCode,QPin,JPin)values('产品组长','10101012','chanpinzuzhang','cpzz')
+insert into JobTitle(JTName,JTCode,QPin,JPin)values('运营总监','1011','yunyingzongjian','yyzj')
+insert into JobTitle(JTName,JTCode,QPin,JPin)values('销售组长','101110','xiaoshouzuzhang','xszz')
+insert into JobTitle(JTName,JTCode,QPin,JPin)values('销售员','10111010','xiaoshouyuan','xsy')
+
+

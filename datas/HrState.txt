@@ -1,11 +1,11 @@
 create table HrState(
       Id          int     identity(1,1)  primary key   not null,     --主键id
-      St_Name     nvarchar(10)                         not null,     --状态名称
-      St_Code     int                                  not null,     --状态代码
-      S_Default   bit     default(0)                   null,         --是否默认
+      StName     nvarchar(10)                         not null,     --状态名称
+      StCode     int                                  not null,     --状态代码
+      SDefault   bit     default(0)                   null,         --是否默认
 )
-insert into HrState(St_Name,St_Code)values('在岗','10')
-insert into HrState(St_Name,St_Code)values('请假','11')
-insert into HrState(St_Name,St_Code)values('出差','12')
-insert into HrState(St_Name,St_Code)values('离职','13')
+insert into HrState(StName,StCode)values('在岗','10')
+insert into HrState(StName,StCode)values('请假','11')
+insert into HrState(StName,StCode)values('出差','12')
+insert into HrState(StName,StCode)values('离职','13')
 
