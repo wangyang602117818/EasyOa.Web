@@ -46,7 +46,7 @@ namespace EasyOa.Model
                 }
                 //如果数据库连接为此方法内部打开，则自行关闭；否则，不用管理
                 if (!isAreadyOpenConnection) mapper.CloseConnection();
-                return SqlStatementFormat(strSql);
+                return strSql;
             }
             catch (Exception error)
             {
