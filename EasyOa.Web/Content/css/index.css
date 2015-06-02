@@ -34,7 +34,7 @@
 
     .sidebar .human_item {
         display: block;
-        width: 150px;
+        width: 166px;
         text-align: center;
         line-height: 37px;
         color: #4d4d4d;
@@ -48,7 +48,7 @@
         height: 37px;
         cursor: pointer;
         vertical-align: middle;
-        color:#7DA3C5;
+        color:#005CB5;
     }
 
 
