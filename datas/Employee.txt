@@ -133,5 +133,5 @@ create table EmpTransfer(
 --人事-培训主题
 create table EmpLearn(
        Id        int     primary key identity(1,1)       not null,    --主键id
-
+       
 )

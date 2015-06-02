@@ -155,4 +155,5 @@ mainnav_link ul {
 
 .toptips_wrap, .topnav_wrap, .mainnav_wrap, .container, .footer {
     width: 996px;
+    margin:0 auto;
 }

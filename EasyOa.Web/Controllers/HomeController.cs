@@ -15,12 +15,10 @@ namespace EasyOa.Web.Controllers
     {
         public ActionResult Login()
         {
-            ViewBag.Title = "登录";
             return View();
         }
         public ActionResult Index()
         {
-            ViewBag.Title = "首页";
             return View();
         }
         public ActionResult Edit()

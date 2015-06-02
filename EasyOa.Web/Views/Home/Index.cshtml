@@ -2,4 +2,33 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section header{
+    <link href="~/Content/css/index.css" rel="stylesheet" />
+}
+<div class="container">
+    <div class="sidebar">
+        <ul class="nav">
+            <li id="human_base" class="on">
+                <a href="#" class="human_item">
+                    <i class="iconfont ">&#xe60f;</i>
+                    人事信息
+                </a>
+            </li>
+            <li id="human_query">
+                <a href="#" class="human_item">
+                    <i class="iconfont">&#xe60f;</i>
+                    人事查询
+                </a>
+            </li>
+            <li id="human_add">
+                <a href="#" class="human_item">
+                    <i class="iconfont">&#xe60f;</i>
+                    人事管理
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
 
+    </div>
+</div>
