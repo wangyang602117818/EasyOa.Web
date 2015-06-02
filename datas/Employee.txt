@@ -111,7 +111,7 @@ create table EmpContract(
 create table EmpAward(
        Id        int     primary key identity(1,1)       not null,    --主键id
        EmployeeId            int                         not null,    --人员id
-       AwardTypeCode         smallint                    not null,    --奖惩代码
+       AwardTypeCode         smallint                    not null,    --奖惩类型代码
        Content               nvarchar(200)               not null,    --奖惩内容
        According             nvarchar(100)               not null,    --奖惩依据
        AwardDate             date                        not null,    --奖惩时间
@@ -122,6 +122,16 @@ create table EmpAward(
 create table EmpTransfer(
        Id        int     primary key identity(1,1)       not null,    --主键id
        EmployeeId            int                         not null,    --人员id
+       OldDeptCode           varchar(20)                 not null,    --原部门
+       OldJTCode             varchar(20)                 not null,    --原职位
+       NewDeptCode           varchar(20)                 not null,    --新部门
+       NewJTCode             varchar(20)                 not null,    --新职位
+       TransferTypeCode      smallint                    not null,    --调动类型
+       TranDate              date                        not null,    --生效时间
+       Remark                nvarchar(200)               null,        --备注
+)
+--人事-培训主题
+create table EmpLearn(
+       Id        int     primary key identity(1,1)       not null,    --主键id
 
 )
---人事-培训信息

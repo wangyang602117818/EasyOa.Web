@@ -1,0 +1,11 @@
+--调动类型表
+create table TransferType(
+      Id        int     primary key identity(1,1)       not null,    --主键id
+      TranName          nvarchar(20)                    not null,    --调动类型
+      TranCode          smallint                        not null,    --代码
+      TDefault          bit     default(0)              not null,    --是否默认
+)
+insert into TransferType(TranName,TranCode)values('晋升',10)
+insert into TransferType(TranName,TranCode)values('调动',11)
+insert into TransferType(TranName,TranCode)values('降职',20)
+
