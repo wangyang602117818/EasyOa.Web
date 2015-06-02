@@ -1,5 +1,4 @@
 
-
 create table ContractType(
        Id        int     primary key identity(1,1)       not null,    --主键id
        ConName         nvarchar(10)                     not null,     --合同类型

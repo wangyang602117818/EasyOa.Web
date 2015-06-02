@@ -19,25 +19,75 @@ create table Employee(
        FamilyCode        tinyint   default(1)            not null,    --名族id
        PoliticalCode     char(2)                         not null,    --政治面貌id
        FinishSchool      nvarchar(30)                    null,        --毕业院校
-       EducationCode     tinyint                         not null,    --学历id
+       DegreeCode        tinyint                         not null,    --学历id
        Major             nvarchar(20)                    null,        --专业
        Height            tinyint                         null,        --身高cm
        Weight            tinyint                         null,        --体重kg
        BeginWorkDate     date                            null,        --参加工作时间
        LogDate           datetime     default(getdate()) not null,    --入库时间
 )
+--人事-家庭人员信息
+create table EmpFamilyMember(
+       Id        int     primary key identity(1,1)       not null,    --主键id
+       EmployeeId            int                         not null,    --人员id
+       Name                  nvarchar(10)                not null,    --姓名
+       Relation              nvarchar(10)                not null,    --与本人关系
+       Birthday              date                        null,        --出生年月
+       IdCard                varchar(20)                 null,        --身份证号
+       ContactPhone          varchar(30)                 null,        --联系电话
+       ContactAddress        nvarchar(50)                null,        --联系地址
+       Company               nvarchar(50)                null,        --工作单位
+       PoliticalCode         char(2)                     not null,    --政治面貌id
+       LogDate           datetime     default(getdate()) not null,    --入库时间
+)
+--人事-教育学习情况
+create table EmpEducationExperience(
+       Id        int     primary key identity(1,1)       not null,    --主键id
+       EmployeeId            int                         not null,    --人员id
+       EduStartDate          date                        not null,    --开始时间
+       EduEndDate            date                        not null,    --结束时间
+       School                nvarchar(30)                not null,    --学校
+       DegreeCode            tinyint                     not null,    --学历id
+       LearnContent          nvarchar(100)               null,        --学习内容
+       LearnResult           nvarchar(100)               null,        --学习结果
+       CredentialId          varchar(50)                 null,        --证件号码
+       LogDate           datetime     default(getdate()) not null,    --入库时间
+)
+--人事-工作经历
+create table EmpWorkExperience(
+       Id        int     primary key identity(1,1)       not null,    --主键id
+       EmployeeId            int                         not null,    --人员id
+       WorkExpStartDate      date                        not null,    --开始日期
+       WorkExpEndDate        date                        null,        --结束时间
+       CompanyName           nvarchar(50)                null,        --公司名称
+       JobTitle              nvarchar(30)                null,        --职位名称
+       LeaveReason           nvarchar(200)               null,        --离职原因
+       LogDate               datetime                    not null,    --录入时间
+)
 --人事-公司信息表
 create table EmpCompany(
        Id        int     primary key identity(1,1)       not null,    --主键id
        EmployeeId       int                              not null,    --人员id
        EmpCode          int                              null,        --工号
-       DepartmentCode   varchar(20)                      not null,    --部门代码
-       JobTitleCode     varchar(20)                      not null,    --职位代码
-       HrStateCode      int                              not null,    --状态代码
+       DepartmentCode   varchar(20)                      not null,    --部门代码(主)
+       JobTitleCode     varchar(20)                      not null,    --职位代码(主)
+       EmpStateCode     int                              not null,    --状态代码
        JoinDate         date                             not null,    --入职时间
        RegularDate      date                             null,        --转正时间
        LeaveDate        date                             null,        --离职时间
        LogDate          datetime     default(getdate())  not null,    --录入时间
+)
+--人事-员工部门关联表（多个部门）
+create table EmpDeptRelation(
+       Id        int     primary key identity(1,1)       not null,    --主键id
+       EmployeeId       int                              not null,    --人员id
+       DepartmentCode   varchar(20)                      not null,    --部门代码
+)
+--人事-员工职位关联表（多个职位）
+create table EmpJobRelation(
+       Id        int     primary key identity(1,1)       not null,    --主键id
+       EmployeeId       int                              not null,    --人员id
+       JobTitleCode     varchar(20)                      not null,    --职位代码
 )
 --人事-合同信息
 create table EmpContract(
@@ -55,5 +105,23 @@ create table EmpContract(
        IsUsed                bit        default(1)       not null,    --是否生效
        ModifyTime            datetime                    not null,    --最后一次修改时间
        ModifyEmpId           int                         not null,    --修改人
-       LogTime               datetime                    not null,    --录入时间
+       LogDate               datetime                    not null,    --录入时间
 )
+--人事-奖惩信息
+create table EmpAward(
+       Id        int     primary key identity(1,1)       not null,    --主键id
+       EmployeeId            int                         not null,    --人员id
+       AwardTypeCode         smallint                    not null,    --奖惩代码
+       Content               nvarchar(200)               not null,    --奖惩内容
+       According             nvarchar(100)               not null,    --奖惩依据
+       AwardDate             date                        not null,    --奖惩时间
+       ModifyEmpId           int                         not null,    --修改人
+       LogDate               datetime                    not null,    --录入时间
+)
+--人事-调动信息
+create table EmpTransfer(
+       Id        int     primary key identity(1,1)       not null,    --主键id
+       EmployeeId            int                         not null,    --人员id
+
+)
+--人事-培训信息

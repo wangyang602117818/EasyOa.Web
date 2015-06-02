@@ -1,0 +1,22 @@
+
+create table Degree(
+    Id          int     identity(1,1)  primary key   not null,     --主键id
+    DeName      nvarchar(20)                         not null,     --学历名称
+    DeCode      tinyint    unique                    not null,     --学历代码
+    DeDefault    bit     default(0)                   null,         --是否默认   
+)
+
+insert into Degree(DeName,DeCode)
+values
+('研究生',10),
+('博士',11),
+('硕士',14),
+('本科',21),
+('专科',31),
+('中专',41),
+('高中',44),
+('职高',46),
+('技校',47),
+('初中',71),
+('小学',80),
+('其他',90)

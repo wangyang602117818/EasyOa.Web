@@ -25,6 +25,7 @@ ul {
 a {
     text-decoration: none;
 }
+
 p {
     display: block;
 }
@@ -87,7 +88,6 @@ h1, h2, h3, h4, h5, h6, input, textarea, select, button, label {
         color: #CECECE;
         text-decoration: none;
     }
-
 .link_split {
     float: left;
     height: 29px;
@@ -147,6 +147,11 @@ mainnav_link ul {
         color: #005CB5;
         border-bottom: 3px solid #005CB5;
     }
+
+#mainnav_link_sel {
+    color: #005CB5;
+    border-bottom: 3px solid #005CB5;
+}
 
 .toptips_wrap, .topnav_wrap, .mainnav_wrap, .container, .footer {
     width: 996px;

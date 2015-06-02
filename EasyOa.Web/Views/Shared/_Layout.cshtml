@@ -27,7 +27,7 @@
                     <div class="unlogin">
                         <ul class="linkwrap">
                             <li>
-                                <a href="#" class="link">自助服务</a>
+                                <a href="#" class="link">登陆用户</a>
                                 <span class="link_split"></span>
                             </li>
                             <li>
@@ -59,8 +59,8 @@
                 </div>
                 <nav>
                     <ul class="mainnav_link">
-                        <li>
-                            <a href="#">账户</a>
+                        <li >
+                            <a href="#" id="mainnav_link_sel">账户</a>
                         </li>
                         <li>
                             <a href="#">理财通</a>
@@ -82,3 +82,13 @@
     @RenderBody()
 </body>
 </html>
+<script type="text/javascript">
+    $(function () {
+        var alll_inks = $(".mainnav_link a");
+        var current_link = alll_inks.first();
+        alll_inks.click(function () {
+            current_link.attr("id", "");
+            current_link = $(this).attr("id", "mainnav_link_sel");
+        });
+    });
+</script>

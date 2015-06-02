@@ -1,0 +1,13 @@
+--奖惩类型
+create table AwardType(
+        Id          int     identity(1,1)  primary key   not null,     --主键id
+        AwName          nvarchar(10)                     not null,     --奖励名称
+	AwCode          smallint      unique             not null,     --代码
+	ADefault        bit       default(0)             not null,    --是否默认
+)
+insert into AwardType(AwName,AwCode)values('奖励',10)
+insert into AwardType(AwName,AwCode)values('惩罚',20)
+insert into AwardType(AwName,AwCode)values('警告',21)
+insert into AwardType(AwName,AwCode)values('记过',22)
+
+
