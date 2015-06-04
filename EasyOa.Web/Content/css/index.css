@@ -10,56 +10,177 @@
     float: left;
     width: 166px;
     min-height: 704px;
-    _height: 704px;
     background-color: #f8f8f8;
     border: 1px solid #d8d8d8;
     border-bottom: 0 none;
-    border-radius: 2px 2px 0 0;
-    -webkit-border-radius: 2px 2px 0 0;
     margin-top: 30px;
 }
 
-    .sidebar .on {
-        color: #4e4e4e;
-        font-weight: 700;
-        background-color: #fff;
+    .sidebar .meun_con {
+        height: 150px;
+        border-bottom: 1px solid #e1e1e1;
     }
 
-    .sidebar li {
-        position: relative;
-        height: 37px;
-        margin: 8px 0 0;
-        border: 1px solid #d8d8d8;
+.meun_con li {
+    position: relative;
+    height: 37px;
+    margin: 8px 0 0;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.meun_con .h_menu {
+    display: block;
+    width: 166px;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    color: #4d4d4d;
+    font-size: 14px;
+}
+
+.meun_con .on {
+    color: #4e4e4e;
+    font-weight: 700;
+    background-color: #fff;
+    border-color: #d9d9d9;
+}
+
+#human_base:hover, #human_query:hover, #human_add:hover {
+    border-color: #d9d9d9;
+    background-color: #fff;
+    width: 167px;
+}
+
+.ico_people, .ico_query, .ico_add {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    left: 19px;
+    top: 7px;
+    width: 25px;
+    height: 21px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.ico_people {
+    background: url(../imgs/icon.png) no-repeat;
+    _background-image: url(../imgs/icon.png);
+    background-position: 0 -70px;
+}
+
+.ico_query {
+    background: url(../imgs/icon.png) no-repeat;
+    _background-image: url(../imgs/icon.png);
+    background-position: 0 -91px;
+}
+
+.ico_add {
+    background: url(../imgs/icon.png) no-repeat;
+    _background-image: url(../imgs/icon.png);
+    background-position: 0 -111px;
+}
+
+.sidebar .nav_sub_btn {
+    position: absolute;
+    z-index: 995;
+    width: 25px;
+    height: 33px;
+    line-height: 30px;
+    padding: 0;
+    cursor: pointer;
+    right: 0;
+    top: 1px;
+    text-align: center;
+    /*border:1px solid red;*/
+}
+
+.sidebar i {
+    font-size: 8px;
+    color: #FF4E00;
+    font-weight: 900;
+}
+
+.nav_sub {
+    display: none;
+    position: absolute;
+    z-index: 994;
+    top: -1px;
+    width: 131px;
+    padding: 2px 0;
+    margin: 0 0 0 167px;
+    background-color: #fff;
+    border: 1px solid #e1e2e2;
+    border-left: none;
+}
+
+    .nav_sub li {
+        margin: 2px 0 0;
+        height: auto;
+        width: 100%;
+        /*border: 1px solid red;*/
     }
 
-    .sidebar .human_item {
+    .nav_sub a {
         display: block;
-        width: 166px;
-        text-align: center;
-        line-height: 37px;
-        color: #4d4d4d;
-        font-size: 14px;
+        height: 24px;
+        line-height: 24px;
+        padding: 1px 18px 2px;
+        _padding: 1px 18px 2px;
+        zoom: 1;
+        white-space: nowrap;
+        color: #747474;
+        font-weight: normal;
     }
 
-    .sidebar i {
-        left: 19px;
-        top: 7px;
-        width: 25px;
-        height: 37px;
-        cursor: pointer;
-        vertical-align: middle;
-        color:#005CB5;
+        .nav_sub a:hover {
+            background-color: #f3f3f3;
+            color: #4e4e4e;
+            text-decoration: none;
+        }
+
+.nav_extra {
+    height: 150px;
+    margin-top: 2px;
+    padding: 3px 12px 6px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+    .nav_extra li {
+        /*border: 1px solid red;*/
+        width: auto;
+        height: 25px;
+        line-height: 23px;
+        margin-top: 3px;
     }
 
+    .nav_extra a {
+        float: left;
+        height: 1.5em;
+        line-height: 1.5em;
+        padding: 2px 7px 1px;
+        width: 4em;
+        border: 1px solid #f8f8f8;
+        word-spacing: 0;
+        font-family: \5b8b\4f53;
+        color: #747474;
+        /*border:1px solid red;*/
+    }
 
+        .nav_extra a:hover {
+            color:#0078b6;
+            background-color:#fff;
+            border: 1px solid #e1e1e1;
+        }
 
-
-
-
-
-
-
-
+    .nav_extra .border {
+        float: left;
+        height: 10px;
+        border-left: 1px dotted #ccc;
+        margin: 7px 5px 0 6px;
+        /*visibility: hidden;*/
+    }
 
 .content {
     float: right;
@@ -68,5 +189,5 @@
     _height: 530px;
     padding-bottom: 30px;
     margin-top: 30px;
-    border: 1px solid red;
+    border: 1px solid #DBDBDB;
 }

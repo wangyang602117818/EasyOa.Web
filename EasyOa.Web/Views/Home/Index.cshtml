@@ -7,28 +7,113 @@
 }
 <div class="container">
     <div class="sidebar">
-        <ul class="nav">
+        <ul class="meun_con">
             <li id="human_base" class="on">
-                <a href="#" class="human_item">
-                    <i class="iconfont ">&#xe60e;</i>&nbsp&nbsp&nbsp
-                    <span>基本信息</span>
+                <a href="#" class="h_menu">
+                    <span class="ico_people"></span>人事档案
                 </a>
+                <a class="nav_sub_btn" hidefocus="hidefocus"><i class="iconfont">&#xe604;</i></a>
+                <div class="nav_sub">
+                    <ul>
+                        <li>
+                            <a href="#">基本信息</a>
+                        </li>
+                        <li>
+                            <a href="#">合同信息</a>
+                        </li>
+                        <li>
+                            <a href="#">家庭成员</a>
+                        </li>
+                        <li>
+                            <a href="#">教育学习</a>
+                        </li>
+                        <li>
+                            <a href="#">培训信息</a>
+                        </li>
+                        <li>
+                            <a href="#">人员奖惩信息</a>
+                        </li>
+                        <li>
+                            <a href="#">人员调动信息</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li id="human_query">
-                <a href="#" class="human_item">
-                    <i class="iconfont">&#xe608;</i>&nbsp&nbsp&nbsp
-                    <span>人事查询</span>
+                <a href="#" class="h_menu">
+                    <span class="ico_query"></span>信息查询
                 </a>
+                <a class="nav_sub_btn"><i class="iconfont">&#xe604;</i></a>
+                <div class="nav_sub">
+                    <ul>
+                        <li>
+                            <a href="#">基本信息</a>
+                        </li>
+                        <li>
+                            <a href="#">合同信息</a>
+                        </li>
+                        <li>
+                            <a href="#">家庭成员</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li id="human_add">
-                <a href="#" class="human_item">
-                    <i class="iconfont">&#xe60b;</i>&nbsp&nbsp&nbsp
-                    <span>添加记录</span>
+                <a href="#" class="h_menu">
+                    <span class="ico_add"></span>添加记录
                 </a>
+                <a class="nav_sub_btn"><i class="iconfont">&#xe604;</i></a>
+                <div class="nav_sub">
+                    <ul>
+                        <li>
+                            <a href="#">员工入库</a>
+                        </li>
+                        <li>
+                            <a href="#">合同添加</a>
+                        </li>
+                        <li>
+                            <a href="#">家庭成员添加</a>
+                        </li>
+                        <li>
+                            <a href="#">教育信息添加</a>
+                        </li>
+                        <li>
+                            <a href="#">工作经历添加</a>
+                        </li>
+                        <li>
+                            <a href="#">奖惩添加</a>
+                        </li>
+                        <li>
+                            <a href="#">培训添加</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
+        </ul>
+        <ul class="nav_extra">
+            <li>
+                <a href="#">快捷支付</a>
+                <span class="border"></span>
+            </li>
+            <li><a href="#">安全中心</a></li>
+            <li><a href="#">QQ 快 付</a>
+                <span class="border"></span>
+            </li>
+            <li><a href="#">手机支付</a></li>
         </ul>
     </div>
     <div class="content">
-
     </div>
 </div>
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var meun_li = $(".meun_con > li");
+        meun_li.mouseover(function () {
+            $(this).children(".nav_sub").show();
+        });
+        meun_li.mouseout(function () {
+            $(this).children(".nav_sub").hide();
+        })
+    });
+</script>

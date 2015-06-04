@@ -1,0 +1,14 @@
+--培训类型
+create table LearnType(
+     Id        int     primary key identity(1,1)       not null,    --主键id
+     LTName           nvarchar(50)                     not null,    --培训类型
+     LTCode           int                              not null,    --培训类型代码
+     LDefault        bit      default(0)               not null,    --是否默认
+)
+insert into LearnType(LTName,LTCode)values('入职培训',100)
+insert into LearnType(LTName,LTCode)values('技能培训',200)
+insert into LearnType(LTName,LTCode)values('礼仪培训',300)
+insert into LearnType(LTName,LTCode)values('工作技巧培训',400)
+insert into LearnType(LTName,LTCode)values('生活技巧培训',500)
+insert into LearnType(LTName,LTCode)values('其他培训',600)
+

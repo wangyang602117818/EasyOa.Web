@@ -93,7 +93,7 @@ create table EmpJobRelation(
 create table EmpContract(
        Id        int     primary key identity(1,1)       not null,    --主键id
        EmployeeId            int                         not null,    --人员id
-       ContractTypeCode      tinyint                     not null,    --合同类型
+       ContractTypeCode      tinyint                     not null,    --合同类型代码
        ContractId            varchar(20)                 not null,    --合同编号
        ConBeginDate          date                        null,        --合同开始时间
        ConEndDate            date                        null,        --合同结束时间
@@ -122,16 +122,27 @@ create table EmpAward(
 create table EmpTransfer(
        Id        int     primary key identity(1,1)       not null,    --主键id
        EmployeeId            int                         not null,    --人员id
+       TransferTypeCode      smallint                    not null,    --调动类型代码
        OldDeptCode           varchar(20)                 not null,    --原部门
        OldJTCode             varchar(20)                 not null,    --原职位
        NewDeptCode           varchar(20)                 not null,    --新部门
        NewJTCode             varchar(20)                 not null,    --新职位
-       TransferTypeCode      smallint                    not null,    --调动类型
-       TranDate              date                        not null,    --生效时间
+       FireDate              date                        not null,    --生效时间
        Remark                nvarchar(200)               null,        --备注
 )
 --人事-培训主题
 create table EmpLearn(
        Id        int     primary key identity(1,1)       not null,    --主键id
-       
+       LearnTypeCode     int                             not null,    --培训类型代码
+       LearnMethodCode   int                             not null,    --培训方式代码
+       LTitle            nvarchar(30)                    not null,    --培训主题
+       LContent          nvarchar(500)                   not null,    --培训内容
+       LAddress          nvarchar(100)                   not null,    --培训地址
+       IsInnerTeacher      bit                           not null,    --是否内部老师培训
+       InnerTeacherId    int                             null,        --内部老师
+       OuterTeacherName  nvarchar(20)                    null,        --外部老师（公司外部老师培训）
+       LStartTime          datetime                      not null,    --开始时间
+       LEndTime            datetime                      not null,    --结束时间
+       Integral            int                           null,        --该次培训积分
+       Remark            nvarchar(500)                   null,        --备注
 )
