@@ -2,16 +2,41 @@
 <head>
     <title></title>
     <style>
-        .sp {
-            float: left;
-            height: 12px;
-            /*border-right:1px solid red;*/
-            border-left: 1px  dotted #ccc;
-            margin: 5px 5px 0 6px;
+        @font-face {
+            font-family: 'iconfont';
+            src: url('//at.alicdn.com/t/font_1433474528_3593602.eot'); /* IE9*/
+            src: url('//at.alicdn.com/t/font_1433474528_3593602.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('//at.alicdn.com/t/font_1433474528_3593602.woff') format('woff'), /* chrome¡¢firefox */
+            url('//at.alicdn.com/t/font_1433474528_3593602.ttf') format('truetype'), /* chrome¡¢firefox¡¢opera¡¢Safari, Android, iOS 4.2+*/
+            url('//at.alicdn.com/t/font_1433474528_3593602.svg#iconfont') format('svg'); /* iOS 4.1- */
+        }
+
+        .iconfont {
+            font-family: "iconfont";
+            font-size: 16px;
+            font-style: normal;
+        }
+
+        .dv1 {
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid red;
+        }
+
+        #i1 {
+            border: 1px solid red;
+            display: inline-block;
+            /*height:10px;*/
+            margin-top: -10px;
         }
     </style>
 </head>
 <body>
-    <span class="sp"></span>
+    <div class="dv1">
+        ÏêÇé<i class="iconfont" id="i1">&#xe60f;</i>
+
+    </div>
+
 </body>
 </html>

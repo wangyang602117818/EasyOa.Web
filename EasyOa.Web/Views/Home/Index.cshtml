@@ -41,26 +41,29 @@
             </li>
             <li id="human_query">
                 <a href="#" class="h_menu">
-                    <span class="ico_query"></span>信息查询
+                    <span class="ico_query"></span>统计查询
                 </a>
                 <a class="nav_sub_btn"><i class="iconfont">&#xe604;</i></a>
                 <div class="nav_sub">
                     <ul>
                         <li>
-                            <a href="#">基本信息</a>
+                            <a href="#">公司员工统计</a>
                         </li>
                         <li>
-                            <a href="#">合同信息</a>
+                            <a href="#">部门编制统计</a>
                         </li>
                         <li>
-                            <a href="#">家庭成员</a>
+                            <a href="#">培训记录统计</a>
+                        </li>
+                        <li>
+                            <a href="#">奖惩信息统计</a>
                         </li>
                     </ul>
                 </div>
             </li>
             <li id="human_add">
                 <a href="#" class="h_menu">
-                    <span class="ico_add"></span>添加记录
+                    <span class="ico_add"></span>添加信息
                 </a>
                 <a class="nav_sub_btn"><i class="iconfont">&#xe604;</i></a>
                 <div class="nav_sub">
@@ -86,6 +89,9 @@
                         <li>
                             <a href="#">培训添加</a>
                         </li>
+                        <li>
+                            <a href="#">调动添加</a>
+                        </li>
                     </ul>
                 </div>
             </li>
@@ -103,6 +109,43 @@
         </ul>
     </div>
     <div class="content">
+        <div class="page_nav">
+            <div class="title_warp">
+                <h2>添加信息</h2>
+            </div>
+            <ul class="links">
+                <li>
+                    <a href="#" class="on">工具箱</a>
+                </li>
+                <li>
+                    <a href="#">入库记录</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tool_box">
+            <ul>
+                <li>
+                    <a href="#">
+                        @*<img src="~/Content/imgs/iconfont-tianjialianxiren.png" />*@
+                        <img src="~/Content/imgs/user.gif" />
+                        员工入库</a>
+                </li>
+                <li>
+                    <a href="#">
+                        合同添加</a>
+                </li>
+                <li>
+                    <a href="#">家庭成员
+
+                    </a>
+                </li>
+                <li><a href="#">教育信息</a></li>
+                <li><a href="#">工作经历</a></li>
+                <li><a href="#">奖惩信息</a></li>
+                <li><a href="#">培训信息</a></li>
+
+            </ul>
+        </div>
     </div>
 </div>
 <script src="~/Scripts/jquery-1.7.1.js"></script>
@@ -114,6 +157,15 @@
         });
         meun_li.mouseout(function () {
             $(this).children(".nav_sub").hide();
+        })
+        var page_nav = $(".page_nav a");
+        page_nav.mouseover(function () {
+            var curr = $(this);
+            if (curr.hasClass("on")) {
+                curr.css("backgroundColor", "#fff");
+                curr.click(function () { return false;})
+            }
+
         })
     });
 </script>

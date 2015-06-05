@@ -127,6 +127,8 @@
     <Content Include="Content\imgs\iconfont-yuangongdangan.png" />
     <Content Include="Content\imgs\index_partner.png" />
     <Content Include="Content\imgs\logo.png" />
+    <Content Include="Content\imgs\test.html" />
+    <Content Include="Content\imgs\user.gif" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\fun.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />

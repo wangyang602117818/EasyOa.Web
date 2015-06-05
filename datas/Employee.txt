@@ -75,6 +75,7 @@ create table EmpCompany(
        JoinDate         date                             not null,    --入职时间
        RegularDate      date                             null,        --转正时间
        LeaveDate        date                             null,        --离职时间
+       Integral         int                              null,        --总培训积分
        LogDate          datetime     default(getdate())  not null,    --录入时间
 )
 --人事-员工部门关联表（多个部门）
@@ -115,6 +116,7 @@ create table EmpAward(
        Content               nvarchar(200)               not null,    --奖惩内容
        According             nvarchar(100)               not null,    --奖惩依据
        AwardDate             date                        not null,    --奖惩时间
+       Integral            int                           null,        --该次奖惩积分
        ModifyEmpId           int                         not null,    --修改人
        LogDate               datetime                    not null,    --录入时间
 )
@@ -129,20 +131,14 @@ create table EmpTransfer(
        NewJTCode             varchar(20)                 not null,    --新职位
        FireDate              date                        not null,    --生效时间
        Remark                nvarchar(200)               null,        --备注
+       ModifyEmpId           int                         not null,    --修改人
+       LogDate            datetime  default(getdate())   not null,    --录入时间
 )
---人事-培训主题
+--人事-人员培训记录
 create table EmpLearn(
        Id        int     primary key identity(1,1)       not null,    --主键id
-       LearnTypeCode     int                             not null,    --培训类型代码
-       LearnMethodCode   int                             not null,    --培训方式代码
-       LTitle            nvarchar(30)                    not null,    --培训主题
-       LContent          nvarchar(500)                   not null,    --培训内容
-       LAddress          nvarchar(100)                   not null,    --培训地址
-       IsInnerTeacher      bit                           not null,    --是否内部老师培训
-       InnerTeacherId    int                             null,        --内部老师
-       OuterTeacherName  nvarchar(20)                    null,        --外部老师（公司外部老师培训）
-       LStartTime          datetime                      not null,    --开始时间
-       LEndTime            datetime                      not null,    --结束时间
-       Integral            int                           null,        --该次培训积分
-       Remark            nvarchar(500)                   null,        --备注
+       EmployeeId            int                         not null,    --人员id
+       EducateRecordId       int                         not null,    --培训主题id
+       ModifyEmpId           int                         not null,    --修改人
+       LogDate           datetime  default(getdate())    not null,    --录入时间
 )
