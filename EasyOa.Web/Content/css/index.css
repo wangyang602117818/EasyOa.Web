@@ -96,10 +96,13 @@
     /*border:1px solid red;*/
 }
 
-.sidebar i {
-    font-size: 8px;
-    color: #FF4E00;
-    font-weight: 900;
+.sidebar .ico_right {
+    display:inline-block;
+    width:8px;height:10px;
+    /*border:1px solid #ccc;*/
+    background:url(../imgs/icon.png) no-repeat;
+    background-position:-16px -60px;
+    margin-top:12px;
 }
 
 .nav_sub {
@@ -237,33 +240,34 @@
         .page_nav .links a:hover {
             background-color: #e1e6eb;
         }
+
     .page_nav .links .on {
         background-color: #fff;
-        border-left:1px solid #DDDDDD;
-        border-right:1px solid #DDDDDD;
-        border-top:1px solid #DDDDDD;
+        border-left: 1px solid #DDDDDD;
+        border-right: 1px solid #DDDDDD;
+        border-top: 1px solid #DDDDDD;
     }
 
-.tool_box {
+.emp_con {
     border: 1px solid #DDDDDD;
-    border-top:0;
+    border-top: 0;
     background-color: #FFFFFF;
     padding: 4px 12px;
     margin-top: 0px;
     position: relative;
-    height: 30px;
-    /*border: 1px solid red;*/
+    height: 35px;
+    border: 1px solid red;
 }
 
-    .tool_box ul li {
+    .emp_con ul li {
         float: left;
         margin-right: 10px;
-        margin-top:2px;
+        margin-top: 4px;
         vertical-align: middle;
         padding-left: 2px;
     }
 
-        .tool_box ul li a {
+        .emp_con ul li a {
             display: inline-block;
             height: 24px;
             line-height: 22px;
@@ -275,7 +279,7 @@
             border-left: 1px solid #fff;
         }
 
-            .tool_box ul li a:hover {
+            .emp_con ul li a:hover {
                 background-color: #E1E6EB;
-                border-color:#C9D4DF;
+                border-color: #C9D4DF;
             }

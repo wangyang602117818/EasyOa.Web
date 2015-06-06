@@ -38,9 +38,9 @@
     </div>
     <div class="bgnum">
         <ul>
-            <li><i class="iconfont selnum" id="i1" value="~/Content/imgs/c01.jpg">&#xe607;</i></li>
-            <li><i class="iconfont" id="i2" value="~/Content/imgs/c02.jpg">&#xe607;</i></li>
-            <li><i class="iconfont" id="i3" value="~/Content/imgs/c03.jpg">&#xe607;</i></li>
+            <li><span class="ico_circle selnum" id="i1" value="~/Content/imgs/c01.jpg"></span></li>
+            <li><span class="ico_circle" id="i2" value="~/Content/imgs/c02.jpg"></span></li>
+            <li><span class="ico_circle" id="i3" value="~/Content/imgs/c03.jpg"></span></li>
         </ul>
     </div>
     <div class="page_bottom">
@@ -108,7 +108,7 @@
 <div class="foot_fill"></div>
 <script type="text/javascript">
     $(function () {
-        var all_items = $(".bgnum i");
+        var all_items = $(".bgnum span");
         var first_item = all_items.first();
         var img_container = $(".img_container");
         all_items.click(function () {

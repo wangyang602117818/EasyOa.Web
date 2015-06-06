@@ -30,33 +30,47 @@
     /*border-top: 1px solid #ccc;*/
     /*border-bottom: 1px solid #ccc;*/
     overflow: hidden;
-    background:url(../imgs/c01.jpg) repeat-x;
+    background: url(../imgs/c01.jpg) repeat-x;
 }
 
 .bgnum {
-    width: 72px;
+    width: 78px;
     height: 30px;
     line-height: 35px;
     margin: 0 auto;
     text-align: center;
     color: #D7D9DF;
+    /*border:1px solid red;*/
 }
+
+    .bgnum .ico_circle {
+        width: 11px;
+        height: 11px;
+        overflow: hidden;
+        background: url(../imgs/icon.png) no-repeat;
+        background-position: 0 -46px;
+        /*border:1px solid #ccc;*/
+    }
 
     .bgnum ul li {
         width: 24px;
+        /*border: 1px solid red;*/
     }
 
-        .bgnum ul li i {
-            font-size: 10px;
-            cursor: pointer;
+    .bgnum .ico_circle {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+        .bgnum .ico_circle:hover {
+            background-position: -10px -46px;
         }
 
-            .bgnum ul li i:hover {
-                color: #92A9C3;
-            }
-.selnum {
-    color: #92A9C3;
-}
+    .bgnum .selnum {
+        background: url(../imgs/icon.png) no-repeat;
+        background-position: -10px -46px;
+    }
+
 .page_bottom {
     min-width: 996px;
     border-top: 1px solid #E1E1E1;
@@ -141,7 +155,8 @@
 }
 
 .index_footer {
-    width: 996px;height:60px;
+    width: 996px;
+    height: 60px;
     margin: 0 auto;
     border-top: 1px solid #E1E1E1;
     padding-top: 20px;
@@ -159,13 +174,15 @@
         .index_footer a:hover {
             color: #0078b6;
         }
+
 .foot_fill {
-    position:absolute;
-    top:885px;
-    bottom:0;
-    width:100%;
-    background-color:#f5f5f5;
+    position: absolute;
+    top: 885px;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
 }
+
 .header {
     height: 50px;
     border-bottom: 1px solid #e2e2e2;

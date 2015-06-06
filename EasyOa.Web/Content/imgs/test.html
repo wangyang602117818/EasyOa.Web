@@ -2,41 +2,29 @@
 <head>
     <title></title>
     <style>
-        @font-face {
-            font-family: 'iconfont';
-            src: url('//at.alicdn.com/t/font_1433474528_3593602.eot'); /* IE9*/
-            src: url('//at.alicdn.com/t/font_1433474528_3593602.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-            url('//at.alicdn.com/t/font_1433474528_3593602.woff') format('woff'), /* chrome¡¢firefox */
-            url('//at.alicdn.com/t/font_1433474528_3593602.ttf') format('truetype'), /* chrome¡¢firefox¡¢opera¡¢Safari, Android, iOS 4.2+*/
-            url('//at.alicdn.com/t/font_1433474528_3593602.svg#iconfont') format('svg'); /* iOS 4.1- */
-        }
-
-        .iconfont {
-            font-family: "iconfont";
-            font-size: 16px;
-            font-style: normal;
-        }
-
-        .dv1 {
-            width: 200px;
-            height: 30px;
-            line-height: 30px;
+        #dv1 {
             border: 1px solid red;
+            width: 7px;
+            height: 5px;
+            transition: transform 1s;
+            -moz-transition: transform 1s; /* Firefox 4 */
+            -webkit-transition: transform 1s; /* Safari ºÍ Chrome */
+            -o-transition: transform 1s; /* Opera */
+            background: url(../imgs/icon.png) no-repeat;
+            background-position: 0 -62px;
         }
 
-        #i1 {
-            border: 1px solid red;
-            display: inline-block;
-            /*height:10px;*/
-            margin-top: -10px;
-        }
+            #dv1:hover {
+                transform: rotate(180deg);
+                -ms-transform: rotate(180deg); /* IE 9 */
+                -moz-transform: rotate(180deg); /* Firefox */
+                -webkit-transform: rotate(180deg); /* Safari ºÍ Chrome */
+                -o-transform: rotate(180deg); /* Opera */
+            }
     </style>
 </head>
 <body>
-    <div class="dv1">
-        ÏêÇé<i class="iconfont" id="i1">&#xe60f;</i>
-
-    </div>
+    <div id="dv1"></div>
 
 </body>
 </html>
