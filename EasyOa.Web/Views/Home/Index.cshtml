@@ -115,46 +115,75 @@
             </div>
             <ul class="links">
                 <li>
-                    <a href="#" class="on">员工相关</a>
+                    <a href="#" class="on">员工相关<span class="ico_menu"></span></a>
                 </li>
                 <li>
-                    <a href="#">公司相关</a>
+                    <a href="#">人事相关<span class="ico_menu"></span></a>
                 </li>
             </ul>
         </div>
-        <div class="emp_con">
+        <div class="dept_con">
             <ul>
                 <li>
                     <a href="#">
-                        <img src="~/Content/imgs/user.gif" />
+                        <span class="ico_notice"></span>
+                        人事通知</a>
+                </li>
+            </ul>
+        </div>
+      @*  <div class="emp_con">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="ico_user"></span>
                         员工入库</a>
                 </li>
                 <li>
                     <a href="#">
-                        <img src="~/Content/imgs/217-16.png" />
+                        <span class="ico_contract"></span>
                         合同添加</a>
                 </li>
                 <li>
                     <a href="#">
-                        <img src="~/Content/imgs/14-24.png" />
+                        <span class="ico_family"></span>
                         家庭成员
                     </a>
                 </li>
+                <li>
+                    <a href="#">
+                        <span class="ico_education"></span>
+                        教育信息
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="ico_experience"></span>
+                        工作经历
+                    </a>
+                </li>
+                <li><a href="#">                 
+                    <span class="ico_award"></span>
+                    奖惩信息
+                    </a>
+                </li>
                 <li><a href="#">
-                    <img src="~/Content/imgs/225-20.png" />教育信息</a></li>
+                    <span class="ico_learn"></span>
+                    培训信息
+                    </a>
+                </li>
                 <li><a href="#">
-                    <img src="~/Content/imgs/dreams_dream_sleep_emoticon_emotion_moon_sleeping-20.png" />工作经历</a></li>
-                <li><a href="#">
-                    <img src="~/Content/imgs/award.png" />奖惩信息</a></li>
-                <li><a href="#">培训信息</a></li>
-
+                    <span class="ico_transfer"></span>
+                    调动信息
+                    </a>
+                </li>
             </ul>
-        </div>
+        </div>*@
     </div>
 </div>
 <script src="~/Scripts/jquery-1.7.1.js"></script>
 <script type="text/javascript">
     $(function () {
+        //侧边折叠菜单栏
         var meun_li = $(".meun_con > li");
         meun_li.mouseover(function () {
             $(this).children(".nav_sub").show();
@@ -162,14 +191,16 @@
         meun_li.mouseout(function () {
             $(this).children(".nav_sub").hide();
         })
+        //导航信息栏
         var page_nav = $(".page_nav a");
+        var curr_nav = page_nav.first();
         page_nav.mouseover(function () {
             var curr = $(this);
             if (curr.hasClass("on")) {
                 curr.css("backgroundColor", "#fff");
-                curr.click(function () { return false;})
+                curr.click(function () { return false; })
             }
-
         })
+
     });
 </script>

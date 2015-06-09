@@ -97,12 +97,13 @@
 }
 
 .sidebar .ico_right {
-    display:inline-block;
-    width:8px;height:10px;
+    display: inline-block;
+    width: 8px;
+    height: 10px;
     /*border:1px solid #ccc;*/
-    background:url(../imgs/icon.png) no-repeat;
-    background-position:-16px -60px;
-    margin-top:12px;
+    background: url(../imgs/icon.png) no-repeat;
+    background-position: -16px -60px;
+    margin-top: 12px;
 }
 
 .nav_sub {
@@ -198,8 +199,8 @@
 .page_nav {
     zoom: 1;
     padding: 0 10px 0 12px;
-    min-height: 37px;
-    height: 37px;
+    min-height: 35px;
+    height: 35px;
     border-bottom: 1px solid #e1e2e2;
     background-color: #f8f8f8;
     /*border:1px solid red;*/
@@ -207,7 +208,7 @@
 
 .title_warp {
     position: absolute;
-    margin-top: 9px;
+    margin-top: 8px;
     padding-left: 9px;
 }
 
@@ -225,16 +226,16 @@
 
     .page_nav .links a {
         position: relative;
-        height: 37px;
-        line-height: 37px;
-        padding: 0 13px;
+        height: 35px;
+        line-height: 35px;
+        padding: 0 12px;
         white-space: nowrap;
-        text-align: center;
+        text-align: left;
+        width: 65px;
         overflow: hidden;
         display: inline;
         float: left;
-        /*border:1px solid #fff;*/
-        /*background-color:#fff;*/
+        /*border:1px solid red;*/
     }
 
         .page_nav .links a:hover {
@@ -248,38 +249,111 @@
         border-top: 1px solid #DDDDDD;
     }
 
-.emp_con {
+.ico_menu {
+    display: inline-block;
+    /*border: 1px solid red;*/
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    overflow: hidden;
+    top: 12px;
+    right: 9px;
+    background: url(../imgs/icon.png) no-repeat;
+    background-position: 0 -141px;
+}
+
+.emp_con, .dept_con {
     border: 1px solid #DDDDDD;
     border-top: 0;
     background-color: #FFFFFF;
-    padding: 4px 12px;
+    padding: 4px 10px;
     margin-top: 0px;
     position: relative;
-    height: 35px;
+    height: 33px;
     /*border: 1px solid red;*/
 }
 
-    .emp_con ul li {
+    .emp_con ul li, .dept_con ul li {
         float: left;
-        margin-right: 10px;
-        margin-top: 4px;
+        margin-right: 15px;
+        margin-top: 3px;
         vertical-align: middle;
-        padding-left: 2px;
+        /*border:1px solid red;*/
     }
 
-        .emp_con ul li a {
+        .emp_con ul li a, .dept_con ul li a {
             display: inline-block;
             height: 24px;
             line-height: 22px;
+            width: 55px;
             position: relative;
             color: #666666;
-            text-align: center;
-            padding: 1px 10px;
+            /*text-align: right;*/
+            padding-left: 28px;
             border-top: 1px solid #fff;
             border-left: 1px solid #fff;
+            /*border:1px solid red;*/
         }
 
-            .emp_con ul li a:hover {
+            .emp_con ul li a:hover, .dept_con ul li a:hover {
                 background-color: #E1E6EB;
                 border-color: #C9D4DF;
             }
+
+.ico_user, .ico_contract, .ico_family, .ico_education, .ico_experience, .ico_award, .ico_learn, .ico_transfer {
+    position: absolute;
+    left: 5px;
+    top: 4px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+}
+
+.ico_user {
+    /*border:1px solid red;*/
+    background: url(../imgs/icon.png) no-repeat;
+    background-position: 0 -267px;
+}
+
+.ico_contract {
+    /*border:1px solid red;*/
+    background: url(../imgs/icon.png) no-repeat;
+    background-position: -19px -267px;
+}
+
+.ico_family {
+    /*border:1px solid red;*/
+    background: url(../imgs/icon.png) no-repeat;
+    background-position: -61px -267px;
+}
+
+.ico_education {
+    /*border:1px solid red;*/
+    background: url(../imgs/icon.png) no-repeat;
+    background-position: -84px -267px;
+}
+
+.ico_experience {
+    /*border:1px solid red;*/
+    background: url(../imgs/icon.png) no-repeat;
+    background-position: -104px -267px;
+}
+
+.ico_award {
+    /*border:1px solid red;*/
+    background: url(../imgs/icon.png) no-repeat;
+    background-position: -38px -267px;
+}
+
+.ico_learn {
+    /*border:1px solid red;*/
+    background: url(../imgs/icon.png) no-repeat;
+    background-position: -120px -267px;
+}
+
+.ico_transfer {
+    /*border:1px solid red;*/
+    background: url(../imgs/icon.png) no-repeat;
+    background-position: -140px -267px;
+}
