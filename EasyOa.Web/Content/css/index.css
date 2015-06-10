@@ -300,7 +300,7 @@
                 border-color: #C9D4DF;
             }
 
-.ico_user, .ico_contract, .ico_family, .ico_education, .ico_experience, .ico_award, .ico_learn, .ico_transfer {
+.ico_user, .ico_contract, .ico_family, .ico_education, .ico_experience, .ico_award, .ico_learn, .ico_transfer,.ico_notice {
     position: absolute;
     left: 5px;
     top: 4px;
@@ -313,47 +313,53 @@
 .ico_user {
     /*border:1px solid red;*/
     background: url(../imgs/icon.png) no-repeat;
-    background-position: 0 -267px;
+    background-position: 0 -268px;
 }
 
 .ico_contract {
     /*border:1px solid red;*/
     background: url(../imgs/icon.png) no-repeat;
-    background-position: -19px -267px;
+    background-position: -19px -268px;
 }
 
 .ico_family {
     /*border:1px solid red;*/
     background: url(../imgs/icon.png) no-repeat;
-    background-position: -61px -267px;
+    background-position: -61px -268px;
 }
 
 .ico_education {
     /*border:1px solid red;*/
     background: url(../imgs/icon.png) no-repeat;
-    background-position: -84px -267px;
+    background-position: -84px -268px;
 }
 
 .ico_experience {
     /*border:1px solid red;*/
     background: url(../imgs/icon.png) no-repeat;
-    background-position: -104px -267px;
+    background-position: -104px -268px;
 }
 
 .ico_award {
     /*border:1px solid red;*/
     background: url(../imgs/icon.png) no-repeat;
-    background-position: -38px -267px;
+    background-position: -39px -268px;
 }
 
 .ico_learn {
     /*border:1px solid red;*/
     background: url(../imgs/icon.png) no-repeat;
-    background-position: -120px -267px;
+    background-position: -120px -268px;
 }
 
 .ico_transfer {
     /*border:1px solid red;*/
     background: url(../imgs/icon.png) no-repeat;
-    background-position: -140px -267px;
+    background-position: -140px -268px;
+}
+
+.ico_notice {
+    /*border:1px solid red;*/
+    background: url(../imgs/icon.png) no-repeat;
+    background-position: -175px -268px;
 }
