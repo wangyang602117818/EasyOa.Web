@@ -86,18 +86,19 @@ h1, h2, h3, h4, h5, h6, input, textarea, select, button, label {
 }
 
     .link .ico_down {
-        position:relative;
-        display:inline-block;
+        position: relative;
+        display: inline-block;
         /*border: 1px solid #ccc;*/
-        width:7px;height:5px;
-        overflow:hidden;
-        top:-2px;
-        right:5px;
-        left:3px;
-        background:url(../imgs/icon.png) no-repeat;
+        width: 7px;
+        height: 5px;
+        overflow: hidden;
+        top: -2px;
+        right: 5px;
+        left: 3px;
+        background: url(../imgs/icon.png) no-repeat;
         background-position: 0 -62px;
     }
-        
+
     .link:hover {
         background-color: #3E3E3E;
         color: #CECECE;
@@ -137,32 +138,25 @@ h1, h2, h3, h4, h5, h6, input, textarea, select, button, label {
     top: 35px;
 }
 
-mainnav_link li {
-    border: 1px solid red;
-}
-
-mainnav_link ul {
-    border: 1px solid red;
-}
-
-.mainnav_link a {
-    position: relative;
-    float: left;
-    height: 36px;
-    width: 70px;
-    line-height: 30px;
-    text-align: center;
-    overflow: hidden;
-    margin-left: 18px;
-    color: #303030;
-    font: 17px/36px \5fae\8f6f\96c5\9ed1,\5b8b\4f53;
-    border-bottom: 1px;
-}
-
-    .mainnav_link a:hover {
-        color: #005CB5;
-        border-bottom: 3px solid #005CB5;
+    .mainnav_link a {
+        position: relative;
+        float: left;
+        height: 36px;
+        width: 60px;
+        line-height: 30px;
+        text-align: center;
+        overflow: hidden;
+        margin-left: 18px;
+        color: #303030;
+        font: 17px/36px \5fae\8f6f\96c5\9ed1,\5b8b\4f53;
+        border-bottom: 1px;
+        /*border:1px solid red;*/
     }
+
+        .mainnav_link a:hover {
+            color: #005CB5;
+            border-bottom: 3px solid #005CB5;
+        }
 
 #mainnav_link_sel {
     color: #005CB5;
