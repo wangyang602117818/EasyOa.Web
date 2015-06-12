@@ -17,7 +17,15 @@ namespace EasyOa.Web.Controllers
         {
             return View();
         }
+        public ActionResult Login1()
+        {
+            return View();
+        }
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult Index1()
         {
             return View();
         }

@@ -149,40 +149,6 @@
     width: 360px;
 }
 
-.footer_container {
-    width: 100%;
-    background-color: #f5f5f5;
-}
-
-.index_footer {
-    width: 996px;
-    height: 60px;
-    margin: 0 auto;
-    border-top: 1px solid #E1E1E1;
-    padding-top: 20px;
-    line-height: 22px;
-    padding-bottom: 10px;
-    text-align: center;
-    color: #999;
-}
-
-    .index_footer a {
-        margin-left: 10px;
-        color: #999;
-    }
-
-        .index_footer a:hover {
-            color: #0078b6;
-        }
-
-.foot_fill {
-    position: absolute;
-    top: 885px;
-    bottom: 0;
-    width: 100%;
-    background-color: #f5f5f5;
-}
-
 .header {
     height: 50px;
     border-bottom: 1px solid #e2e2e2;
@@ -533,3 +499,38 @@
     .logo-vipshop:hover {
         background-position: -74px -114px;
     }
+
+.footer_container {
+    width: 100%;
+    min-width:996px;
+    background-color: #f5f5f5;
+}
+
+.index_footer {
+    width: 996px;
+    height: 60px;
+    margin: 0 auto;
+    border-top: 1px solid #E1E1E1;
+    padding-top: 20px;
+    line-height: 22px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #999;
+}
+
+    .index_footer a {
+        margin-left: 10px;
+        color: #999;
+    }
+
+        .index_footer a:hover {
+            color: #0078b6;
+        }
+
+.foot_fill {
+    position: absolute;
+    top: 885px;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+}
