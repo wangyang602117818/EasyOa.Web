@@ -1,17 +1,12 @@
-﻿@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Index</title>
+    <title>@ViewBag.Title</title>
     <link href="~/Content/css/main.css" rel="stylesheet" />
-    <link href="~/Content/css/login.css" rel="stylesheet" />
-    <link href="~/Content/css/index.css" rel="stylesheet" />
+    <link href="~/Content/css/hr/hr_layout.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    @RenderSection("Header", false)
 </head>
 <body>
     @Html.Partial("Top")
@@ -73,13 +68,13 @@
                 </li>
                 <li id="human_add">
                     <a href="#" class="h_menu">
-                        <span class="ico_add"></span>添加信息
+                        <span class="ico_add"></span>信息维护
                     </a>
                     <a class="nav_sub_btn"><span class="ico_right"></span></a>
                     <div class="nav_sub">
                         <ul>
                             <li>
-                                <a href="#">员工信息添加</a>
+                                <a href="#" id="employ_add">员工信息添加</a>
                             </li>
                             <li>
                                 <a href="#">人事合同添加</a>
@@ -123,81 +118,7 @@
             </ul>
         </div>
         <div class="content">
-            <div class="page_nav">
-                <div class="title_warp">
-                    <h2>添加信息</h2>
-                </div>
-                <ul class="links">
-                    <li>
-                        <a href="#" id="nav1" class="on">员工相关<span class="ico_menu"></span></a>
-                    </li>
-                    <li>
-                        <a href="#" id="nav2">人事相关<span class="ico_menu"></span></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="content_nav">
-                <div class="emp_con" id="con1">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <span class="ico_user"></span>
-                                员工信息</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="ico_contract"></span>
-                                人事合同</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="ico_family"></span>
-                                家庭成员
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="ico_education"></span>
-                                教育信息
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="ico_experience"></span>
-                                工作经历
-                            </a>
-                        </li>
-                        <li><a href="#">
-                            <span class="ico_award"></span>
-                            奖惩信息
-                        </a>
-                        </li>
-                        <li><a href="#">
-                            <span class="ico_learn"></span>
-                            培训信息
-                        </a>
-                        </li>
-                        <li><a href="#">
-                            <span class="ico_transfer"></span>
-                            调动信息
-                        </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="dept_con" id="con2" style="display: none">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <span class="ico_notice"></span>
-                                人事通知</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="data_nav">
-                <div class="data_title">
-                </div>
-            </div>
+            @RenderBody()
         </div>
     </div>
     @Html.Partial("Footer")

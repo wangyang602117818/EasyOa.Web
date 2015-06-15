@@ -15,10 +15,6 @@ namespace EasyOa.Web.Controllers.Hr
         {
             return View();
         }
-        public ActionResult Employee()
-        {
-            return View();
-        }
-        
+
     }
 }
