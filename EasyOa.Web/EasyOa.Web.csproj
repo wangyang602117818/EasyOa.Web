@@ -178,12 +178,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Top.cshtml" />
-    <Content Include="Views\Home\Login1.cshtml" />
-    <Content Include="Views\Home\Index1.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
     <None Include="xsd\provider.xsd">
       <SubType>Designer</SubType>
     </None>
