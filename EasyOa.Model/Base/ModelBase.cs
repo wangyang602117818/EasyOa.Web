@@ -60,7 +60,7 @@ namespace EasyOa.Model
         /// <returns></returns>
         private static string SqlStatementFormat(string sql)
         {
-            string prettySql = sql.Replace2(@"(\()\s+", "$1").Replace2(@"\s*(,)\s*", "$1").Replace2(@"\s+(\))", "$1");
+            string prettySql = sql.RegexReplace(@"(\()\s+", "$1").RegexReplace(@"\s*(,)\s*", "$1").RegexReplace(@"\s+(\))", "$1");
             return prettySql;
         }
     }
