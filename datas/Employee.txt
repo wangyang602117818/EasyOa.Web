@@ -24,6 +24,7 @@ create table Employee(
        Height            tinyint                         null,        --身高cm
        Weight            tinyint                         null,        --体重kg
        BeginWorkDate     date                            null,        --参加工作时间
+       Photo             varchar(100)                    null,        --照片
        LogDate           datetime     default(getdate()) not null,    --入库时间
 )
 --人事-家庭人员信息

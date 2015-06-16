@@ -73,15 +73,56 @@ namespace EasyOa.Common
             return simple ? string.Join("", res.Select(r => r.Substring(0, 1))) : string.Join("", res);
         }
         /// <summary>
-        /// 正则替换
+        /// 字符串正则替换扩展
         /// </summary>
         /// <param name="str"></param>
         /// <param name="regexp"></param>
         /// <param name="replacement"></param>
         /// <returns></returns>
-        public static string Replace2(this string str, string regexp, string replacement)
+        public static string RegexReplace(this string str, string regexp, string replacement)
         {
             return Regex.Replace(str, regexp, replacement);
+        }
+        /// <summary>
+        /// 非ascii编码转unicode编码
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string NotAsciiToUnicode(this string str)
+        {
+            if (string.IsNullOrEmpty(str)) return "";
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in str)
+            {
+                if ((int)c > 127)
+                {
+                    sb.Append("\\u" + ((int)c).ToString("x"));
+                }
+                else
+                {
+                    sb.Append(c);
+                }
+            }
+            return sb.ToString();
+        }
+        /// <summary>
+        /// 吧字符串中unicode编码转成字符
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string StringUnicodeToChar(this string str)
+        {
+            StringBuilder sb = new StringBuilder();
+            if (!string.IsNullOrEmpty(str))
+            {
+                string[] strlist = str.Replace("\\", "").Split('u');
+                for (int i = 1; i < strlist.Length; i++)
+                {
+                    //将unicode字符转为10进制整数，然后转为char中文字符  
+                    sb.Append((char)int.Parse(strlist[i], System.Globalization.NumberStyles.HexNumber));
+                }
+            }
+            return sb.ToString() ;
         }
     }
 }

@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link href="~/Content/css/hr/hr_layout.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    @RenderSection("Header", false)
+</head>
+<body>
+    @Html.Partial("Top")
+    <div class="container">
+        <div class="sidebar">
+            <ul class="meun_con">
+                <li id="human_base" class="on">
+                    <a href="#" class="h_menu">
+                        <span class="ico_people"></span>人事档案
+                    </a>
+                    <a class="nav_sub_btn" hidefocus="hidefocus"><span class="ico_right"></span></a>
+                    <div class="nav_sub">
+                        <ul>
+                            <li>
+                                <a href="#">基本信息</a>
+                            </li>
+                            <li>
+                                <a href="#">合同信息</a>
+                            </li>
+                            <li>
+                                <a href="#">家庭成员</a>
+                            </li>
+                            <li>
+                                <a href="#">教育学习</a>
+                            </li>
+                            <li>
+                                <a href="#">培训信息</a>
+                            </li>
+                            <li>
+                                <a href="#">人员奖惩信息</a>
+                            </li>
+                            <li>
+                                <a href="#">人员调动信息</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="human_query">
+                    <a href="#" class="h_menu">
+                        <span class="ico_query"></span>统计查询
+                    </a>
+                    <a class="nav_sub_btn"><span class="ico_right"></span></a>
+                    <div class="nav_sub">
+                        <ul>
+                            <li>
+                                <a href="#">公司员工统计</a>
+                            </li>
+                            <li>
+                                <a href="#">部门编制统计</a>
+                            </li>
+                            <li>
+                                <a href="#">培训记录统计</a>
+                            </li>
+                            <li>
+                                <a href="#">奖惩信息统计</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="human_add">
+                    <a href="#" class="h_menu">
+                        <span class="ico_add"></span>信息维护
+                    </a>
+                    <a class="nav_sub_btn"><span class="ico_right"></span></a>
+                    <div class="nav_sub">
+                        <ul>
+                            <li>
+                                <a href="#" id="employ_add">员工信息添加</a>
+                            </li>
+                            <li>
+                                <a href="#">人事合同添加</a>
+                            </li>
+                            <li>
+                                <a href="#">家庭成员添加</a>
+                            </li>
+                            <li>
+                                <a href="#">教育信息添加</a>
+                            </li>
+                            <li>
+                                <a href="#">工作经历添加</a>
+                            </li>
+                            <li>
+                                <a href="#">奖惩信息添加</a>
+                            </li>
+                            <li>
+                                <a href="#">培训信息</a>
+                            </li>
+                            <li>
+                                <a href="#">调动信息</a>
+                            </li>
+                            <li class="split_bar"></li>
+                            <li>
+                                <a href="#">人事通知</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav_extra">
+                <li>
+                    <a href="#">快捷支付</a>
+                    <span class="border"></span>
+                </li>
+                <li><a href="#">安全中心</a></li>
+                <li><a href="#">QQ 快 付</a>
+                    <span class="border"></span>
+                </li>
+                <li><a href="#">手机支付</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            @RenderBody()
+        </div>
+    </div>
+    @Html.Partial("Footer")
+    <script type="text/javascript">
+        $(function () {
+            //侧边折叠菜单栏
+            var meun_li = $(".meun_con > li");
+            meun_li.mouseover(function () { $(this).children(".nav_sub").show(); });
+            meun_li.mouseout(function () { $(this).children(".nav_sub").hide(); });
+            //导航信息栏
+            var all_nav = $(".page_nav a");   //导航
+            var last_nav = all_nav.filter(".on");
+            all_nav.click(function () {
+                var curr_nav = $(this);
+                if (!curr_nav.hasClass("on")) {
+                    curr_nav.addClass("on");
+                    last_nav.removeClass("on");
+                    con_change(last_nav, curr_nav);  //改变内容
+                    last_nav = curr_nav;
+                }
+                return false;
+            });
+        });
+        function con_change(last_nav, curr_nav) {
+            var last_con = $("#con" + last_nav.attr("id").substr(3));
+            var curr_con = $("#con" + curr_nav.attr("id").substr(3));
+            last_con.hide(100);
+            curr_con.show(100);
+        }
+    </script>
+</body>
+</html>

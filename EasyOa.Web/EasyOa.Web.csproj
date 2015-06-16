@@ -105,6 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Hr\HrMaintainController.cs" />
+    <Compile Include="Controllers\Hr\HrRecordController.cs" />
+    <Compile Include="Controllers\Hr\HrStatisticController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -115,7 +118,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="App_Data\PinYWord.txt" />
-    <Content Include="Content\css\index.css" />
+    <Content Include="Content\css\hr\hr_maintain_index.css" />
+    <Content Include="Content\css\hr\hr_layout.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\imgs\c01.jpg" />
@@ -175,9 +179,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Shared\Top.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\HrMaintain\Index.cshtml" />
+    <Content Include="Views\Shared\_HrLayout.cshtml" />
+    <Content Include="Views\HrMaintain\Partial_HrMaintain.cshtml" />
     <None Include="xsd\provider.xsd">
       <SubType>Designer</SubType>
     </None>
