@@ -106,7 +106,7 @@ namespace EasyOa.Common
             return sb.ToString();
         }
         /// <summary>
-        /// 吧字符串中unicode编码转成字符
+        /// 把字符串中unicode编码转成字符
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>

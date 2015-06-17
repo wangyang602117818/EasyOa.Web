@@ -13,6 +13,7 @@ namespace EasyOa.Web.Controllers.Hr
 
         public ActionResult Index()
         {
+            Response.Write("okdsfdsfs");
             return View();
         }
 
