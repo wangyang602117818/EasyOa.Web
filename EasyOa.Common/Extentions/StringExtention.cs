@@ -88,7 +88,7 @@ namespace EasyOa.Common
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static string NotAsciiToUnicode(this string str)
+        public static string StringNotAsciiToUnicode(this string str)
         {
             if (string.IsNullOrEmpty(str)) return "";
             StringBuilder sb = new StringBuilder();
