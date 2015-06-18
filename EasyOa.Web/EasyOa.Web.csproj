@@ -118,6 +118,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="App_Data\PinYWord.txt" />
+    <Content Include="Content\css\hr\hr_maintain.css" />
     <Content Include="Content\css\hr\hr_maintain_index.css" />
     <Content Include="Content\css\hr\hr_layout.css" />
     <Content Include="Content\css\login.css" />
