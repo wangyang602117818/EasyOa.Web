@@ -118,6 +118,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="App_Data\PinYWord.txt" />
+    <Content Include="Content\css\hr\hr_maintain.css" />
     <Content Include="Content\css\hr\hr_maintain_index.css" />
     <Content Include="Content\css\hr\hr_layout.css" />
     <Content Include="Content\css\login.css" />
@@ -125,6 +126,7 @@
     <Content Include="Content\imgs\c01.jpg" />
     <Content Include="Content\imgs\c02.jpg" />
     <Content Include="Content\imgs\c03.jpg" />
+    <Content Include="Content\imgs\c04.jpg" />
     <Content Include="Content\imgs\icon.png" />
     <Content Include="Content\imgs\bank_ico.png" />
     <Content Include="Content\imgs\iconfont-yuangongdangan.png" />
@@ -149,7 +151,6 @@
   <ItemGroup>
     <Folder Include="config\" />
     <Folder Include="Models\" />
-    <Folder Include="uploadfile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -185,6 +186,10 @@
     <Content Include="Views\HrMaintain\Index.cshtml" />
     <Content Include="Views\Shared\_HrLayout.cshtml" />
     <Content Include="Views\HrMaintain\Partial_HrMaintain.cshtml" />
+    <Content Include="WebResource\uploadfile\Data Mapper Guide-1.6.2.chm" />
+    <Content Include="WebResource\uploadfile\rabbitmq-dotnet-client-1.5.0-user-guide.pdf" />
+    <Content Include="WebResource\uploadfile\UNICODE编码表.pdf" />
+    <Content Include="WebResource\uploadfile\编码列表.xlsx" />
     <None Include="xsd\provider.xsd">
       <SubType>Designer</SubType>
     </None>

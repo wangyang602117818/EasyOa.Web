@@ -85,25 +85,34 @@ h1, h2, h3, h4, h5, h6, input, textarea, select, button, label {
     /*border:1px solid red;*/
 }
 
-    .link .ico_down {
-        position: relative;
-        display: inline-block;
-        /*border: 1px solid #ccc;*/
-        width: 7px;
-        height: 5px;
-        overflow: hidden;
-        top: -2px;
-        right: 5px;
-        left: 3px;
-        background: url(../imgs/icon.png) no-repeat;
-        background-position: 0 -62px;
-    }
+.ico_down {
+    position: relative;
+    display: inline-block;
+    /*border: 1px solid #ccc;*/
+    width: 7px;
+    height: 5px;
+    overflow: hidden;
+    top: -2px;
+    right: 5px;
+    left: 3px;
+    background: url(../imgs/icon.png) no-repeat;
+    background-position: 0 -62px;
+    transition: transform 0.4s;
+}
 
-    .link:hover {
-        background-color: #3E3E3E;
-        color: #CECECE;
-        text-decoration: none;
-    }
+#kefu:hover .ico_down {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.link:hover {
+    background-color: #3E3E3E;
+    color: #CECECE;
+    text-decoration: none;
+}
 
 .link_split {
     float: left;
@@ -158,10 +167,10 @@ h1, h2, h3, h4, h5, h6, input, textarea, select, button, label {
             border-bottom: 3px solid #005CB5;
         }
 
-#mainnav_link_sel {
-    color: #005CB5;
-    border-bottom: 3px solid #005CB5;
-}
+    .mainnav_link .on {
+        color: #005CB5;
+        border-bottom: 3px solid #005CB5;
+    }
 
 .toptips_wrap, .topnav_wrap, .mainnav_wrap, .container, .footer {
     width: 996px;

@@ -1,6 +1,7 @@
 ﻿using Microsoft.International.Converters.PinYinConverter;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -84,11 +85,11 @@ namespace EasyOa.Common
             return Regex.Replace(str, regexp, replacement);
         }
         /// <summary>
-        /// 非ascii编码转unicode编码
+        /// 将字符串中非ascii编码转unicode编码
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static string NotAsciiToUnicode(this string str)
+        public static string StringNotAsciiToUnicode(this string str)
         {
             if (string.IsNullOrEmpty(str)) return "";
             StringBuilder sb = new StringBuilder();
@@ -112,17 +113,10 @@ namespace EasyOa.Common
         /// <returns></returns>
         public static string StringUnicodeToChar(this string str)
         {
-            StringBuilder sb = new StringBuilder();
-            if (!string.IsNullOrEmpty(str))
-            {
-                string[] strlist = str.Replace("\\", "").Split('u');
-                for (int i = 1; i < strlist.Length; i++)
-                {
-                    //将unicode字符转为10进制整数，然后转为char中文字符  
-                    sb.Append((char)int.Parse(strlist[i], System.Globalization.NumberStyles.HexNumber));
-                }
-            }
-            return sb.ToString() ;
+            if (string.IsNullOrEmpty(str)) return "";
+            return Regex.Unescape(str);  //方式一
+            //return Regex.Replace(str, @"\\u(\w{4})", (match) => ((char)int.Parse(match.Groups[1].Value, NumberStyles.HexNumber)).ToString());   //方式二
+            
         }
     }
 }
