@@ -44,11 +44,14 @@
         <div class="img_container">
         </div>
         <div class="bgnum">
-            <ul>
-                <li><span class="ico_circle selnum" id="i1" value="~/Content/imgs/c01.jpg"></span></li>
-                <li><span class="ico_circle" id="i2" value="~/Content/imgs/c02.jpg"></span></li>
-                <li><span class="ico_circle" id="i3" value="~/Content/imgs/c03.jpg"></span></li>
-            </ul>
+            <div class="numb_con">
+                <ul>
+                    <li><span class="ico_circle selnum" id="i1" value="~/Content/imgs/c01.jpg"></span></li>
+                    <li><span class="ico_circle" id="i2" value="~/Content/imgs/c02.jpg"></span></li>
+                    <li><span class="ico_circle" id="i3" value="~/Content/imgs/c03.jpg"></span></li>
+                    <li><span class="ico_circle" id="i4" value="~/Content/imgs/c04.jpg"></span></li>
+                </ul>
+            </div>
         </div>
         <div class="page_bottom">
             <div class="partner">
@@ -106,26 +109,30 @@
     @Html.Partial("Footer")
     <div class="foot_fill"></div>
     <script type="text/javascript">
+        var i = 0;  //当前被点击的item在all_items中的位置
+        var flag = 0;  //变换标志
+        var intervalId;
+        var all_items = $(".bgnum span");
+        var first_item = all_items.first();
+        var img_container = $(".img_container");
         $(function () {
-            var all_items = $(".bgnum span");
-            var first_item = all_items.first();
-            var img_container = $(".img_container");
             all_items.click(function () {
                 first_item.removeClass("selnum");  //吧上一个颜色去掉
                 first_item = $(this).addClass("selnum");
                 img_container.fadeTo(500, 0.2, function () {
                     img_container.css("background-image", "url(" + first_item.attr("value") + ")");
                 }).fadeTo(800, 1);
+                clearInterval(intervalId);
+                intervalId = setInterval(change_img, 5000);
             });
-            var i = 0;  //当前被选中的item在all_items中的位置
-            var flag = 0;
             img_container.mouseover(function () { flag = 1; })
             img_container.mouseout(function () { flag = 0; })
-            setInterval(function () { //chrome中一开始还是正常的，后来跑的飞快
-                i = parseInt(first_item.attr("id").substring(1)) % all_items.length;
-                if (flag == 0) all_items[i].click();
-            }, 5000);
+            intervalId = setInterval(change_img, 5000);
         })
+        function change_img() {
+            i = parseInt(first_item.attr("id").substring(1)) % all_items.length;
+            if (flag == 0) all_items[i].click();
+        }
     </script>
 </body>
 </html>
