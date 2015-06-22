@@ -134,26 +134,7 @@
             var meun_li = $(".meun_con > li");
             meun_li.mouseover(function () { $(this).children(".nav_sub").show(); });
             meun_li.mouseout(function () { $(this).children(".nav_sub").hide(); });
-            //导航信息栏
-            var all_nav = $(".page_nav a");   //导航
-            var last_nav = all_nav.filter(".on");
-            all_nav.click(function () {
-                var curr_nav = $(this);
-                if (!curr_nav.hasClass("on")) {
-                    curr_nav.addClass("on");
-                    last_nav.removeClass("on");
-                    con_change(last_nav, curr_nav);  //改变内容
-                    last_nav = curr_nav;
-                }
-                return false;
-            });
         });
-        function con_change(last_nav, curr_nav) {
-            var last_con = $("#con" + last_nav.attr("id").substr(3));
-            var curr_con = $("#con" + curr_nav.attr("id").substr(3));
-            last_con.hide(100);
-            curr_con.show(100);
-        }
     </script>
 </body>
 </html>
