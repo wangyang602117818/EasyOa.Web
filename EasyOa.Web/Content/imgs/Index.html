@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title></title>
+    <script src="jquery-1.7.1.js"></script>
+    <script>
+        var first = new Date(2015, 2, 0);
+
+
+
+
+
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .calendar {
+            position: absolute;
+            z-index: 9999;
+            border: 1px solid #76ABD3;
+            width: 203px;
+            height: 201px;
+            left: 200px;
+            top: 200px;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        .calendar_title {
+            width: 100%;
+            height: 26px;
+            background-color: #EBF2FA;
+            overflow: hidden;
+            border-bottom:1px solid #76ABD3;
+            /*padding-left:3px;*/
+            /*border:1px solid blue;*/
+        }
+
+        .last_y, .last_m, .title_y, .title_m, .next_y, .next_m {
+            /*border: 1px solid red;*/
+            /*border-top:1px solid red;*/
+            display: inline-block;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            overflow: hidden;
+            float: left;
+        }
+
+        .last_y {
+            width: 30px;
+        }
+
+        .last_m {
+            width: 23px;
+        }
+
+        .title_y {
+            width: 50px;
+            padding: 0 3px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .title_m {
+            width: 35px;
+            padding: 0 3px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .next_m {
+            width: 23px;
+        }
+
+        .next_y {
+            width: 30px;
+        }
+        .calendar_context {    /*显示或隐藏数据*/
+            border:0;
+            /*display:none;*/
+        }
+        .week_container {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .calendar_week { /*周样式*/
+            height: 25px;
+            line-height: 25px;
+            background-color: #fff;
+            padding: 0 2px;
+            /*overflow:hidden;*/
+            /*border:1px solid red;*/
+        }
+
+            .calendar_week div {
+                float: left;
+                display: inline-block;
+                text-align: center;
+                width: 25px;
+                margin-left: 3px;
+            }
+
+        .calendar_data { /*数据样式*/
+            /*background-color:#ccc;*/
+            height: 146px;
+            padding: 0 2px;
+            /*border:1px solid red;*/
+        }
+
+            .calendar_data div {
+                float: left;
+                margin-top: 3px;
+                display: inline-block;
+                text-align: center;
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                margin-left: 3px;
+            }
+
+                .calendar_data div:hover {
+                    cursor: pointer;
+                    background-color: #48B8E0;
+                }
+    </style>
+</head>
+<body>
+    <div id="calendar" class="calendar">
+        <div id="calendar_title" class="calendar_title">
+            <div id="last_y" class="last_y"><<</div>
+            <div id="last_m" class="last_m"><</div>
+            <div id="title_y" class="title_y">2015年</div>
+            <div id="title_m" class="title_m">01月</div>
+            <div id="next_m" class="next_m">></div>
+            <div id="next_y" class="next_y">>></div>
+        </div>
+        <div id="calendar_context" class="calendar_context">
+            <div id="week_container" class="week_container">
+                <div id="calendar_week" class="calendar_week">
+                    <div>日</div>
+                    <div>一</div>
+                    <div>二</div>
+                    <div>三</div>
+                    <div>四</div>
+                    <div>五</div>
+                    <div>六</div>
+                </div>
+            </div>
+            <div id="calendar_data" class="calendar_data">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div>28</div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
