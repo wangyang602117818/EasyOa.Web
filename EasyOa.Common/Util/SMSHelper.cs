@@ -30,7 +30,7 @@ namespace EasyOa.Common
         /// <returns></returns>
         public static string Send(string to, string[] contents)
         {
-            return Send(to, "1", contents, SMSBodyType.json);
+            return Send(to, contents, "1", SMSBodyType.json);
         }
         /// <summary>
         /// 发送短信
@@ -39,9 +39,9 @@ namespace EasyOa.Common
         /// <param name="templateid">使用模板id</param>
         /// <param name="contents">替换模板的内容</param>
         /// <returns></returns>
-        public static string Send(string to, string templateid, string[] contents)
+        public static string Send(string to, string[] contents, string templateid)
         {
-            return Send(to, templateid, contents, SMSBodyType.json);
+            return Send(to, contents, templateid, SMSBodyType.json);
         }
         /// <summary>
         /// 发送短信
@@ -51,7 +51,7 @@ namespace EasyOa.Common
         /// <param name="contents">替换模板的内容</param>
         /// <param name="type">短信内容的格式</param>
         /// <returns></returns>
-        public static string Send(string to, string templateid, string[] contents, SMSBodyType? type)
+        public static string Send(string to, string[] contents, string templateid, SMSBodyType? type)
         {
             string date = DateTime.Now.ToString("yyyyMMddHHmmss");
             string url = string.Format("{0}/{1}/Accounts/{2}/SMS/TemplateSMS?sig={3}", baseurl, appversion, accountsid, (accountsid + autotoken + date).ToMD5());
@@ -66,7 +66,7 @@ namespace EasyOa.Common
             }
             else
             {
-                return HttpRequestHelper.Post(url, dict, RequestContentType.xml, AcceptType.xml, XmlSerializeHelper.Serialize(smsBody));
+                return HttpRequestHelper.Post(url, dict, RequestContentType.xml, AcceptType.xml, XmlSerializeHelper.Serialize(smsBody).Replace("SmsBody", "TemplateSMS").Replace("string", "data"));
             }
         }
     }
