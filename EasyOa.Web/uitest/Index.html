@@ -4,127 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <title></title>
+    <link href="index.css" rel="stylesheet" />
     <script src="jquery-1.7.1.js"></script>
     <script>
         var first = new Date(2015, 2, 0);
     </script>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        .calendar {
-            position: absolute;
-            z-index: 9999;
-            border: 1px solid #76ABD3;
-            width: 203px;
-            height: 201px;
-            left: 200px;
-            top: 200px;
-            font-size: 14px;
-            overflow: hidden;
-        }
-
-        .calendar_title {
-            width: 100%;
-            height: 26px;
-            background-color: #EBF2FA;
-            overflow: hidden;
-            border-bottom:1px solid #76ABD3;
-            /*padding-left:3px;*/
-            /*border:1px solid blue;*/
-        }
-
-        .last_y, .last_m, .title_y, .title_m, .next_y, .next_m {
-            /*border: 1px solid red;*/
-            /*border-top:1px solid red;*/
-            display: inline-block;
-            height: 25px;
-            line-height: 25px;
-            text-align: center;
-            overflow: hidden;
-            float: left;
-        }
-
-        .last_y {
-            width: 30px;
-        }
-
-        .last_m {
-            width: 23px;
-        }
-
-        .title_y {
-            width: 50px;
-            padding: 0 3px;
-            text-align: right;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .title_m {
-            width: 35px;
-            padding: 0 3px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .next_m {
-            width: 23px;
-        }
-
-        .next_y {
-            width: 30px;
-        }
-        .calendar_context {    /*显示或隐藏数据*/
-            border:0;
-            /*display:none;*/
-        }
-        .week_container {
-            border-bottom: 1px solid #ccc;
-        }
-
-        .calendar_week { /*周样式*/
-            height: 25px;
-            line-height: 25px;
-            background-color: #fff;
-            padding: 0 2px;
-            /*overflow:hidden;*/
-            /*border:1px solid red;*/
-        }
-
-            .calendar_week div {
-                float: left;
-                display: inline-block;
-                text-align: center;
-                width: 25px;
-                margin-left: 3px;
-            }
-
-        .calendar_data { /*数据样式*/
-            /*background-color:#ccc;*/
-            height: 146px;
-            padding: 0 2px;
-            /*border:1px solid red;*/
-        }
-
-            .calendar_data div {
-                float: left;
-                margin-top: 3px;
-                display: inline-block;
-                text-align: center;
-                width: 25px;
-                height: 25px;
-                line-height: 25px;
-                margin-left: 3px;
-            }
-
-                .calendar_data div:hover {
-                    cursor: pointer;
-                    background-color: #48B8E0;
-                }
+        
     </style>
 </head>
 <body>
@@ -137,7 +23,7 @@
             <div id="next_m" class="next_m">></div>
             <div id="next_y" class="next_y">>></div>
         </div>
-        <div id="calendar_context" class="calendar_context">
+        <div id="calendar_maindata_containter" class="calendar_maindata_containter">
             <div id="week_container" class="week_container">
                 <div id="calendar_week" class="calendar_week">
                     <div>日</div>
@@ -150,10 +36,10 @@
                 </div>
             </div>
             <div id="calendar_data" class="calendar_data">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 <div>1</div>
                 <div>2</div>
                 <div>3</div>
@@ -183,9 +69,41 @@
                 <div>27</div>
                 <div>28</div>
             </div>
-
+        </div>
+        <div id="calendar_mainyear_containter" class="calendar_mainyear_containter">
+            <div>2000</div>
+            <div>2001</div>
+            <div>2002</div>
+            <div>2003</div>
+            <div>2004</div>
+            <div>2005</div>
+            <div>2006</div>
+            <div>2007</div>
+            <div>2008</div>
+            <div>2009</div>
+            <div>2010</div>
+            <div>2011</div>
+            <div>2012</div>
+            <div>2013</div>
+            <div>2014</div>
+            <div>2015</div>
+        </div>
+        <div id="calendar_mainmonth_containter" class="calendar_mainmonth_containter">
+            <div>一月</div>
+            <div>二月</div>
+            <div>三月</div>
+            <div>四月</div>
+            <div>五月</div>
+            <div>六月</div>
+            <div>七月</div>
+            <div>八月</div>
+            <div>九月</div>
+            <div>十月</div>
+            <div>十一月</div>
+            <div>十二月</div>
         </div>
     </div>
+
 </body>
 </html>
 

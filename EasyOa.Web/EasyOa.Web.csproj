@@ -130,10 +130,11 @@
     <Content Include="Content\imgs\icon.png" />
     <Content Include="Content\imgs\bank_ico.png" />
     <Content Include="Content\imgs\iconfont-yuangongdangan.png" />
-    <Content Include="Content\imgs\Index.html" />
+    <Content Include="uitest\index.css" />
+    <Content Include="uitest\Index.html" />
     <Content Include="Content\imgs\index_partner.png" />
     <Content Include="Content\imgs\logo.png" />
-    <Content Include="Content\imgs\test.html" />
+    <Content Include="uitest\test.html" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\fun.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
