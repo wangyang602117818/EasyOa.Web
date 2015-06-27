@@ -130,6 +130,7 @@
     <Content Include="Content\imgs\icon.png" />
     <Content Include="Content\imgs\bank_ico.png" />
     <Content Include="Content\imgs\iconfont-yuangongdangan.png" />
+    <Content Include="Content\imgs\Index.html" />
     <Content Include="Content\imgs\index_partner.png" />
     <Content Include="Content\imgs\logo.png" />
     <Content Include="Content\imgs\test.html" />
