@@ -4,24 +4,62 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <title></title>
-    <link href="index.css" rel="stylesheet" />
-    <script src="jquery-1.7.1.js"></script>
+    <link href="calendar.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.7.1.min.js"></script>
     <script>
-        var first = new Date(2015, 2, 0);
+        $(function () {
+            var con_year = $(".calendar_mainyear_containter");
+            var con_month = $(".calendar_mainmonth_containter");
+            $(".title_y").click(function () {   //点击年
+                con_year.stop(); con_month.stop();
+                con_year.css({ "z-index": parseInt(con_month.css("z-index"), 10) + 1 });   //让year层在month层上面
+
+                if (parseInt(con_year.css("top"), 10) == -147) {
+                    con_year.animate({ top: "27px" }, 500, function () {
+                        con_month.css({ top: "-147px" });
+                    });
+                } else {
+                    con_year.animate({ top: "-147px" }, 500);
+                };
+            })
+            $(".title_m").click(function () {  //点击月
+                con_year.stop(); con_month.stop();
+                con_month.css({ "z-index": parseInt(con_year.css("z-index"), 10) + 1 });  //让moth层在year层上面
+                if (parseInt(con_month.css("top"), 10) == -147) {
+                    con_month.animate({ top: "27px" }, 500, function () {
+                        con_year.css({ top: "-147px" });
+                    });
+                } else {
+                    con_month.animate({ top: "-147px" }, 500);
+                }
+            });
+            $("#last_y").click(function () {
+
+            });
+            $("#btn1").click(function () {
+                var len = $("#y").offset();
+                
+                alert(len.left+","+len.top);
+            })
+        })
     </script>
     <style>
         
     </style>
 </head>
 <body>
+    <div id="d1" style="position:absolute;right:50px;top:100px;border:1px solid red;width:200px;height:200px"></div>
+    year-index:<input type="text" name="y" id="y" /><br />
+    month-idex:<input type="text" name="m" id="m" /><br />
+    <input type="button" value="动画" id="btn1" />
     <div id="calendar" class="calendar">
-        <div id="calendar_title" class="calendar_title">
-            <div id="last_y" class="last_y"><<</div>
-            <div id="last_m" class="last_m"><</div>
-            <div id="title_y" class="title_y">2015年</div>
-            <div id="title_m" class="title_m">01月</div>
-            <div id="next_m" class="next_m">></div>
-            <div id="next_y" class="next_y">>></div>
+        <div id="calendar_title_containter" class="calendar_title_containter">
+            <div class="last_y"><span id="last_y"><<</span></div>
+            <div class="last_m"><span id="last_m"><</span></div>
+            <div class="title_y"><span id="title_y">2015年</span></div>
+            <div class="title_m"><span id="title_m">01月</span></div>
+            <div class="next_m"><span id="next_m">></span></div>
+            <div class="next_y"><span id="next_y">>></span></div>
         </div>
         <div id="calendar_maindata_containter" class="calendar_maindata_containter">
             <div id="week_container" class="week_container">
@@ -35,7 +73,7 @@
                     <div>六</div>
                 </div>
             </div>
-            <div id="calendar_data" class="calendar_data">
+            <div id="calendar_data_containter" class="calendar_data_containter">
                 <span></span>
                 <span></span>
                 <span></span>

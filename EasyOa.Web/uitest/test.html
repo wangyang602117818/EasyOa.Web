@@ -2,14 +2,30 @@
 <head>
     <title></title>
     <style>
-        .text {
-            background-color:#fafafa;
-           border: 1px solid #ccc;
+        #dv1 {
+            position:absolute;
+            width:200px;height:200px;
+            border:1px solid blue;
+            z-index:100;
+            background-color:#fff;
+            top:300px;
+        }
+        #dv2 {
+            position:absolute;
+            width:200px;height:200px;
+            border:1px solid red;
+            top:105px;
+            z-index:330;
+            background-color:#fff;
         }
     </style>
 </head>
 <body>
-   <input type="text" class="text" />
+   <div id="dv1">
 
+   </div>
+    <div id="dv2">
+
+    </div>
 </body>
 </html>
