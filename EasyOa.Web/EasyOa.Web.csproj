@@ -135,6 +135,7 @@
     <Content Include="Content\imgs\index_partner.png" />
     <Content Include="Content\imgs\logo.png" />
     <Content Include="uitest\Calendar.js" />
+    <Content Include="uitest\date.png" />
     <Content Include="uitest\test.html" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\fun.js" />

@@ -7,6 +7,7 @@
     <link href="calendar.css" rel="stylesheet" />
     <script src="../Scripts/jquery-1.7.1.min.js"></script>
     <script>
+        var week = ["日", "一", "二", "三", "四", "五", "六"];
         $(function () {
             var con_year = $(".calendar_mainyear_containter");
             var con_month = $(".calendar_mainmonth_containter");
@@ -34,32 +35,68 @@
                 }
             });
             $("#last_y").click(function () {
-
+                var curr_year = $("#title_y");
+                curr_year.text((parseInt(curr_year.text(), 10) - 1) + "年");
+            });
+            $("#next_y").click(function () {
+                var curr_year = $("#title_y");
+                curr_year.text((parseInt(curr_year.text(), 10) + 1) + "年");
             });
             $("#btn1").click(function () {
                 var len = $("#y").offset();
-                
-                alert(len.left+","+len.top);
+
+                alert(len.left + "," + len.top);
             })
         })
+        function getMonthDays(yyyy, mm) {  //根据年月获取该月的天数
+            var date = new Date(yyyy, mm + 1, 0);
+            var days = date.getDate();  //当前月的天数
+            var first_day_week = date.setDate(1);
+            alert(first_day_week.getDay());
+        }
+        function createCalendar(yyyy, mm, dd, hh, MM, ss) {
+            var date = new Date(yyyy, mm, dd, hh, MM, ss);
+            getMonthDays(yyyy, mm);
+            var calendar_div = "<div id=\"calendar\" class=\"calendar\">";
+            calendar_div += "<div id=\"calendar_title_containter\" class=\"calendar_title_containter\">";
+            calendar_div += "<div class=\"last_y\"><span id=\"last_y\"></span></div><div class=\"last_m\"><span id=\"last_m\"></span></div><div class=\"title_y\"><span id=\"title_y\">" + date.getFullYear() + "年</span></div><div class=\"title_m\"><span id=\"title_m\">" + (date.getMonth()) + "月</span></div><div class=\"next_m\"><span id=\"next_m\"></span></div><div class=\"next_y\"><span id=\"next_y\"></span></div>";  //title
+            calendar_div += "<div id=\"calendar_maindata_containter\" class=\"calendar_maindata_containter\">";
+            calendar_div += "<div id=\"week_container\" class=\"week_container\"><div id=\"calendar_week\" class=\"calendar_week\">";
+            for (var item in week) {
+                calendar_div += "<div>" + week[item] + "</div>";
+            }
+            calendar_div += "</div>";
+            calendar_div += "<div id=\"calendar_data_containter\" class=\"calendar_data_containter\">";
+            calendar_div += "";
+            calendar_div += "";
+            calendar_div += "";
+            calendar_div += "";
+            calendar_div += "";
+            calendar_div += "";
+            calendar_div += "";
+        }
+
+        createCalendar(2015, 2, 22, 21, 50, 32);
     </script>
     <style>
         
     </style>
 </head>
 <body>
-    <div id="d1" style="position:absolute;right:50px;top:100px;border:1px solid red;width:200px;height:200px"></div>
+    <div id="d1" style="position: absolute; right: 50px; top: 100px; border: 1px solid red; width: 200px; height: 200px"></div>
     year-index:<input type="text" name="y" id="y" /><br />
     month-idex:<input type="text" name="m" id="m" /><br />
     <input type="button" value="动画" id="btn1" />
+
+
     <div id="calendar" class="calendar">
         <div id="calendar_title_containter" class="calendar_title_containter">
-            <div class="last_y"><span id="last_y"><<</span></div>
-            <div class="last_m"><span id="last_m"><</span></div>
+            <div class="last_y"><span id="last_y"></span></div>
+            <div class="last_m"><span id="last_m"></span></div>
             <div class="title_y"><span id="title_y">2015年</span></div>
             <div class="title_m"><span id="title_m">01月</span></div>
-            <div class="next_m"><span id="next_m">></span></div>
-            <div class="next_y"><span id="next_y">>></span></div>
+            <div class="next_m"><span id="next_m"></span></div>
+            <div class="next_y"><span id="next_y"></span></div>
         </div>
         <div id="calendar_maindata_containter" class="calendar_maindata_containter">
             <div id="week_container" class="week_container">
@@ -82,7 +119,7 @@
                 <div>2</div>
                 <div>3</div>
                 <div>4</div>
-                <div>5</div>
+                <div class="today">5</div>
                 <div>6</div>
                 <div>7</div>
                 <div>8</div>
