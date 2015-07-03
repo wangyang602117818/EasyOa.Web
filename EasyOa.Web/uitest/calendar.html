@@ -6,99 +6,200 @@
     <title></title>
     <link href="calendar.css" rel="stylesheet" />
     <script src="../Scripts/jquery-1.7.1.min.js"></script>
+    <script src="Calendar.js" type="text/javascript"></script>
     <script>
         var week = ["日", "一", "二", "三", "四", "五", "六"];
+        var date = new Date();
+        var curr_time_arr = [date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()];
+
         $(function () {
+            var con_data = $(".calendar_maindata_containter");
             var con_year = $(".calendar_mainyear_containter");
             var con_month = $(".calendar_mainmonth_containter");
-            $(".title_y").click(function () {   //点击年
+            $("#title_year").click(function () {   //点击年
                 con_year.stop(); con_month.stop();
                 con_year.css({ "z-index": parseInt(con_month.css("z-index"), 10) + 1 });   //让year层在month层上面
-
-                if (parseInt(con_year.css("top"), 10) == -147) {
-                    con_year.animate({ top: "27px" }, 500, function () {
-                        con_month.css({ top: "-147px" });
+                if (con_year.attr("flag") == "0") {   //flag=0;表示年div未显示
+                    con_year.animate({ bottom: 0 }, 500, function () {
+                        con_month.css({ bottom: con_data.css("height") });
+                        con_year.attr("flag", "1");
+                        con_month.attr("flag", "0");
                     });
                 } else {
-                    con_year.animate({ top: "-147px" }, 500);
-                };
+                    con_year.animate({ bottom: con_data.css("height") }, 500);
+                    con_year.attr("flag", "0");
+                }
             })
-            $(".title_m").click(function () {  //点击月
+            $("#title_month").click(function () {  //点击月
                 con_year.stop(); con_month.stop();
                 con_month.css({ "z-index": parseInt(con_year.css("z-index"), 10) + 1 });  //让moth层在year层上面
-                if (parseInt(con_month.css("top"), 10) == -147) {
-                    con_month.animate({ top: "27px" }, 500, function () {
-                        con_year.css({ top: "-147px" });
+                if (con_month.attr("flag") == "0") {   //flag=0;表示月div未显示
+                    con_month.animate({ bottom: 0 }, 500, function () {
+                        con_year.css({ bottom: con_data.css("height") });
+                        con_month.attr("flag", "1");
+                        con_year.attr("flag", "0");
                     });
                 } else {
-                    con_month.animate({ top: "-147px" }, 500);
+                    con_month.animate({ bottom: con_data.css("height") }, 500);
+                    con_month.attr("flag", "0");
                 }
             });
-            $("#last_y").click(function () {
-                var curr_year = $("#title_y");
-                curr_year.text((parseInt(curr_year.text(), 10) - 1) + "年");
+            $("#last_year").click(function () {  //上一年
+                --curr_time_arr[0];
+                $("#title_year").text(curr_time_arr[0] + "年");
+                changeMainData("left");  //动画改变日期面板
             });
-            $("#next_y").click(function () {
-                var curr_year = $("#title_y");
-                curr_year.text((parseInt(curr_year.text(), 10) + 1) + "年");
+            $("#next_year").click(function () {  //下一年
+                ++curr_time_arr[0];
+                $("#title_year").text(curr_time_arr[0] + "年");
+                changeMainData("right");  //动画改变日期面板
             });
-            $("#btn1").click(function () {
-                var len = $("#y").offset();
-
-                alert(len.left + "," + len.top);
+            $("#last_month").click(function () {  //上一月
+                --curr_time_arr[1];
+                if (curr_time_arr[1] < 0) {
+                    curr_time_arr[0]--;
+                    curr_time_arr[1] = 11;
+                    $("#title_year").text(curr_time_arr[0] + "年");
+                }
+                $("#title_month").text(monthFormat(parseInt(curr_time_arr[1], 10) + 1, 2) + "月");
+                changeMainData("left");//动画改变日期面板
             })
+            $("#next_month").click(function () {  //下一月
+                ++curr_time_arr[1];
+                if (curr_time_arr[1] > 11) {
+                    curr_time_arr[0]++;
+                    curr_time_arr[1] = 0;
+                    $("#title_year").text(curr_time_arr[0] + "年");
+                }
+                $("#title_month").text(monthFormat(parseInt(curr_time_arr[1], 10) + 1, 2) + "月");
+                changeMainData("right");
+            })
+            $(".calendar_maindata_containter").click(function (e) {
+                if (e.target.nodeName.toLowerCase() == "div" && $(e.target).attr("class") != "calendar_data_containter") {
+                    var day = $(e.target).text()
+                    curr_time_arr[2] = day;
+                    var date = dateFormat(curr_time_arr);
+                    $("#txt1").val(date);
+                }
+            })
+            $(".week_container").click(function(){return false})
         })
-        function getMonthDays(yyyy, mm) {  //根据年月获取该月的天数
-            var date = new Date(yyyy, mm + 1, 0);
-            var days = date.getDate();  //当前月的天数
-            var first_day_week = date.setDate(1);
-            alert(first_day_week.getDay());
+        function changeMainData(direction) {   //以动画效果改变主日期面板,direction=动画方向
+            var calendar_width = $(".calendar").css("width");  //主日期框宽度(数据面板的偏移量)
+            var dataDiv = createDataDiv(curr_time_arr); //创建
+            var dur = 300;
+            if (direction == "left") {
+                var dataEle = $(dataDiv).css({ left: calendar_width }).attr("flag", "0");  //创建日期数据主面板element
+                $(".calendar_maindata_containter").append(dataEle);  //吧日期主面板加入父容器,这时连同以前一个数据面板，一共有2个数据面板
+                var containter = $(".calendar_data_containter");   //获取这2个数据面板 
+                //2个面板一同移动
+                setTimeout(function () {
+                    containter.filter(":[flag=1]").animate({ left: "-" + calendar_width }, dur, function () {
+                        $(this).remove();
+                    });
+                }, 0);
+                setTimeout(function () {
+                    containter.filter(":[flag=0]").animate({ left: 0 }, dur).attr("flag", "1");
+                }, 0);
+            }
+            if (direction == "right") {
+                var dataEle = $(dataDiv).css({ left: "-" + calendar_width }).attr("flag", "0");
+                $(".calendar_maindata_containter").append(dataEle);
+                var containter = $(".calendar_data_containter");
+                setTimeout(function () {
+                    containter.filter(":[flag=1]").animate({ left: calendar_width }, dur, function () {
+                        $(this).remove();
+                    });
+                }, 0);
+                setTimeout(function () {
+                    containter.filter(":[flag=0]").animate({ left: 0 }, dur).attr("flag", "1");
+                }, 0);
+            }
         }
-        function createCalendar(yyyy, mm, dd, hh, MM, ss) {
-            var date = new Date(yyyy, mm, dd, hh, MM, ss);
-            getMonthDays(yyyy, mm);
-            var calendar_div = "<div id=\"calendar\" class=\"calendar\">";
+        function getMonthDays(year, month) {  //根据年月获取该月的天数,第一天周几
+            var days = new Date(year, month + 1, 0).getDate();  //当前月的天数
+            var first_day_week = new Date(year, month, 1).getDay();   //第一天周几
+            return { days: days, first_day_week: first_day_week };
+        }
+        function needAddHeight(curr_time_arr) {  //是否需要增加日期框高度
+            var days_week_obj = getMonthDays(curr_time_arr[0], curr_time_arr[1]);  //对象包含当月的天数，第一天周几？
+            if (days_week_obj.days == 30 && days_week_obj.first_day_week == 6) return true;
+            if (days_week_obj.days == 31 && (days_week_obj.first_day_week == 5 || days_week_obj.first_day_week == 6)) return true;
+            return false;
+        }
+        //alert(Date.prototype.toString());
+        function createCalendar(curr_time_arr) {
+            var calendar_div = "";
+            if (needAddHeight(curr_time_arr)) {
+                calendar_div += "<div id=\"calendar\" class=\"calendar cal_len1\">";
+            } else {
+                calendar_div += "<div id=\"calendar\" class=\"calendar\">";
+            }
             calendar_div += "<div id=\"calendar_title_containter\" class=\"calendar_title_containter\">";
-            calendar_div += "<div class=\"last_y\"><span id=\"last_y\"></span></div><div class=\"last_m\"><span id=\"last_m\"></span></div><div class=\"title_y\"><span id=\"title_y\">" + date.getFullYear() + "年</span></div><div class=\"title_m\"><span id=\"title_m\">" + (date.getMonth()) + "月</span></div><div class=\"next_m\"><span id=\"next_m\"></span></div><div class=\"next_y\"><span id=\"next_y\"></span></div>";  //title
-            calendar_div += "<div id=\"calendar_maindata_containter\" class=\"calendar_maindata_containter\">";
+            calendar_div += "<div class=\"last_y\"><span id=\"last_y\"></span></div><div class=\"last_m\"><span id=\"last_m\"></span></div><div class=\"title_y\"><span id=\"title_y\">" + curr_time_arr[0] + "年</span></div><div class=\"title_m\"><span id=\"title_m\">" + (curr_time_arr[1] + 1) + "月</span></div><div class=\"next_m\"><span id=\"next_m\"></span></div><div class=\"next_y\"><span id=\"next_y\"></span></div></div>";  //title
+            //容器部分
+            if (needAddHeight(curr_time_arr)) {
+                calendar_div += "<div id=\"calendar_maindata_containter\" class=\"calendar_maindata_containter main_date_len1\">";
+            }
+            else {
+                calendar_div += "<div id=\"calendar_maindata_containter\" class=\"calendar_maindata_containter\">";
+            }
             calendar_div += "<div id=\"week_container\" class=\"week_container\"><div id=\"calendar_week\" class=\"calendar_week\">";
             for (var item in week) {
                 calendar_div += "<div>" + week[item] + "</div>";
             }
-            calendar_div += "</div>";
-            calendar_div += "<div id=\"calendar_data_containter\" class=\"calendar_data_containter\">";
-            calendar_div += "";
-            calendar_div += "";
-            calendar_div += "";
-            calendar_div += "";
-            calendar_div += "";
-            calendar_div += "";
-            calendar_div += "";
+            calendar_div += "</div></div>";
+            calendar_div += createDataDiv(curr_time_arr);   //天数
+            //$("#d1").html(calendar_div);
+            return calendar_div;
         }
-
-        createCalendar(2015, 2, 22, 21, 50, 32);
+        //根据一个月天数，和第一天周几来创建天数据
+        function createDataDiv(curr_time_arr) {
+            var days_week_obj = getMonthDays(curr_time_arr[0], curr_time_arr[1]);  //对象包含当月的天数，第一天周几？
+            var calendar_div = "<div class=\"calendar_data_containter\">";
+            for (var i = 0; i < days_week_obj.first_day_week; i++) {   //前面部分
+                calendar_div += "<span></span>";
+            }
+            for (var i = 1; i <= days_week_obj.days; i++) {      // 日期部分
+                if (isToday(curr_time_arr, i)) {
+                    calendar_div += "<div class=\"today\">" + i + "</div>";
+                } else {
+                    calendar_div += "<div>" + i + "</div>";
+                }
+            }
+            calendar_div += "</div></div>";
+            return calendar_div;
+        }
+        //判断给定的日期是否今天
+        function isToday(curr_time_arr, day) {
+            var date = new Date();
+            if (date.getFullYear() == curr_time_arr[0] && date.getMonth() == curr_time_arr[1] && date.getDate() == day) return true;
+            return false;
+        }
+        $(function () {
+            createCalendar(curr_time_arr);
+        })
     </script>
     <style>
         
     </style>
 </head>
 <body>
-    <div id="d1" style="position: absolute; right: 50px; top: 100px; border: 1px solid red; width: 200px; height: 200px"></div>
-    year-index:<input type="text" name="y" id="y" /><br />
-    month-idex:<input type="text" name="m" id="m" /><br />
-    <input type="button" value="动画" id="btn1" />
+    <div id="d1" style="position: absolute; right: 50px; top: 0px; border: 1px solid red; width: 400px; height: 700px">
+    </div>
+    <input type="text" id="txt1" />
 
 
-    <div id="calendar" class="calendar">
+    <div id="calendar" class="calendar cal_len1">
         <div id="calendar_title_containter" class="calendar_title_containter">
-            <div class="last_y"><span id="last_y"></span></div>
-            <div class="last_m"><span id="last_m"></span></div>
-            <div class="title_y"><span id="title_y">2015年</span></div>
-            <div class="title_m"><span id="title_m">01月</span></div>
-            <div class="next_m"><span id="next_m"></span></div>
-            <div class="next_y"><span id="next_y"></span></div>
+            <div class="last_year"><span id="last_year"></span></div>
+            <div class="last_month"><span id="last_month"></span></div>
+            <div class="title_year"><span id="title_year">2015年</span></div>
+            <div class="title_month"><span id="title_month">01月</span></div>
+            <div class="next_month"><span id="next_month"></span></div>
+            <div class="next_year"><span id="next_year"></span></div>
         </div>
-        <div id="calendar_maindata_containter" class="calendar_maindata_containter">
+        <div id="calendar_maindata_containter" class="calendar_maindata_containter main_date_len1">
             <div id="week_container" class="week_container">
                 <div id="calendar_week" class="calendar_week">
                     <div>日</div>
@@ -110,7 +211,7 @@
                     <div>六</div>
                 </div>
             </div>
-            <div id="calendar_data_containter" class="calendar_data_containter">
+            <div class="calendar_data_containter" flag="1">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -145,7 +246,7 @@
                 <div>28</div>
             </div>
         </div>
-        <div id="calendar_mainyear_containter" class="calendar_mainyear_containter">
+        <div id="calendar_mainyear_containter" class="calendar_mainyear_containter" flag="0">
             <div>2000</div>
             <div>2001</div>
             <div>2002</div>
@@ -163,7 +264,7 @@
             <div>2014</div>
             <div>2015</div>
         </div>
-        <div id="calendar_mainmonth_containter" class="calendar_mainmonth_containter">
+        <div id="calendar_mainmonth_containter" class="calendar_mainmonth_containter" flag="0">
             <div>一月</div>
             <div>二月</div>
             <div>三月</div>
@@ -181,4 +282,6 @@
 
 </body>
 </html>
-
+<script>
+ 
+</script>

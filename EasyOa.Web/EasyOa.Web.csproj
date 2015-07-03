@@ -138,7 +138,7 @@
     <Content Include="uitest\date.png" />
     <Content Include="uitest\test.html" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\fun.js" />
+    <Content Include="Scripts\jqPlugFun.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Web.config">

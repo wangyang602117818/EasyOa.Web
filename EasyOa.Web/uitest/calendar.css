@@ -8,13 +8,16 @@
     z-index: 10000;
     border: 1px solid #76ABD3;
     width: 203px;
-    height: 201px;
-    left: 300px;
-    top: 100px;
+    height: 201px;  
+    /*height:226px;*/
+    left: 400px;
+    top: 200px;
     font-size: 14px;
-    overflow: hidden;
+    /*overflow:hidden;*/
 }
-
+.cal_len1 {  /*第二种日期框高度*/
+    height: 226px;   /*+25*/
+}
 .calendar_title_containter { /*标题容器*/
     position: absolute;
     top: 0;
@@ -33,7 +36,7 @@
         cursor: pointer;
     }
 
-.last_y, .last_m, .title_y, .title_m, .next_y, .next_m { /*标题按钮*/
+.last_year, .last_month, .title_year, .title_month, .next_year, .next_month { /*标题按钮*/
     /*border: 1px solid red;*/
     /*border-top:1px solid red;*/
     display: inline-block;
@@ -44,15 +47,15 @@
     float: left;
 }
 
-#last_y, #last_m, #next_y, #next_m {
+#last_year, #last_month, #next_year, #next_month {
     display: inline-block;
 }
 
-.last_y { /*向前年按钮*/
+.last_year { /*向前年按钮*/
     width: 30px;
 }
 
-#last_y {
+#last_year {
     /*border:1px solid red;*/
     width: 25px;
     height: 22px;
@@ -60,15 +63,15 @@
     background-position: -72px 0;
 }
 
-    #last_y:hover {
+    #last_year:hover {
         background-position: -72px -20px;
     }
 
-.last_m { /*向前月按钮*/
+.last_month { /*向前月按钮*/
     width: 23px;
 }
 
-#last_m {
+#last_month {
     /*border:1px solid red;*/
     width: 20px;
     height: 22px;
@@ -76,18 +79,18 @@
     background-position: -54px 0;
 }
 
-    #last_m:hover {
+    #last_month:hover {
         background-position: -54px -20px;
     }
 
-.title_y { /*年按钮*/
+.title_year { /*年按钮*/
     width: 50px;
     padding: 0 3px;
     text-align: right;
     font-weight: 600;
     font-size: 14px;
 }
-.title_m { /*月按钮*/
+.title_month { /*月按钮*/
     width: 35px;
     padding: 0 3px;
     text-align: left;
@@ -95,11 +98,11 @@
     font-size: 14px;
 }
 
-.next_m { /*向后月按钮*/
+.next_month { /*向后月按钮*/
     width: 23px;
 }
 
-#next_m {
+#next_month {
     /*border: 1px solid red;*/
     width: 20px;
     height: 22px;
@@ -107,15 +110,15 @@
     background-position: -27px 0;
 }
 
-    #next_m:hover {
+    #next_month:hover {
         background-position: -27px -20px;
     }
 
-.next_y { /*向后年按钮*/
+.next_year { /*向后年按钮*/
     width: 30px;
 }
 
-#next_y {
+#next_year {
     display: inline-block;
     /*border:1px solid red;*/
     width: 25px;
@@ -123,7 +126,7 @@
     background: url(date.png) no-repeat;
     background-position: -5px 0;
 }
-    #next_y:hover {
+    #next_year:hover {
         background-position: -5px -20px;
     }
 .calendar_maindata_containter { /*显示或隐藏数据 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
@@ -133,12 +136,15 @@
     right: 0;
     top: 27px;
     bottom: 0;
-    height: 173px;
-    overflow: hidden;
+    height: 173px;  /*+25*/
+    /*height:198px;*/
+    /*overflow:hidden;*/
     /*border: 1px solid red;*/
     /*display: none;*/
 }
-
+.main_date_len1 {  /*第二种日期数据容器高度*/
+    height:198px;
+}
 .week_container { /*周容器*/
     /*position: absolute;
     top:26px;*/
@@ -165,14 +171,16 @@
 
 .calendar_data_containter { /*数据容器*/
     /*background-color:#ccc;*/
-    height: 146px;
+    width:198px;
     position: absolute;
     padding: 0 2px;
-    /*border:1px solid red;*/
+    left:0;
+    border:1px solid red;
 }
 
     .calendar_data_containter .today {
         background-color: #FFCCCC;
+        /*border-radius:12.5px;*/
     }
 
     .calendar_data_containter div, .calendar_data_containter span { /*单个日期*/
@@ -189,33 +197,35 @@
         .calendar_data_containter div:hover {
             cursor: pointer;
             background-color: #48B8E0;
+            /*border-radius:12.5px;*/
         }
 
-.calendar_mainyear_containter { /*年容器*/
+.calendar_mainyear_containter { /*年份容器*/
     /*border: 1px solid red;*/
     position: absolute;
     background-color: #fff;
     /*top:27px;*/
-    top: -147px;
-    height: 172px;
-    padding: 0 2px;
+    bottom: 198px;
+    height: 198px;
+    padding:0 2px;
     overflow: hidden;
     z-index: 1;
     /*display:none;*/
 }
 
     .calendar_mainyear_containter div {
-        /*border-top: 1px solid blue;
-        border-bottom: 1px solid blue;*/
+        /*border-top: 1px solid blue;*/
+        /*border-bottom: 1px solid blue;*/
         display: inline-block;
         float: left;
         margin-left: 2px;
         margin-top: 4px;
         width: 45px;
         height: 35px;
-        line-height: 35px;
+        line-height:35px;
         text-align: center;
         border: 1px solid transparent;
+        /*border: 1px solid blue;*/
     }
 
         .calendar_mainyear_containter div:hover {
@@ -228,8 +238,8 @@
     position: absolute;
     background-color: #fff;
     /*top: 27px;*/
-    top: -147px;
-    height: 172px;
+    bottom: 198px;
+    height: 198px;
     padding: 0 2px;
     overflow: hidden;
     z-index: 1;
