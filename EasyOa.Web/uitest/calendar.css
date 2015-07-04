@@ -10,7 +10,7 @@
     width: 203px;
     height: 201px;  
     /*height:226px;*/
-    left: 400px;
+    left: 100px;
     top: 200px;
     font-size: 14px;
     /*overflow:hidden;*/
@@ -201,12 +201,10 @@
         }
 
 .calendar_mainyear_containter { /*年份容器*/
-    /*border: 1px solid red;*/
+    border: 1px solid red;
     position: absolute;
     background-color: #fff;
     /*top:27px;*/
-    bottom: 198px;
-    height: 198px;
     padding:0 2px;
     overflow: hidden;
     z-index: 1;
@@ -234,16 +232,14 @@
         }
 
 .calendar_mainmonth_containter { /*月样式容器显示或隐藏!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-    /*border: 1px solid red;*/
+    border: 1px solid blue;
     position: absolute;
     background-color: #fff;
     /*top: 27px;*/
-    bottom: 198px;
-    height: 198px;
     padding: 0 2px;
     overflow: hidden;
     z-index: 1;
-    /*display: none;*/
+    /*/*display: none;*/*/
 }
 
     .calendar_mainmonth_containter div { /*单个月样式*/
