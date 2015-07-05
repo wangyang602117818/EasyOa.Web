@@ -11,19 +11,7 @@
 
         $(function () {
             $("body").Calendar();
-
-           
-            //事件冒泡
-            $(".calendar_maindata_containter").click(function (e) {
-                if (e.target.nodeName.toLowerCase() == "div" && $(e.target).attr("class") != "calendar_data_containter") {
-                    var day = $(e.target).text();
-                    if ($.isNumeric(day)) {
-                        curr_time_arr[2] = day;
-                        var date = dateFormat(curr_time_arr);
-                        $("#txt1").val(date);
-                    }
-                }
-            })
+          
         })
     </script>
     <style>

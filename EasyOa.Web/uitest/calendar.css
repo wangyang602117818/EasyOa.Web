@@ -15,7 +15,7 @@
     font-size: 14px;
     /*overflow:hidden;*/
 }
-.cal_len1 {  /*第二种日期框高度*/
+.add_cal_len1 {  /*第二种日期框高度*/
     height: 226px;   /*+25*/
 }
 .calendar_title_containter { /*标题容器*/
@@ -26,7 +26,7 @@
     z-index: 10000;
     height: 26px;
     background-color: #EBF2FA;
-    /*overflow: hidden;*/
+    overflow: hidden;
     border-bottom: 1px solid #76ABD3;
     /*padding-left:3px;*/
     /*border: 1px solid blue;*/
@@ -142,7 +142,7 @@
     /*border: 1px solid red;*/
     /*display: none;*/
 }
-.main_date_len1 {  /*第二种日期数据容器高度*/
+.add_main_date_len1 {  /*第二种日期数据容器高度*/
     height:198px;
 }
 .week_container { /*周容器*/
@@ -205,12 +205,17 @@
     position: absolute;
     background-color: #fff;
     /*top:27px;*/
+    height:173px;
+    bottom:173px;
     padding:0 2px;
-    overflow: hidden;
+    /*overflow: hidden;*/
     z-index: 1;
     /*display:none;*/
 }
-
+.mainyear_height1 {
+    height:198px;
+    bottom:198px;
+}
     .calendar_mainyear_containter div {
         /*border-top: 1px solid blue;*/
         /*border-bottom: 1px solid blue;*/
@@ -237,11 +242,16 @@
     background-color: #fff;
     /*top: 27px;*/
     padding: 0 2px;
+    height:173px;
+    bottom:173px;
     overflow: hidden;
     z-index: 1;
-    /*/*display: none;*/*/
+    /*display: none;*/
 }
-
+.mainmonth_height1 {
+    height:198px;
+    bottom:198px;
+}
     .calendar_mainmonth_containter div { /*单个月样式*/
         display: inline-block;
         float: left;
