@@ -6,6 +6,8 @@
     <script src="Calendar.js"></script>
     <script>
         $(function () {
+            var date = new Date();
+            var  curr_time_arr = [date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()];
             var con_data = $(".calendar_maindata_containter");
             var con_year = $(".calendar_mainyear_containter");
             var con_month = $(".calendar_mainmonth_containter");
@@ -85,7 +87,7 @@
     </script>
 </head>
 <body>
-   <div id="calendar" class="calendar cal_len1">
+    <div id="calendar" class="calendar add_cal_len1">
         <div id="calendar_title_containter" class="calendar_title_containter">
             <div class="last_year"><span id="last_year"></span></div>
             <div class="last_month"><span id="last_month"></span></div>
@@ -94,7 +96,7 @@
             <div class="next_month"><span id="next_month"></span></div>
             <div class="next_year"><span id="next_year"></span></div>
         </div>
-        <div id="calendar_maindata_containter" class="calendar_maindata_containter main_date_len1">
+        <div id="calendar_maindata_containter" class="calendar_maindata_containter add_main_date_len1">
             <div id="week_container" class="week_container">
                 <div id="calendar_week" class="calendar_week">
                     <div>日</div>
@@ -107,6 +109,7 @@
                 </div>
             </div>
             <div class="calendar_data_containter" flag="1">
+                <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -139,9 +142,12 @@
                 <div>26</div>
                 <div>27</div>
                 <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
             </div>
         </div>
-        <div class="calendar_mainyear_containter" flag="0">
+        <div class="calendar_mainyear_containter mainyear_height1 mainyear_bottom1" flag="0">
             <div>2000</div>
             <div>2001</div>
             <div>2002</div>
@@ -159,7 +165,7 @@
             <div>2014</div>
             <div>2015</div>
         </div>
-        <div class="calendar_mainmonth_containter" flag="0">
+        <div class="calendar_mainmonth_containter mainmonth_height1 mainmonth_bottom1" flag="0">
             <div>一月</div>
             <div>二月</div>
             <div>三月</div>
@@ -174,5 +180,20 @@
             <div>十二月</div>
         </div>
     </div>
+    <div id="calendar_time" class="calendar_time">
+        <span id="hover_txt">20</span>:<span id="minute_txt">55</span>:<span id="second_txt">22</span>
+        <div class="hover_containter">
+            <div>00</div>
+            <div>01</div>
+            <div>02</div>
+            <div>03</div>
+            <div>04</div>
+            <div>05</div>
+            <div>06</div>
+        </div>
+    </div>
 </body>
 </html>
+<script>
+   
+</script>

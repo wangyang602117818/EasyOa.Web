@@ -136,6 +136,7 @@
     <Content Include="Content\imgs\logo.png" />
     <Content Include="uitest\Calendar.js" />
     <Content Include="uitest\date.png" />
+    <Content Include="uitest\t01.html" />
     <Content Include="uitest\test.html" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jqPlugFun.js" />
