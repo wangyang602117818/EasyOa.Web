@@ -312,34 +312,81 @@
     border: 1px solid red;
     width: 203px;
     position: absolute;
-    top: 427px;
+    top: 427px; /*+25*/
     left: 250px;
     background-color: #EBF2FA;
     border-color: #76ABD3;
     text-align: center;
     height: 22px;
     line-height: 20px;
-    z-index: 1000;
+    z-index: 10000;
 }
 
     .calendar_time span {
-        /*border:1px solid red;*/
+        /*border: 1px solid red;*/
         display: inline-block;
         width: 25px;
     }
 
-        .calendar_time span:hover {
-            cursor: pointer;
-        }
+    .calendar_time .time_txt {
+        width: 25px;
+        text-align:center;
+        border:0px;
+        outline:none;
+        background-color:#EBF2FA;
+    }
+
+    .calendar_time span:hover {
+        cursor: pointer;
+    }
 
     .calendar_time .hover_containter {
+        position: absolute;
         height: 173px;
-        border: 1px solid red;
-        padding: 2px;
+        background-color: #fff;
+        bottom: 23px;
+        z-index: 1;
+        display: none;
+        /*border: 1px solid red;*/
     }
 
         .calendar_time .hover_containter div {
-            border: 1px solid red;
+            border: 1px solid transparent;
             display: inline-block;
             float: left;
+            margin-left: 6px;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            margin-top: 12px;
         }
+
+            .calendar_time .hover_containter div:hover {
+                cursor: pointer;
+                border-color: #48B8E0;
+            }
+
+    .calendar_time .minute_containter {
+        position: absolute;
+        height: 173px;
+        background-color: #fff;
+        bottom: 23px;
+        z-index: 1;
+        /*display:none;*/
+    }
+
+        .calendar_time .minute_containter div {
+            border: 1px solid transparent;
+            display: inline-block;
+            float: left;
+            margin-left: 15px;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            margin-top: 18px;
+        }
+
+            .calendar_time .minute_containter div:hover {
+                cursor: pointer;
+                border-color: #48B8E0;
+            }
