@@ -2,9 +2,9 @@
 jQuery.fn.Calendar = function (options) {
     //默认配置
     var defaults = {
-        format: "yyyy-mm-dd hh:mm:ss",  //日期模板yyyy-mm-dd hh:mm:ss
-        start: "",
-        end: ""
+        format: "yyyy-mm-dd",  //日期模板yyyy-mm-dd hh:mm:ss
+        start: "2015-07-06 00:00:00",
+        end: "2016-07-06 00:00:00"
     };
 
     var week = ["日", "一", "二", "三", "四", "五", "六"],
@@ -12,50 +12,43 @@ jQuery.fn.Calendar = function (options) {
         date = new Date(),
         curr_time_arr = [date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()],
         text_time_arr,  //保存选中日期
+        start_time_arr,
+        end_time_arr,
         dur = 300,   //动画速度
-        calendar,  //主日期框对象
-        calendar_time,
-        main_data_containter,  //主数据容器对象
         start_disp_year,  //year层的起始年
         has_time = false,     //
+        that = this,
+        date_regex = /([yY]+)([/-])([mM]+)\2([dD]*)\s*([hH]*):?([mM]*):?([sS]*)/,
+        time_regex = /[Hh]{1,2}(:[Mm]{1,2})?(:[Ss]{1,2})?/,
+        date_val_regex = /(\d{2,4})(?:[/-])?(\d{1,2})?(?:[/-])?(\d{1,2})?\s*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?/;
+    //全局对象
+    var calendar,  //主日期框对象
+        calendar_time,  //时间对象
+        main_data_containter,  //主数据容器对象
         con_year,
         con_month,
         con_hover,
         con_minute,
-        con_second,
-        that = this,
-        date_regex = /([yY]+)([/-])([mM]+)\2([dD]*)\s*([hH]*):?([mM]*):?([sS]*)/,
-        time_regex = /[Hh]{1,2}(:[Mm]{1,2})?(:[Ss]{1,2})?/,
-        date_val_regex = /(\d{2,4})(?:[/-])(\d{1,2})(?:[/-])(\d{1,2})?\s(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?/;;
-    that.bind("click focus", innerCalendar);
-    //innerCalendar();
+        con_second;
+    that.bind("click", renderCalendar);
     return this;
     //显示日期层
-    function innerCalendar() {
-        if (time_regex.test(defaults.format)) has_time = true;
+    function renderCalendar() {
         $("#calendar").remove();
+        if (time_regex.test(defaults.format)) has_time = true;
+        start_time_arr = startEndDateConvert(defaults.start);
+        end_time_arr = startEndDateConvert(defaults.end);
         if (that.val().trim() != "") {
-            date = dateConvert(that.val());
+            date = inputDateConvert(that.val());
             curr_time_arr = [date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()];
             text_time_arr = curr_time_arr.slice(0);
         }
-        createCalendar();
+        beginCalendar();
         $(document).bind("click", function () { $("#calendar").hide() });
         return false;
     }
-    //将文本框中的日期字符串转成日期对象
-    function dateConvert(str) {
-        var result = date_val_regex.exec(str);
-        var year = result[1],
-           month = result[2] - 1,
-          day = result[3] || new Date().getDate(),
-          hover = result[4] || new Date().getHours(),
-          minute = result[5] || new Date().getMinutes(),
-          second = result[6] || new Date().getSeconds();
-        return new Date(year, month, day, hover, minute, second);
-    }
     //创建日期主面板
-    function createCalendar() {
+    function beginCalendar() {
         var top = that.offset().top + that.outerHeight() + "px",
             left = $(that).offset().left + "px";
         var calendar_div = "<div id=\"calendar\" class=\"calendar\">";
@@ -79,15 +72,15 @@ jQuery.fn.Calendar = function (options) {
         }
         $("body").append(calendar);
         init();
-        if (has_time) createCalendarTime().appendTo(calendar);   //时间
+        if (has_time) beginCalendarTime().appendTo(calendar);   //时间
     }
     //创建时间div
-    function createCalendarTime() {
+    function beginCalendarTime() {
         var time_div = "<div id=\"calendar_time\" class=\"calendar_time\">";
         time_div += "<span id=\"hover_txt\"><input type=\"text\" class=\"time_txt\" value=\"" + curr_time_arr[3] + "\" maxlength=\"2\" id=\"hover\"/></span>:<span id=\"minute_txt\"><input type=\"text\" class=\"time_txt\" value=\"" + monthFormat(curr_time_arr[4], 2) + "\" maxlength=\"2\" id=\"minute\"/></span>:<span id=\"second_txt\"><input type=\"text\" class=\"time_txt\" value=\"" + monthFormat(curr_time_arr[5], 2) + "\" maxlength=\"2\" id=\"second\"/></span>";
         time_div += "</div>";
         calendar_time = $(time_div);
-        initTimeEvent();
+        initTime();
         needAddHeight() ? calendar.addClass("add_cal_len3") : calendar.addClass("add_cal_len2");
         return calendar_time;
     }
@@ -102,7 +95,7 @@ jQuery.fn.Calendar = function (options) {
         calendar.find("#last_month").bind("click", lastMonth);
         calendar.find("#next_month").bind("click", nextMonth);
     }
-    function initTimeEvent() {
+    function initTime() {
         con_hover = createHoverEle();
         con_minute = createMinuteEle();
         con_second = createMinuteEle();
@@ -113,6 +106,29 @@ jQuery.fn.Calendar = function (options) {
         calendar_time.find("#hover_txt").bind("click", dispalyHoverDiv);
         calendar_time.find("#minute_txt").bind("click", dispalyMinuteDiv);
         calendar_time.find("#second_txt").bind("click", dispalySecondDiv);
+    }
+    //将文本框中的日期字符串转成日期对象,供默认选中用
+    function inputDateConvert(str) {
+        var result = date_val_regex.exec(str);
+        var year = result[1] || new Date().getFullYear(),
+            month = (result[2] - 1) || new Date().getMonth(),
+            day = result[3] || new Date().getDate(),
+            hover = result[4] || new Date().getHours(),
+            minute = result[5] || new Date().getMinutes(),
+            second = result[6] || new Date().getSeconds();
+        //转换成日期对象,这样可以消去一些不必要的格式错误
+        return new Date(year, month, day, hover, minute, second);
+    }
+    //将给出的时间范围转成数组,以便后续的比较
+    function startEndDateConvert(str) {
+        var result = date_val_regex.exec(str);
+        var year = result[1],
+            month = (result[2] - 1) || 0,
+            day = result[3] || 0,
+            hover = result[4] || 0,
+            minute = result[5] || 0,
+            second = result[6] || 0;
+        return [year, month, day, hover, minute, second];
     }
     //显示年份div
     function displayYearDiv() {
@@ -197,7 +213,7 @@ jQuery.fn.Calendar = function (options) {
     //上一年
     function lastYear() {
         if (isYearDisplay()) {
-            dispalyLastYearDiv("right");
+            dispalyYearDiv("right");
             return false;
         }
         --curr_time_arr[0];
@@ -207,7 +223,7 @@ jQuery.fn.Calendar = function (options) {
     //下一年
     function nextYear() {
         if (isYearDisplay()) {
-            dispalyLastYearDiv("left");
+            dispalyYearDiv("left");
             return false;
         }
         ++curr_time_arr[0];
@@ -345,7 +361,11 @@ jQuery.fn.Calendar = function (options) {
         start_disp_year = Math.floor(curr_year / 16) * 16;
         var year_div = "<div class=\"calendar_mainyear_containter\" flag=\"0\">";
         for (var i = start_disp_year; i < start_disp_year + 16; i++) {
-            year_div += "<div>" + i + "</div>";
+            if (i < start_time_arr[0] || i > end_time_arr[0]) {  //设置禁用标记
+                year_div += "<div class=\"disabled\">" + i + "</div>";
+            } else {
+                year_div += "<div>" + i + "</div>";
+            }
         }
         year_div += "</div>";
         var year_ele = $(year_div);
@@ -357,7 +377,12 @@ jQuery.fn.Calendar = function (options) {
     function createMonthEle() {
         var month_div = "<div class=\"calendar_mainmonth_containter\" flag=\"0\">";
         for (var i = 0; i < month.length; i++) {
-            month_div += "<div>" + month[i] + "</div>";
+            //设置禁用标记
+            if ((Number(curr_time_arr[0]) * 12 + i < Number(start_time_arr[0]) * 12 + Number(start_time_arr[1])) || (Number(curr_time_arr[0]) * 12 + i > Number(end_time_arr[0]) * 12 + Number(end_time_arr[1]))) {
+                month_div += "<div class=\"disabled\">" + month[i] + "</div>";
+            } else {
+                month_div += "<div>" + month[i] + "</div>";
+            }
         }
         month_div += "</div>";
         var month_ele = $(month_div);
@@ -400,6 +425,7 @@ jQuery.fn.Calendar = function (options) {
     }
     function yearSelected(event) {
         var srcElement = $(event.target);  //触发事件的原对象
+        if (srcElement.hasClass("disabled")) return false;
         if (!isNaN(srcElement.text()) && srcElement.text().length <= 4) {
             var txt = srcElement.text();  //点击的年份
             var curr_year = curr_time_arr[0];  //首先保存当前年
@@ -415,6 +441,7 @@ jQuery.fn.Calendar = function (options) {
     }
     function monthSelected(event) {
         var srcElement = $(event.target);  //触发事件的原对象
+        if (srcElement.hasClass("disabled")) return false;
         var txt = srcElement.text();  //点击的月份
         for (var i = 0; i < month.length; i++) {
             if (month[i] == txt) {
@@ -468,7 +495,7 @@ jQuery.fn.Calendar = function (options) {
             dispalySecondDiv();
         }
     }
-    function dispalyLastYearDiv(direction) {
+    function dispalyYearDiv(direction) {
         if (direction == "left") {
             start_disp_year += 16;
             con_year = createYearEle(start_disp_year, main_data_containter.css("height")).removeClass("mainyear_bottom1").css({ "left": calendar.css("width"), "top": "26px" });
