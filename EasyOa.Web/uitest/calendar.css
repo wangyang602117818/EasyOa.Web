@@ -175,7 +175,7 @@
     /*overflow:hidden;*/
 }
 
-    .calendar_week div { /*单个数据样式*/
+    .calendar_week div { /*单个周样式*/
         float: left;
         display: inline-block;
         text-align: center;
@@ -235,6 +235,15 @@
             /*border-radius:12.5px;*/
         }
 
+    .calendar_data_containter .disabled {
+        color: #bbb;
+    }
+
+        .calendar_data_containter .disabled:hover {
+            cursor: default;
+            background-color:transparent;
+        }
+
 .calendar_mainyear_containter { /*年份容器*/
     /*border: 1px solid red;*/
     position: absolute;
@@ -270,7 +279,6 @@
 }
 
 .calendar_mainyear_containter .disabled {
-    cursor: default;
     color: #bbb;
 }
 
@@ -317,7 +325,6 @@
 }
 
 .calendar_mainmonth_containter .disabled {
-    cursor: default;
     color: #bbb;
 }
 

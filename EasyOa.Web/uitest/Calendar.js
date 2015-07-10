@@ -3,12 +3,14 @@ jQuery.fn.Calendar = function (options) {
     //默认配置
     var defaults = {
         format: "yyyy-mm-dd",  //日期模板yyyy-mm-dd hh:mm:ss
-        start: "2015-07-06 00:00:00",
-        end: "2016-07-06 00:00:00"
+        start: "1970-01-01 00:00:00",
+        //start: new Date(),
+        end: "2049-12-31 00:00:00"
     };
 
     var week = ["日", "一", "二", "三", "四", "五", "六"],
         month = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+        commonstr = ["年", "上一年", "下一年", "月", "上一月", "下一月"],
         date = new Date(),
         curr_time_arr = [date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()],
         text_time_arr,  //保存选中日期
@@ -53,7 +55,7 @@ jQuery.fn.Calendar = function (options) {
             left = $(that).offset().left + "px";
         var calendar_div = "<div id=\"calendar\" class=\"calendar\">";
         calendar_div += "<div id=\"calendar_title_containter\" class=\"calendar_title_containter\">";
-        calendar_div += "<div class=\"last_year\"><span id=\"last_year\" title=\"上一年\"></span></div><div class=\"last_month\"><span id=\"last_month\" title=\"上一月\"></span></div><div class=\"title_year\"><span id=\"title_year\">" + curr_time_arr[0] + "年</span></div><div class=\"title_month\"><span id=\"title_month\">" + monthFormat((curr_time_arr[1] + 1), 2) + "月</span></div><div class=\"next_month\"><span id=\"next_month\" title=\"下一月\"></span></div><div class=\"next_year\"><span id=\"next_year\" title=\"下一年\"></span></div></div>";  //title
+        calendar_div += "<div class=\"last_year\"><span id=\"last_year\" title=\"" + commonstr[1] + "\"></span></div><div class=\"last_month\"><span id=\"last_month\" title=\"" + commonstr[4] + "\"></span></div><div class=\"title_year\"><span id=\"title_year\">" + curr_time_arr[0] + commonstr[0] + "</span></div><div class=\"title_month\"><span id=\"title_month\">" + monthFormat((curr_time_arr[1] + 1), 2) + commonstr[3] + "</span></div><div class=\"next_month\"><span id=\"next_month\" title=\"" + commonstr[5] + "\"></span></div><div class=\"next_year\"><span id=\"next_year\" title=\"" + commonstr[2] + "\"></span></div></div>";  //title
         //容器部分
         calendar_div += "<div id=\"calendar_maindata_containter\" class=\"calendar_maindata_containter\">";
         calendar_div += "<div id=\"week_container\" class=\"week_container\"><div id=\"calendar_week\" class=\"calendar_week\">";
@@ -72,10 +74,10 @@ jQuery.fn.Calendar = function (options) {
         }
         $("body").append(calendar);
         init();
-        if (has_time) beginCalendarTime().appendTo(calendar);   //时间
+        if (has_time) renderCalendarTime().appendTo(calendar);   //时间
     }
     //创建时间div
-    function beginCalendarTime() {
+    function renderCalendarTime() {
         var time_div = "<div id=\"calendar_time\" class=\"calendar_time\">";
         time_div += "<span id=\"hover_txt\"><input type=\"text\" class=\"time_txt\" value=\"" + curr_time_arr[3] + "\" maxlength=\"2\" id=\"hover\"/></span>:<span id=\"minute_txt\"><input type=\"text\" class=\"time_txt\" value=\"" + monthFormat(curr_time_arr[4], 2) + "\" maxlength=\"2\" id=\"minute\"/></span>:<span id=\"second_txt\"><input type=\"text\" class=\"time_txt\" value=\"" + monthFormat(curr_time_arr[5], 2) + "\" maxlength=\"2\" id=\"second\"/></span>";
         time_div += "</div>";
@@ -111,11 +113,11 @@ jQuery.fn.Calendar = function (options) {
     function inputDateConvert(str) {
         var result = date_val_regex.exec(str);
         var year = result[1] || new Date().getFullYear(),
-            month = (result[2] - 1) || new Date().getMonth(),
-            day = result[3] || new Date().getDate(),
-            hover = result[4] || new Date().getHours(),
-            minute = result[5] || new Date().getMinutes(),
-            second = result[6] || new Date().getSeconds();
+            month = result[2] > 0 ? (result[2] - 1) : new Date().getMonth(),
+            day = result[3] > 0 ? result[3] : new Date().getDate(),
+            hover = result[4] > 0 ? result[4] : new Date().getHours(),
+            minute = result[5] > 0 ? result[5] : new Date().getMinutes(),
+            second = result[6] > 0 ? result[6] : new Date().getSeconds();
         //转换成日期对象,这样可以消去一些不必要的格式错误
         return new Date(year, month, day, hover, minute, second);
     }
@@ -123,18 +125,18 @@ jQuery.fn.Calendar = function (options) {
     function startEndDateConvert(str) {
         var result = date_val_regex.exec(str);
         var year = result[1],
-            month = (result[2] - 1) || 0,
-            day = result[3] || 0,
-            hover = result[4] || 0,
-            minute = result[5] || 0,
-            second = result[6] || 0;
+            month = (result[2] - 1) < 0 ? 0 : (result[2] - 1),
+            day = result[3] > 0 ? result[3] : 1,
+            hover = result[4] > 0 ? result[4] : 1,
+            minute = result[5] > 0 ? result[5] : 1,
+            second = result[6] > 0 ? result[6] : 1;
         return [year, month, day, hover, minute, second];
     }
     //显示年份div
     function displayYearDiv() {
         con_year.stop(); con_month.stop();
         //重设年份容器的年份内容
-        con_year.html(createYearEle(curr_time_arr[0], main_data_containter.css("height")).html());
+        con_year.html(createYearEle(curr_time_arr[0]).unbind("click", yearSelected).html());
         //让year层在month层上面
         con_year.css({ "z-index": parseInt(con_month.css("z-index"), 10) + 1 });
         if (con_year.attr("flag") == "0") {   //flag=0;表示年div未显示
@@ -151,6 +153,7 @@ jQuery.fn.Calendar = function (options) {
     //显示月份div
     function displayMonthDiv() {
         con_year.stop(); con_month.stop();
+        con_month.html(createMonthEle().unbind("click", monthSelected).html());  //重设月份的内容
         con_month.css({ "z-index": parseInt(con_year.css("z-index"), 10) + 1 });  //让moth层在year层上面
         if (con_month.attr("flag") == "0") {   //flag=0;表示月div未显示
             con_month.animate({ top: "26px" }, dur, function () {
@@ -212,21 +215,27 @@ jQuery.fn.Calendar = function (options) {
     }
     //上一年
     function lastYear() {
-        if (isYearDisplay()) {
-            dispalyYearDiv("right");
+        if (isYearDisplay()) {    //year层目前在展现
+            nextYearDiv("right");
             return false;
         }
         --curr_time_arr[0];
+        if (isMonthDisplay()) {   //month目前在展现
+            nextMonthDisplay("right");
+        }
         calendar.find("#title_year").text(curr_time_arr[0] + "年");
         changeMainData("right");  //动画改变日期面板
     }
     //下一年
     function nextYear() {
-        if (isYearDisplay()) {
-            dispalyYearDiv("left");
+        if (isYearDisplay()) {   //year层目前在展现
+            nextYearDiv("left");
             return false;
         }
         ++curr_time_arr[0];
+        if (isMonthDisplay()) {   //month目前在展现
+            nextMonthDisplay("left");
+        }
         calendar.find("#title_year").text(curr_time_arr[0] + "年");
         changeMainData("left");  //动画改变日期面板
     }
@@ -237,6 +246,7 @@ jQuery.fn.Calendar = function (options) {
             curr_time_arr[0]--;
             curr_time_arr[1] = 11;
             calendar.find("#title_year").text(curr_time_arr[0] + "年");
+            if (isMonthDisplay()) nextMonthDisplay("right");
         }
         calendar.find("#title_month").text(monthFormat(parseInt(curr_time_arr[1], 10) + 1, 2) + "月");
         changeMainData("right");//动画改变日期面板
@@ -248,6 +258,7 @@ jQuery.fn.Calendar = function (options) {
             curr_time_arr[0]++;
             curr_time_arr[1] = 0;
             calendar.find("#title_year").text(curr_time_arr[0] + "年");
+            if (isMonthDisplay()) nextMonthDisplay("left");
         }
         calendar.find("#title_month").text(monthFormat(parseInt(curr_time_arr[1], 10) + 1, 2) + "月");
         changeMainData("left");
@@ -350,6 +361,7 @@ jQuery.fn.Calendar = function (options) {
             if (isDay(i)) selcss += "day ";
             if (isWeekend(i)) selcss += "weekend ";
             if (isDateToday(i)) selcss += "today ";
+            if (isDayDisabled(i)) selcss = "disabled ";
             selcss += "\"";
             calendar_div += "<div class=" + selcss + ">" + i + "</div>";
         }
@@ -377,8 +389,12 @@ jQuery.fn.Calendar = function (options) {
     function createMonthEle() {
         var month_div = "<div class=\"calendar_mainmonth_containter\" flag=\"0\">";
         for (var i = 0; i < month.length; i++) {
-            //设置禁用标记
-            if ((Number(curr_time_arr[0]) * 12 + i < Number(start_time_arr[0]) * 12 + Number(start_time_arr[1])) || (Number(curr_time_arr[0]) * 12 + i > Number(end_time_arr[0]) * 12 + Number(end_time_arr[1]))) {
+            var disabled = false;  //禁用标记
+            var months = Number(curr_time_arr[0]) * 12 + i,
+                startmonths = Number(start_time_arr[0]) * 12 + Number(start_time_arr[1]),
+                endmonths = Number(end_time_arr[0]) * 12 + Number(end_time_arr[1]);
+            if (months < startmonths || months > endmonths) disabled = true;
+            if (disabled) {
                 month_div += "<div class=\"disabled\">" + month[i] + "</div>";
             } else {
                 month_div += "<div>" + month[i] + "</div>";
@@ -461,6 +477,7 @@ jQuery.fn.Calendar = function (options) {
     }
     function daySelected(event) {
         var srcElement = $(event.target);  //触发事件的原对象
+        if (srcElement.hasClass("disabled")) return false;
         var day = srcElement.text();
         if (day <= 31 && day > 0) {
             curr_time_arr[2] = day;
@@ -495,12 +512,12 @@ jQuery.fn.Calendar = function (options) {
             dispalySecondDiv();
         }
     }
-    function dispalyYearDiv(direction) {
+    function nextYearDiv(direction) {
         if (direction == "left") {
             start_disp_year += 16;
-            con_year = createYearEle(start_disp_year, main_data_containter.css("height")).removeClass("mainyear_bottom1").css({ "left": calendar.css("width"), "top": "26px" });
+            con_year = createYearEle(start_disp_year).css({ "left": calendar.css("width"), "top": "26px" });
             calendar.append(con_year);
-            var year_containter = calendar.find(".calendar_mainyear_containter");
+            var year_containter = calendar.find(".calendar_mainyear_containter");  //获取2个year层
             //去掉原来的
             year_containter.filter(":[flag=1]").animate({ left: "-" + calendar.css("width") }, dur, function () {
                 $(this).unbind("click", yearSelected).remove();
@@ -509,13 +526,34 @@ jQuery.fn.Calendar = function (options) {
             year_containter.filter(":[flag=0]").animate({ left: 0 }, dur).attr("flag", "1");
         } else {
             start_disp_year -= 16;
-            con_year = createYearEle(start_disp_year, main_data_containter.css("height")).removeClass("mainyear_bottom1").css({ "right": calendar.css("width"), "top": "26px" });
+            con_year = createYearEle(start_disp_year).css({ "right": calendar.css("width"), "top": "26px" });
             calendar.append(con_year);
-            var year_containter = calendar.find(".calendar_mainyear_containter");
+            var year_containter = calendar.find(".calendar_mainyear_containter");  //获取2个year层
             year_containter.filter(":[flag=1]").animate({ right: "-" + calendar.css("width") }, dur, function () {
                 $(this).unbind("click", yearSelected).remove();
             });
             year_containter.filter(":[flag=0]").animate({ right: 0 }, dur).attr("flag", "1");
+        }
+    }
+    function nextMonthDisplay(direction) {
+        if (direction == "left") {
+            con_month = createMonthEle().css({ "left": calendar.css("width"), "top": "26px" });
+            calendar.append(con_month);
+            var month_containter = calendar.find(".calendar_mainmonth_containter");  //获取2个month层
+            //去掉原来的
+            month_containter.filter(":[flag=1]").animate({ left: "-" + calendar.css("width") }, dur, function () {
+                $(this).unbind("click", monthSelected).remove();
+            });
+            //添加新的
+            month_containter.filter(":[flag=0]").animate({ left: 0 }, dur).attr("flag", "1");
+        } else {
+            con_month = createMonthEle().css({ "right": calendar.css("width"), "top": "26px" });
+            calendar.append(con_month);
+            var month_containter = calendar.find(".calendar_mainmonth_containter");  //获取2个month层
+            month_containter.filter(":[flag=1]").animate({ right: "-" + calendar.css("width") }, dur, function () {
+                $(this).unbind("click", monthSelected).remove();
+            });
+            month_containter.filter(":[flag=0]").animate({ right: 0 }, dur).attr("flag", "1");
         }
     }
     function isYearDisplay() {
@@ -536,6 +574,14 @@ jQuery.fn.Calendar = function (options) {
     }
     function isSecondDisplay() {
         if (con_second.attr("flag") == "1") return true;
+        return false;
+    }
+    //判断给的的天是否在给出的范围
+    function isDayDisabled(day) {
+        var days = Number(curr_time_arr[0]) * 365 + Number(curr_time_arr[1]) * 30 + day,
+            startdays = Number(start_time_arr[0]) * 365 + Number(start_time_arr[1]) * 30 + Number(start_time_arr[2]),
+            enddays = Number(end_time_arr[0]) * 365 + Number(end_time_arr[1]) * 30 + Number(end_time_arr[2]);
+        if (days < startdays || days > enddays) return true;
         return false;
     }
     //判断给定的天是否今天
