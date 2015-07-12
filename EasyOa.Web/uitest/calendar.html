@@ -11,10 +11,11 @@
         //var data=new Date("2015-09-30 11:07:18");
         //alert(data.getMonth());
         $(function () {
-            var s = $("#txt1").Calendar();
-            var s = $("#txt2").Calendar();
+            var s = $("#txt1").Calendar({ isTime:true,start:new Date(),end:new Date().addYear(1) });
+            //var s = $("#txt2").Calendar();
+            
         })
-
+        
     </script>
     <style>
         .calander {
@@ -49,7 +50,7 @@
     <br />
     <br />
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="txt1" class="calander" />
-    <input type="text" id="txt2" class="calander" value="2015-08-08 15:09:05" />
+    <input type="text" id="txt2" class="calander" value="2015-08-08 15:09:05"/>
 
 </body>
 </html>
@@ -67,5 +68,9 @@
     //alert(regex.exec(date));
     var _ = "";
     var str = [1,2];
+    var d = new Date();
+    d.setFullYear(2017);
+    var t = 63545040000;
 
+   
 </script>

@@ -241,7 +241,7 @@
 
         .calendar_data_containter .disabled:hover {
             cursor: default;
-            background-color:transparent;
+            background-color: transparent;
         }
 
 .calendar_mainyear_containter { /*年份容器*/
@@ -382,22 +382,31 @@
     /*border: 1px solid red;*/
 }
 
-.calendar .hover_containter div {
-    border: 1px solid transparent;
-    display: inline-block;
-    float: left;
-    margin-left: 6px;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    text-align: center;
-    margin-top: 12px;
-}
-
-    .calendar .hover_containter div:hover {
-        cursor: pointer;
-        border-color: #48B8E0;
+    .hover_containter div {
+        border: 1px solid transparent;
+        display: inline-block;
+        float: left;
+        margin-left: 6px;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        margin-top: 12px;
     }
+
+        .hover_containter div:hover {
+            cursor: pointer;
+            border-color: #48B8E0;
+        }
+
+    .hover_containter .disabled {
+        color: #bbb;
+    }
+
+        .hover_containter .disabled:hover {
+            cursor: default;
+            border-color: transparent;
+        }
 
 .minute_containter {
     position: absolute;
@@ -411,19 +420,28 @@
     /*display: none;*/
 }
 
-.calendar .minute_containter div {
-    border: 1px solid transparent;
-    display: inline-block;
-    float: left;
-    margin-left: 10px;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    margin-top: 15px;
-}
-
-    .calendar .minute_containter div:hover {
-        cursor: pointer;
-        border-color: #48B8E0;
+    .minute_containter div {
+        border: 1px solid transparent;
+        display: inline-block;
+        float: left;
+        margin-left: 10px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        margin-top: 15px;
     }
+
+        .minute_containter div:hover {
+            cursor: pointer;
+            border-color: #48B8E0;
+        }
+
+    .minute_containter .disabled {
+        color: #bbb;
+    }
+
+        .minute_containter .disabled:hover {
+            cursor: default;
+            border-color: transparent;
+        }
