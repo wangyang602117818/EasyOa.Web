@@ -13,6 +13,7 @@
     left: 250px;
     top: 200px;
     font-size: 14px;
+    background-color:#fff;
     overflow: hidden;
 }
 
@@ -150,6 +151,7 @@
     top: 27px;
     bottom: 0;
     height: 173px; /*+25*/
+    background-color:#fff;
     /*height:198px;*/
     /*overflow:hidden;*/
     /*border: 1px solid red;*/
@@ -353,7 +355,6 @@
 }
 
     .calendar_time span {
-        /*border: 1px solid red;*/
         display: inline-block;
         width: 25px;
     }
@@ -363,6 +364,8 @@
         text-align: center;
         border: 0px;
         outline: none;
+        margin:0;
+        padding:0;
         background-color: #EBF2FA;
     }
 

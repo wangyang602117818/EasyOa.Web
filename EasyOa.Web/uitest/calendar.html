@@ -11,14 +11,15 @@
         //var data=new Date("2015-09-30 11:07:18");
         //alert(data.getMonth());
         $(function () {
-            var s = $("#txt1").Calendar({ isTime:true,start:new Date(),end:new Date().addYear(1) });
-            var s = $("#txt2").Calendar();
-            
+            $("#txt1").Calendar();
+            $("#txt2").Calendar({ isTime: true });
+            $("#txt3").Calendar({ start: new Date(), end: new Date().addYear(1).addMonth(1).addDay(1) });
+            $("#txt4").Calendar({ isTime: true, start: "2014-01-01 00:00:00", end: "2016-01-01 00:00:00" });
         })
-        
+
     </script>
     <style>
-        .calander {
+        input {
             background-color: #fafafa;
             border: 1px solid #ccc;
             border-radius: 2px;
@@ -28,16 +29,37 @@
             outline: none;
         }
 
-            .calander:focus {
+            input:focus {
                 border-color: #51A7E8;
                 background-color: #fff;
                 box-shadow: 0 0 5px rgba(103, 166, 217, 0.5);
             }
     </style>
 </head>
-<body>
-    <div id="d1" style="position: absolute; right: 50px; top: 0px; border: 1px solid red; width: 400px; height: 700px">
-    </div>
+<body style="padding: 30px;">
+    用法一:仅有日期框:  <br />
+    $("#txt1").Calendar();<br />
+    <input type="text" id="txt1" />
+    <br />
+    <br />
+    <br />
+    用法二：带日期和时间框:  <br />
+    $("#txt1").Calendar({ isTime: true });<br />
+    <input type="text" id="txt2" />
+    <br />
+    <br />
+    <br />
+    技巧一：时间范围限制:<br />
+    start:开始时间（今天）： new Date()<br />
+    end:结束时间在（在今天的基础上加一年零一个月零一天）： new Date().addYear(1).addMonth(1).addDay(1)<br />
+    $("#txt3").Calendar({ start: new Date(), end: new Date().addYear(1).addMonth(1).addDay(1) }});<br />
+    <input type="text" id="txt3" />
+    <br />
+    <br />
+    <br />
+    技巧二：绝对时间范围限制：<br />
+    $("#txt4").Calendar({ isTime: true, start: "2014-01-01 00:00:00", end: "2016-01-01 00:00:00" });<br />
+    <input type="text" id="txt4" />
     <br />
     <br />
     <br />
@@ -49,28 +71,10 @@
     <br />
     <br />
     <br />
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="txt1" class="calander" />
-    <input type="text" id="txt2" class="calander" value="2015-08-08 15:09:05"/>
-
+    <br />
+    <br />
+    <br />
+    <br />
 </body>
 </html>
-<script>
-    var regex = /(\d{2,4})(?:[/-])?(\d{1,2})?(?:[/-])?(\d{1,2})?\s*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?/;
-    var date = "2015-08-09";
-    var result = regex.exec(date);
-    var year = result[1];
-    var month = result[2];
-    var day = result[3] || new Date().getDate();
-    var hover = result[4] || new Date().getHours();
-    var minute = result[5] || new Date().getMinutes();
-    var second = result[6] || new Date().getSeconds();
 
-    //alert(regex.exec(date));
-    var _ = "";
-    var str = [1,2];
-    var d = new Date();
-    d.setFullYear(2017);
-    var t = 63545040000;
-
-   
-</script>
