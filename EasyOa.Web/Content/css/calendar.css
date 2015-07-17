@@ -70,7 +70,7 @@
     /*border:1px solid red;*/
     width: 25px;
     height: 22px;
-    background: url(date.png) no-repeat;
+    background: url(../imgs/date.png) no-repeat;
     background-position: -72px 0;
 }
 
@@ -86,7 +86,7 @@
     /*border:1px solid red;*/
     width: 20px;
     height: 22px;
-    background: url(date.png) no-repeat;
+    background: url(../imgs/date.png) no-repeat;
     background-position: -54px 0;
 }
 
@@ -118,7 +118,7 @@
     /*border: 1px solid red;*/
     width: 20px;
     height: 22px;
-    background: url(date.png) no-repeat;
+    background: url(../imgs/date.png) no-repeat;
     background-position: -27px 0;
 }
 
@@ -135,7 +135,7 @@
     /*border:1px solid red;*/
     width: 25px;
     height: 22px;
-    background: url(date.png) no-repeat;
+    background: url(../imgs/date.png) no-repeat;
     background-position: -5px 0;
 }
 

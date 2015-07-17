@@ -20,7 +20,7 @@
         //默认配置
         var defaults = {
             format: "yyyy-mm-dd",  //日期模板yyyy-mm-dd hh:mm:ss
-            start: "2015-01-01 00:00:00",   //start: new Date(),
+            start: "1950-01-01 00:00:00",   //start: new Date(),
             end: "2049-12-31 00:00:00"  //end: new Date().addYear(1)
         };
         init(options);
