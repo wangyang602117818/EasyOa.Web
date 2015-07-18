@@ -5,6 +5,7 @@
 @section Header{
     <link href="~/Content/css/hr/hr_maintain.css" rel="stylesheet" />
     <link href="~/Content/css/hr/hr_maintain_index.css" rel="stylesheet" />
+    <link href="~/Content/css/calendar.css" rel="stylesheet" />
 }
 <style type="text/css">
     #ico_user {
@@ -40,9 +41,13 @@
             <div class="form_line">
                 <label class="label" for="birthday">出生年月 :</label>
                 <div class="element">
-                    
+                    <input type="text" name="birthday" id="birthday" class="text"/>
                 </div>
             </div>
         </form>
     </div>
 </div>
+<script src="~/Scripts/Calendar.js"></script>
+<script type="text/javascript">
+    $("#birthday").Calendar();
+</script>
