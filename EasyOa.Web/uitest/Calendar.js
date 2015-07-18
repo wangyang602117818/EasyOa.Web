@@ -13,7 +13,7 @@
        end:结束时间,有两种设置方式
              1:对象形式:  new Date()
              2:字符串形式:"2016-01-01 00:00:00"
-   其中对象形式的调用有3个扩展方法可用 new Date().addYear(1) ,new Date().addMonth(1),new Date().addMonth(1)
+       其中对象形式的调用有3个扩展方法可用 new Date().addYear(1) ,new Date().addMonth(1),new Date().addMonth(1)
 **********************************************************************/
 (function (win, jQuery) {
     jQuery.fn.Calendar = function (options) {
