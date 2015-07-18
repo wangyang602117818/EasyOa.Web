@@ -20,7 +20,7 @@
         //默认配置
         var defaults = {
             format: "yyyy-mm-dd",  //日期模板yyyy-mm-dd hh:mm:ss
-            start: "2015-01-01 00:00:00",   //start: new Date(),
+            start: "1950-01-01 00:00:00",   //start: new Date(),
             end: "2049-12-31 00:00:00"  //end: new Date().addYear(1)
         };
         init(options);
@@ -108,7 +108,7 @@
             initDate();
             if (has_time) renderCalendarTime().appendTo(calendar);   //时间
         }
-        //创建时间div
+        //日期面板的点击事件
         function initDate() {
             con_year = createYearEle(curr_time_arr[0]);
             con_month = createMonthEle();
@@ -120,6 +120,7 @@
             calendar.find("#last_month").bind("click", lastMonth);
             calendar.find("#next_month").bind("click", nextMonth);
         }
+        //初始化时间面板
         function renderCalendarTime() {
             var time_div = "<div id=\"calendar_time\" class=\"calendar_time\">";
             time_div += "<span id=\"hover_txt\"><input type=\"text\" class=\"time_txt\" value=\"" + monthFormat(curr_time_arr[3],2) + "\" maxlength=\"2\" id=\"hour\"/></span>:<span id=\"minute_txt\"><input type=\"text\" class=\"time_txt\" value=\"" + monthFormat(curr_time_arr[4], 2) + "\" maxlength=\"2\" id=\"minute\"/></span>:<span id=\"second_txt\"><input type=\"text\" class=\"time_txt\" value=\"" + monthFormat(curr_time_arr[5], 2) + "\" maxlength=\"2\" id=\"second\"/></span>";
@@ -129,6 +130,7 @@
             needAddHeight() ? calendar.addClass("add_cal_len3") : calendar.addClass("add_cal_len2");
             return calendar_time;
         }
+        //时间面板的点击事件
         function initTime() {
             con_hour = createHoverEle();
             con_minute = createMinuteEle();
