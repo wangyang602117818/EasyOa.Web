@@ -1,0 +1,6 @@
+[submodule "EasyOa.Common"]
+	path = EasyOa.Common
+	url = git@github.com:wangyang602117818/EasyOa.Common.git
+[submodule "EasyOa.Model"]
+	path = EasyOa.Model
+	url = git@github.com:wangyang602117818/EasyOa.Model.git
