@@ -44,5 +44,15 @@ namespace EasyOa.Common
                 sw.WriteLine(msg);
             }
         }
+        /// <summary>
+        /// 在项目根目录写日志
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="msg"></param>
+        public static void WriteFile(string filename, string msg)
+        {
+            string fullpath = AppConfig.basePath;
+            WriteFile(fullpath, filename, msg);
+        }
     }
 }

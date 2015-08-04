@@ -108,6 +108,7 @@
     <Compile Include="Controllers\Hr\HrMaintainController.cs" />
     <Compile Include="Controllers\Hr\HrRecordController.cs" />
     <Compile Include="Controllers\Hr\HrStatisticController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -194,6 +195,7 @@
     <Content Include="WebResource\uploadfile\rabbitmq-dotnet-client-1.5.0-user-guide.pdf" />
     <Content Include="WebResource\uploadfile\UNICODE编码表.pdf" />
     <Content Include="WebResource\uploadfile\编码列表.xlsx" />
+    <Content Include="Views\Test\Index.cshtml" />
     <None Include="xsd\provider.xsd">
       <SubType>Designer</SubType>
     </None>

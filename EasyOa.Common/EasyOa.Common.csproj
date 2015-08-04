@@ -39,6 +39,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\libs\RabbitMQ.Client.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -55,13 +58,18 @@
     <Compile Include="Enum\SMSParaType.cs" />
     <Compile Include="Extentions\EnumExtention.cs" />
     <Compile Include="Extentions\RandomExtention.cs" />
+    <Compile Include="ObjectHelper.cs" />
+    <Compile Include="RabbitMq\LogConsumer.cs" />
+    <Compile Include="RabbitMq\LogRabbitMq.cs" />
+    <Compile Include="RabbitMq\RabbitConnection.cs" />
+    <Compile Include="Serializer\BinarySerializerHelper.cs" />
     <Compile Include="Util\EncryptHelper.cs" />
-    <Compile Include="Serializer\JsonHelper.cs" />
+    <Compile Include="Serializer\JsonSerializerHelper.cs" />
     <Compile Include="Util\FileHelper.cs" />
     <Compile Include="Util\MailHelper.cs" />
     <Compile Include="Util\HttpRequestHelper.cs" />
     <Compile Include="Util\SMSHelper.cs" />
-    <Compile Include="Serializer\XmlSerializeHelper.cs" />
+    <Compile Include="Serializer\XmlSerializerHelper.cs" />
     <Compile Include="LogHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extentions\StringExtention.cs" />
