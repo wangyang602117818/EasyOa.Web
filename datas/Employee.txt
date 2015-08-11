@@ -15,7 +15,7 @@ create table Employee(
        HomeAdress        nvarchar(50)                    not null,    --家庭住址
        PeopleNumber      tinyint                         null,        --家庭人口数
        IsMarried         bit                             not null,    --婚否
-       StateCode         char(3)                         not null,    --国籍代码
+       StateCode         char(3)                         not null,    --国籍id
        FamilyCode        tinyint   default(1)            not null,    --名族id
        PoliticalCode     char(2)                         not null,    --政治面貌id
        FinishSchool      nvarchar(30)                    null,        --毕业院校

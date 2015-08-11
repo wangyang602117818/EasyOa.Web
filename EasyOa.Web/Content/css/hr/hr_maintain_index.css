@@ -23,17 +23,33 @@
     border: 1px solid #EBF1F9;
     padding: 5px 10px;
 }
+
 .form_line {
-    margin-top:10px;
+    margin-top: 10px;
+    width: 80%;
+    /*border: 1px solid red;*/
 }
+
+    .form_line .form_line_left {
+        display: inline-block;
+        /*border: 1px solid red;*/
+        width: 45%;
+    }
+
+    .form_line .form_line_right {
+        display: inline-block;
+        /*border: 1px solid red;*/
+        width: 50%;
+    }
+
 form .label {
     height: 25px;
     line-height: 25px;
-    margin-left: 10px;
+    margin-left: 5px;
     font-size: 13px;
-    text-align:center;
+    text-align: center;
     /*border:1px solid red;*/
-    display:inline-block;
+    display: inline-block;
     width: 70px;
     color: #666;
 }
@@ -41,7 +57,7 @@ form .label {
 form .element {
     display: inline-block;
     /*border:1px solid red;*/
-    margin-left: 8px;
+    margin-left: 3px;
 }
 
 form .text {
@@ -57,6 +73,12 @@ form .text {
 
     form .text:focus {
         border-color: #51A7E8;
-        background-color:#fff;
+        background-color: #fff;
         box-shadow: 0 0 5px rgba(103, 166, 217, 0.5);
     }
+
+form .split_hr {
+    margin-top: 10px;
+    width: 80%;
+    border-top: 1px dashed #e1e2e2;
+}

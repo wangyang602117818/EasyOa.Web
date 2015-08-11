@@ -26,34 +26,73 @@
     <div class="data_con">
         <form name="frm1">
             <div class="form_line">
-                <label class="label" for="name"> 姓 名 : </label>
-                <div class="element">
-                    <input type="text" name="name" class="text" tabindex="1" size="30"/>
+                <div class="form_line_left">
+                    <label class="label" for="Name">姓  名 : </label>
+                    <div class="element">
+                        <input type="text" name="Name" class="text" tabindex="1" size="25" />
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label right" for="Sex">性 别 : </label>
+                    <div class="element">
+                        男
+                        <input type="radio" name="Sex" value="m" checked="checked" />&nbsp;&nbsp;&nbsp;&nbsp;
+                        女
+                        <input type="radio" name="Sex" />
+                    </div>
+
                 </div>
             </div>
             <div class="form_line">
-                <label class="label" for="sex"> 性 别 : </label>
-                <div class="element">
-                    男 <input type="radio" name="sex" checked="checked"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                    女 <input type="radio" name="sex" />
+                <div class="form_line_left">
+                    <label class="label" for="Birthday">出生年月 :</label>
+                    <div class="element">
+                        <input type="text" name="Birthday" id="Birthday" class="text" size="15" />
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label" for="IsMarried">婚 否 :</label>
+                    <div class="element">
+                        已婚
+                        <input type="radio" name="IsMarried" value="1" checked="checked" />&nbsp;&nbsp;&nbsp;&nbsp;
+                        未婚
+                        <input type="radio" name="IsMarried" />
+                    </div>
                 </div>
             </div>
             <div class="form_line">
-                <label class="label" for="birthday">出生年月 :</label>
-                <div class="element">
-                    <input type="text" name="birthday" id="birthday" class="text"/>
+                <div class="form_line_left">
+                    <label class="label" for="Telephone">联系电话 :</label>
+                    <div class="element">
+                        <input type="text" name="Telephone" id="Telephone" class="text" size="20" />
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label" for="IdCard">身份证号 :</label>
+                    <div class="element">
+                        <input type="text" name="IdCard" id="IdCard" class="text" size="30" />
+                    </div>
                 </div>
             </div>
             <div class="form_line">
-                <label class="label" for="IdCard">身份证号 :</label>
+                <label class="label" for="HomeAdress">家庭住址 :</label>
                 <div class="element">
-                    <input type="text" name="IdCard" id="IdCard" class="text" size="30"/>
+
+
+                    <input type="text" name="HomeAdress" id="HomeAdress" class="text" size="30" />
                 </div>
             </div>
+            <div class="split_hr"></div>
             <div class="form_line">
-                <label class="label" for="Telephone">联系电话 :</label>
-                <div class="element">
-                    <input type="text" name="Telephone" id="Telephone" class="text" size="20"/>
+                <div class="form_line_left">
+                    <label class="label" for="FinishSchool">毕业院校 :</label>
+                    <input type="text" name="HomeAdress" id="FinishSchool" class="text" size="25" />
+                </div>
+                <div class="form_line_right">
+                    <label class="label" for="DegreeCode">学 历 :</label>
+                    <div class="element">
+                        <input type="text" name="DegreeCode" id="DegreeCode" class="text" size="30" />
+                    </div>
                 </div>
             </div>
         </form>
@@ -61,5 +100,5 @@
 </div>
 <script src="~/Scripts/Calendar.js"></script>
 <script type="text/javascript">
-    $("#birthday").Calendar();
+    $("#Birthday").Calendar();
 </script>
