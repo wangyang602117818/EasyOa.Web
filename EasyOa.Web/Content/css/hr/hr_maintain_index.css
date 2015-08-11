@@ -25,7 +25,7 @@
 }
 
 .form_line {
-    margin-top: 10px;
+    margin-top: 15px;
     width: 80%;
     /*border: 1px solid red;*/
 }
@@ -53,7 +53,6 @@ form .label {
     width: 70px;
     color: #666;
 }
-
 form .element {
     display: inline-block;
     /*border:1px solid red;*/
