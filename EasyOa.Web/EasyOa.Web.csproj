@@ -124,6 +124,10 @@
     <Content Include="Content\css\hr\hr_layout.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\main.css" />
+    <Content Include="Content\date\calendar.css" />
+    <Content Include="Content\date\Calendar.js" />
+    <Content Include="Content\date\calendar.png" />
+    <Content Include="Content\date\date.png" />
     <Content Include="Content\imgs\c01.jpg" />
     <Content Include="Content\imgs\c02.jpg" />
     <Content Include="Content\imgs\c03.jpg" />
@@ -131,12 +135,10 @@
     <Content Include="Content\imgs\icon.png" />
     <Content Include="Content\imgs\bank_ico.png" />
     <Content Include="Content\imgs\iconfont-yuangongdangan.png" />
-    <Content Include="Content\css\calendar.css" />
     <Content Include="uitest\calendar.html" />
     <Content Include="Content\imgs\index_partner.png" />
     <Content Include="Content\imgs\logo.png" />
     <Content Include="Scripts\Calendar.js" />
-    <Content Include="Content\imgs\date.png" />
     <Content Include="uitest\test.html" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jqPlugFun.js" />
