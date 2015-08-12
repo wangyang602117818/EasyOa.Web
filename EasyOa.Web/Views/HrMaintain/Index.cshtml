@@ -53,10 +53,10 @@
                 <div class="form_line_right">
                     <label class="label" for="IsMarried">婚 否 :</label>
                     <div class="element">
-                        已婚
-                        <input type="radio" name="IsMarried" value="1" checked="checked" />&nbsp;&nbsp;&nbsp;&nbsp;
                         未婚
-                        <input type="radio" name="IsMarried" />
+                        <input type="radio" name="IsMarried" value="0" checked="checked" />&nbsp;&nbsp;&nbsp;&nbsp;
+                        已婚
+                        <input type="radio" name="IsMarried" value="1"/>
                     </div>
                 </div>
             </div>
@@ -75,15 +75,34 @@
                 </div>
             </div>
             <div class="form_line">
-                <label class="label" for="Email">电子邮箱 :</label>
-                <div class="element">
-                    <input type="text" name="Email" id="Email" class="text" size="30" />
+                <div class="form_line_left">
+                    <label class="label" for="Email">电子邮箱 :</label>
+                    <div class="element">
+                        <input type="text" name="Email" id="Email" class="text" size="25" />
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label" for="Homephone">家庭电话 :</label>
+                    <div class="element">
+                        <input type="text" name="Homephone" id="Homephone" class="text" size="20" />
+                    </div>
                 </div>
             </div>
             <div class="form_line">
                 <label class="label" for="HomeAdress">家庭住址 :</label>
                 <div class="element">
-                    <input type="text" name="HomeAdress" id="HomeAdress" class="text" size="50" />
+                    <select name="province">
+                        <option value="01">湖北省</option>
+                        <option value="02">广西壮族自治区</option>
+                        <option value="03">湖北省</option>
+                    </select>
+                    <select name="city">
+                        <option value="01">武汉市</option>
+                    </select>
+                    <select name="area">
+                        <option value="01">武昌区</option>
+                    </select>&nbsp;
+                    <input type="text" name="HomeAdress" id="HomeAdress" class="text" size="20" />
                 </div>
             </div>
             <div class="split_hr"></div>
@@ -93,12 +112,14 @@
                     <div class="element">
                         <input type="text" name="FinishSchool" id="FinishSchool" class="text" size="25" />
                     </div>
-
                 </div>
                 <div class="form_line_right">
                     <label class="label" for="DegreeCode">学 历 :</label>
                     <div class="element">
-                        <input type="text" name="DegreeCode" id="DegreeCode" class="text" size="30" />
+                        <select name="DegreeCode" style="width: 100px">
+                            <option value="1">研究生</option>
+                            <option value="2">博士</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -112,7 +133,10 @@
                 <div class="form_line_right">
                     <label class="label" for="PoliticalCode">政治面貌 :</label>
                     <div class="element">
-                        <input type="text" name="PoliticalCode" id="PoliticalCode" class="text" size="20" />
+                        <select name="PoliticalCode" style="width: 150px">
+                            <option value="01">团员</option>
+                            <option value="02">党员</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -124,11 +148,31 @@
             </div>
             <div class="split_hr"></div>
             <div class="form_line">
+                <div class="form_line_left">
+                    <label class="label" for="StateCode">国 籍 :</label>
+                    <div class="element">
+                        <select name="StateCode" style="width: 100px">
+                            <option value="01">中国</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label" for="FamilyCode">名 族 :</label>
+                    <div class="element">
+                        <select name="FamilyCode" style="width: 150px">
+                            <option value="01">汉族</option>
+                            <option value="02">满族</option>
+                        </select>
+                    </div>
+                </div>
             </div>
+            <div class="split_hr"></div>
+
         </form>
     </div>
 </div>
 <script src="~/Scripts/Calendar.js"></script>
 <script type="text/javascript">
     $("#Birthday").Calendar();
+    $("#BeginWorkDate").Calendar();
 </script>
