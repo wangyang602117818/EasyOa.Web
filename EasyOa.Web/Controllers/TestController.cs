@@ -14,20 +14,12 @@ namespace EasyOa.Web.Controllers
 
         public ActionResult Index()
         {
-            List<Person> list = new List<Person>()
-                {
-                    new Person(){Age=12,Name = "张三"},
-                    new Person(){Age = 13,Name = "李四"}
-                };
-            for (int i = 1; i <= 2; i++)
-            {
-                LogEnqueue.Enqueue(BinarySerializerHelper.ObjectToByteArray("aaaanbbccc"));
-            }
-
-            for (int i = 0; i < 5; i++)
-            {
-                LogEnqueue.Enqueue(list);
-            }
+           Response.Write(EncryptHelper.FileMd5(AppConfig.basePath + @"WebResource\uploadfile\css3.chm")+"<br>");
+           Response.Write(EncryptHelper.FileMd5(AppConfig.basePath + @"WebResource\uploadfile\css3.chw") + "<br>");
+           Response.Write(EncryptHelper.FileMd5(AppConfig.basePath + @"WebResource\uploadfile\HTML5中文参考手册.chm") + "<br>");
+           Response.Write(EncryptHelper.FileMd5(AppConfig.basePath + @"WebResource\uploadfile\jQuery-api-1.7.1_20120209.chm") + "<br>");
+           Response.Write(EncryptHelper.FileMd5(AppConfig.basePath + @"WebResource\uploadfile\W3CSchool.chm") + "<br>");
+            
             return View();
         }
 
