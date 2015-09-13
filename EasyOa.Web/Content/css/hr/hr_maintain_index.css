@@ -23,9 +23,18 @@
     border: 1px solid #EBF1F9;
     padding: 5px 10px;
 }
-
+.photo {
+    position: absolute;
+    /*border: 1px solid #cccccc;*/
+    background-color: #fafafa;
+    width: 100px;height: 100px;
+    right: 15px;
+    top: 55px;
+    cursor: pointer;
+    overflow: hidden;
+}
 .form_line {
-    margin-top: 18px;
+    margin-top: 22px;
     width: 80%;
     /*border: 1px solid red;*/
 }
@@ -53,6 +62,7 @@ form .label {
     width: 70px;
     color: #666;
 }
+
 form .element {
     display: inline-block;
     /*border:1px solid red;*/
@@ -80,4 +90,54 @@ form .split_hr {
     margin-top: 20px;
     width: 80%;
     border-top: 1px dashed #e1e2e2;
+}
+.form_button {
+    width: 75px;
+    height: 28px;
+    line-height: 27px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0px 1px 2px #999;
+    -webkit-box-shadow: 0px 1px 2px #999;
+    -moz-box-shadow: 0px 1px 2px #999;
+    border-bottom: 1px solid #09527D;
+    border-radius: 0.2em;
+    outline: none;
+}
+.submit_button {
+    border: 1px solid #406185;
+    background: #3C5A7B;
+    background-image: linear-gradient(bottom, #406185 40%, #1180C4 70%);
+    background-image: -o-linear-gradient(bottom, #406185 40%, #1180C4 70%);
+    background-image: -moz-linear-gradient(bottom, #406185 40%, #1180C4 70%);
+    background-image: -webkit-linear-gradient(bottom, #406185 40%, #557597 70%);
+    background-image: -ms-linear-gradient(bottom, #406185 40%, #1180C4 70%);
+}
+.submit_button:hover {
+    background-image: linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
+    background-image: -o-linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
+    background-image: -moz-linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
+    background-image: -webkit-linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
+    background-image: -ms-linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
+}
+.submit_button:active {
+    background-image: linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
+    background-image: -o-linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
+    background-image: -moz-linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
+    background-image: -webkit-linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
+    background-image: -ms-linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
+}
+.disabled_button {
+    border: 1px solid #726E66;
+    background: #8F8C84;
+    cursor: default;
+    background-image: -webkit-linear-gradient(bottom, #726E66 40%, #8F8C84 70%);
+}
+.disabled_button:hover {
+    background-image: -webkit-linear-gradient(bottom, #726E66 40%, #8F8C84 70%);
+}
+.disabled_button:active {
+    background-image: -webkit-linear-gradient(bottom, #726E66 40%, #8F8C84 70%);
 }
