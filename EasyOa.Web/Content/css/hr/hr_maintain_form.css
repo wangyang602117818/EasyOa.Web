@@ -23,33 +23,41 @@
     border: 1px solid #EBF1F9;
     padding: 5px 10px;
 }
+
 .photo {
     position: absolute;
     /*border: 1px solid #cccccc;*/
-    background-color: #fafafa;
-    width: 100px;height: 100px;
+    background-color: #999;
+    width: 100px;
+    height: 100px;
     right: 15px;
     top: 55px;
     cursor: pointer;
     overflow: hidden;
 }
+
 .form_line {
     margin-top: 22px;
     width: 80%;
     /*border: 1px solid red;*/
 }
 
-    .form_line .form_line_left {
-        display: inline-block;
-        /*border: 1px solid red;*/
-        width: 45%;
-    }
+.form_bottom {
+    padding-left: 170px;
+    padding-bottom: 20px;
+}
 
-    .form_line .form_line_right {
-        display: inline-block;
-        /*border: 1px solid red;*/
-        width: 50%;
-    }
+.form_line .form_line_left {
+    display: inline-block;
+    /*border: 1px solid red;*/
+    width: 45%;
+}
+
+.form_line .form_line_right {
+    display: inline-block;
+    /*border: 1px solid red;*/
+    width: 50%;
+}
 
 form .label {
     height: 25px;
@@ -59,7 +67,7 @@ form .label {
     text-align: center;
     /*border:1px solid red;*/
     display: inline-block;
-    width: 70px;
+    width: 75px;
     color: #666;
 }
 
@@ -91,6 +99,7 @@ form .split_hr {
     width: 80%;
     border-top: 1px dashed #e1e2e2;
 }
+
 .form_button {
     width: 75px;
     height: 28px;
@@ -106,6 +115,7 @@ form .split_hr {
     border-radius: 0.2em;
     outline: none;
 }
+
 .submit_button {
     border: 1px solid #406185;
     background: #3C5A7B;
@@ -115,29 +125,34 @@ form .split_hr {
     background-image: -webkit-linear-gradient(bottom, #406185 40%, #557597 70%);
     background-image: -ms-linear-gradient(bottom, #406185 40%, #1180C4 70%);
 }
-.submit_button:hover {
-    background-image: linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
-    background-image: -o-linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
-    background-image: -moz-linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
-    background-image: -webkit-linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
-    background-image: -ms-linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
-}
-.submit_button:active {
-    background-image: linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
-    background-image: -o-linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
-    background-image: -moz-linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
-    background-image: -webkit-linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
-    background-image: -ms-linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
-}
+
+    .submit_button:hover {
+        background-image: linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
+        background-image: -o-linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
+        background-image: -moz-linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
+        background-image: -webkit-linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
+        background-image: -ms-linear-gradient(bottom, #3C5A7B 40%, #607E9E 70%);
+    }
+
+    .submit_button:active {
+        background-image: linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
+        background-image: -o-linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
+        background-image: -moz-linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
+        background-image: -webkit-linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
+        background-image: -ms-linear-gradient(bottom, #3C5A7B 40%, #3C5A7B 70%);
+    }
+
 .disabled_button {
     border: 1px solid #726E66;
     background: #8F8C84;
     cursor: default;
     background-image: -webkit-linear-gradient(bottom, #726E66 40%, #8F8C84 70%);
 }
-.disabled_button:hover {
-    background-image: -webkit-linear-gradient(bottom, #726E66 40%, #8F8C84 70%);
-}
-.disabled_button:active {
-    background-image: -webkit-linear-gradient(bottom, #726E66 40%, #8F8C84 70%);
-}
+
+    .disabled_button:hover {
+        background-image: -webkit-linear-gradient(bottom, #726E66 40%, #8F8C84 70%);
+    }
+
+    .disabled_button:active {
+        background-image: -webkit-linear-gradient(bottom, #726E66 40%, #8F8C84 70%);
+    }

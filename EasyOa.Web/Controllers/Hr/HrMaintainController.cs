@@ -8,12 +8,29 @@ namespace EasyOa.Web.Controllers.Hr
     public class HrMaintainController : Controller
     {
         //
-        // GET: /HrMaintain/
-
-        public ActionResult Index()
+        /// <summary>
+        /// 员工信息添加
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult EmpAdd()
         {
             return View();
         }
-
+        /// <summary>
+        /// 合同添加
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult EmpContract()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 家庭成员添加
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult EmpFamily()
+        {
+            return View();
+        }
     }
 }

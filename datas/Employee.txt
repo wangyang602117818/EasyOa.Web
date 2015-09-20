@@ -32,7 +32,7 @@ create table EmpFamilyMember(
        Id        int     primary key identity(1,1)       not null,    --主键id
        EmployeeId            int                         not null,    --人员id
        Name                  nvarchar(10)                not null,    --姓名
-       Relation              nvarchar(10)                not null,    --与本人关系
+       RelationCode          int                         not null,    --与本人关系
        Birthday              date                        null,        --出生年月
        IdCard                varchar(20)                 null,        --身份证号
        ContactPhone          varchar(30)                 null,        --联系电话

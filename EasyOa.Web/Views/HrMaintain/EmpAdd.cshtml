@@ -1,10 +1,11 @@
 ﻿@{
+    ViewBag.Title = "员工添加";
     Layout = "~/Views/Shared/_HrLayout.cshtml";
 }
 @* 员工信息添加 *@
 @section Header{
     <link href="~/Content/css/hr/hr_maintain.css" rel="stylesheet" />
-    <link href="~/Content/css/hr/hr_maintain_index.css" rel="stylesheet" />
+    <link href="~/Content/css/hr/hr_maintain_form.css" rel="stylesheet" />
     <link href="~/Content/date/calendar.css" rel="stylesheet" />
 }
 <style type="text/css">
@@ -25,7 +26,6 @@
     </div>
     <div class="data_con">
         <div class="photo">
-            
             <img src="~/Content/imgs/c01.jpg" style="border:0px solid #ccc" />
         </div>
         <form name="frm1">
@@ -171,13 +171,12 @@
                 </div>
             </div>
             <div class="split_hr"></div>
-            <div class="form_line" style="padding-left: 170px;padding-bottom: 25px;padding-top: 10px">
+            <div class="form_line form_bottom">
                 <input type="button" value="提 交" class="form_button submit_button"/>
             </div>
         </form>
     </div>
 </div>
-<script src="~/Scripts/Calendar.js"></script>
 <script type="text/javascript">
     $("#Birthday").Calendar();
     $("#BeginWorkDate").Calendar();

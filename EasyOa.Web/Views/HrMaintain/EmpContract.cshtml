@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "合同添加";
+    Layout = "~/Views/Shared/_HrLayout.cshtml";
+}
+@section Header
+{
+    <link href="~/Content/css/hr/hr_maintain.css" rel="stylesheet" />
+    <link href="~/Content/css/hr/hr_maintain_form.css" rel="stylesheet" />
+    <link href="~/Content/date/calendar.css" rel="stylesheet" />
+}
+<style type="text/css">
+    #ico_contract {
+        background-color: #E1E6EB;
+        border-color: #C9D4DF;
+    }
+
+    #contract_add {
+        background-color: #f3f3f3;
+        color: #4e4e4e;
+    }
+</style>
+@Html.Partial("Partial_HrMaintain")
+<div class="data_nav">
+    <div class="data_title">
+        <h2>人事合同</h2>
+    </div>
+    <div class="data_con">
+        <div class="photo">
+            <img src="" style="border: 0px solid #ccc" />
+        </div>
+        <form name="frm1">
+            <div class="form_line">
+                <label class="label" for="EmpName">员工姓名 : </label>
+                <div class="element">
+                    <input type="text" name="EmpName" class="text" tabindex="1" size="30" />
+                    <input type="hidden" name="EmployeeId" id="EmployeeId"/>
+                </div>
+            </div>
+            <div class="form_line">
+                <div class="form_line_left">
+                    <label class="label" for="ContractId">合同编号 :</label>
+                    <div class="element">
+                        <input type="text" name="ContractId" id="ContractId" class="text" size="25" />
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label" for="ContractTypeCode">合同类型 :</label>
+                    <div class="element">
+                        <select name="ContractTypeCode" id="ContractTypeCode" style="width: 150px">
+                            <option value="01">普通合同</option>
+                            <option value="01">保密合同</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form_line">
+                <div class="form_line_left">
+                    <label class="label" for="ConBeginDate">开始时间 :</label>
+                    <div class="element">
+                        <input type="text" name="ConBeginDate" id="ConBeginDate" class="text date" size="15" />
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label" for="ConEndDate">结束时间 :</label>
+                    <div class="element">
+                        <input type="text" name="ConEndDate" id="ConEndDate" class="text date" size="15" />
+                    </div>
+                </div>
+            </div>
+            <div class="form_line">
+                <div class="form_line_left">
+                    <label class="label">合同部门 :</label>
+                    <div class="element">
+                        <select name="ConDepartmentCode" style="width: 150px">
+                            <option value="01">xx部门</option>
+                            <option value="02">xx部门</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label">合同职位 :</label>
+                    <div class="element">
+                        <select name="ConJobTitleCode" style="width: 120px">
+                            <option value="01">xx职位</option>
+                            <option value="01">xx职位</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form_line">
+                <label class="label">是否生效 :</label>
+                <div class="element">
+                    生效
+                    <input type="radio" name="IsUsed" value="1" checked="checked" />&nbsp;&nbsp;&nbsp;&nbsp;
+                    不生效
+                    <input type="radio" name="IsUsed" />
+                </div>
+            </div>
+            <div class="split_hr"></div>
+            <div class="form_line form_bottom" >
+                <input type="button" value="提 交" class="form_button submit_button"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#ConBeginDate").Calendar();
+    $("#ConEndDate").Calendar();
+</script>
