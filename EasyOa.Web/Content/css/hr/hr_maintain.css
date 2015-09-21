@@ -180,3 +180,10 @@
     background: url(../../imgs/icon.png) no-repeat;
     background-position: -175px -268px;
 }
+
+#human_add {
+    color: #4e4e4e;
+    font-weight: 700;
+    background-color: #fff;
+    border-color: #d9d9d9;
+}
