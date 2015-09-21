@@ -34,7 +34,7 @@
     overflow: hidden;
 }
 .form_line {
-    margin-top: 22px;
+    margin-top: 20px;
     width: 80%;
     /*border: 1px solid red;*/
 }
@@ -50,7 +50,10 @@
         /*border: 1px solid red;*/
         width: 50%;
     }
-
+form .star {
+    display: inline-block;
+    color: red;
+}
 form .label {
     height: 25px;
     line-height: 25px;
@@ -59,7 +62,7 @@ form .label {
     text-align: center;
     /*border:1px solid red;*/
     display: inline-block;
-    width: 70px;
+    width: 75px;
     color: #666;
 }
 
@@ -87,7 +90,7 @@ form .text {
     }
 
 form .split_hr {
-    margin-top: 20px;
+    margin-top: 15px;
     width: 80%;
     border-top: 1px dashed #e1e2e2;
 }

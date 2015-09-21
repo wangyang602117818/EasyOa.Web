@@ -125,8 +125,8 @@
                 clearInterval(intervalId);
                 intervalId = setInterval(change_img, 5000);
             });
-            img_container.mouseover(function () { flag = 1; })
-            img_container.mouseout(function () { flag = 0; })
+            img_container.mouseover(function() { flag = 1; });
+            img_container.mouseout(function() { flag = 0; });
             intervalId = setInterval(change_img, 5000);
         })
         function change_img() {

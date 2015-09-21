@@ -25,7 +25,7 @@
     </div>
     <div class="data_con">
         <div class="photo">
-            
+            <!--照片-->
             <img src="~/Content/imgs/c01.jpg" style="border:0px solid #ccc" />
         </div>
         <form name="frm1">
@@ -44,7 +44,6 @@
                         女
                         <input type="radio" name="Sex" />
                     </div>
-
                 </div>
             </div>
             <div class="form_line">
@@ -123,6 +122,7 @@
                         <select name="DegreeCode" style="width: 100px">
                             <option value="1">研究生</option>
                             <option value="2">博士</option>
+                            <option value="3">大博士</option>
                         </select>
                     </div>
                 </div>
@@ -150,7 +150,6 @@
                     <input type="text" name="BeginWorkDate" id="BeginWorkDate" class="text date" size="30" placeholder="首次参加工作时间" />
                 </div>
             </div>
-            <div class="split_hr"></div>
             <div class="form_line">
                 <div class="form_line_left">
                     <label class="label" for="StateCode">国 籍 :</label>
@@ -163,9 +162,55 @@
                 <div class="form_line_right">
                     <label class="label" for="FamilyCode">名 族 :</label>
                     <div class="element">
-                        <select name="FamilyCode" style="width: 150px">
+                        <select name="FamilyCode" style="width: 160px">
                             <option value="01">汉族</option>
                             <option value="02">满族</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="split_hr"></div>
+            <div class="form_line">
+                 <label class="label len" for="EmpCode">工 号 :</label>
+                <div class="element">
+                    <input type="text" name="EmpCode" id="EmpCode" class="text" size="25" />
+                </div>
+            </div>
+            <div class="form_line">
+                <div class="form_line_left">
+                    <label class="label" for="DepartmentCode">所在部门 :</label>
+                    <div class="element">
+                        <select name="DepartmentCode" style="width: 150px">
+                            <option value=""></option>
+                            <option value="01">技术部</option>
+                            <option value="02">行政人事部</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label" for="JobTitleCode">职 位 :</label>
+                    <div class="element">
+                        <select name="JobTitleCode" style="width: 180px">
+                            <option value=""></option>
+                            <option value="01">人事资产员</option>
+                            <option value="02">经理</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form_line">
+                <div class="form_line_left">
+                    <label class="label" for="JoinDate">入司时间 :</label>
+                    <div class="element">
+                        <input type="text" name="JoinDate" id="JoinDate" class="text date" size="15" />
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label" for="EmpStateCode">状 态 :</label>
+                    <div class="element">
+                        <select name="EmpStateCode" style="width: 130px">
+                            <option value="01">正常</option>
+                            <option value="02">离职</option>
                         </select>
                     </div>
                 </div>
@@ -181,4 +226,5 @@
 <script type="text/javascript">
     $("#Birthday").Calendar();
     $("#BeginWorkDate").Calendar();
+    $("#JoinDate").Calendar();
 </script>
