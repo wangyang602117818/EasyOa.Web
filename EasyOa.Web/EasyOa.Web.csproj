@@ -201,6 +201,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\HrMaintain\EmpContract.cshtml" />
     <Content Include="Views\HrMaintain\EmpFamily.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="xsd\provider.xsd">
       <SubType>Designer</SubType>
     </None>

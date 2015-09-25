@@ -16,7 +16,7 @@ namespace EasyOa.Web.Controllers
     {
         public ActionResult Index()
         {
-         
+           
             return View();
         }
     }
