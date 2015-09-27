@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/_HrLayout.cshtml";
+}
+@section Header
+{
+    <link href="~/Content/css/hr/hr_maintain.css" rel="stylesheet" />
+    <link href="~/Content/css/hr/hr_maintain_form.css" rel="stylesheet" />
+    <link href="~/Content/date/calendar.css" rel="stylesheet" />
+}
+<style type="text/css">
+    #learn_add {
+        background-color: #f3f3f3;
+        color: #4e4e4e;
+    }
+
+    #ico_learn {
+        background-color: #E1E6EB;
+        border-color: #C9D4DF;
+    }
+</style>
+@Html.Partial("Partial_HrMaintain")
+<div class="data_nav">
+    <div class="data_title">
+        <h2>培训信息</h2>
+    </div>
+    <div class="data_con">
+        <div class="photo ">
+            <img src="" style="border: 0px solid #ccc" />
+        </div>
+        <form name="frm1">
+            
+        </form>
+    </div>
+</div>

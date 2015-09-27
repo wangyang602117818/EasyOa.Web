@@ -8,12 +8,12 @@
     <link href="~/Content/date/calendar.css" rel="stylesheet" />
 }
 <style type="text/css">
-    #family_add {
+    #education_add {
         background-color: #f3f3f3;
         color: #4e4e4e;
     }
 
-    #ico_family {
+    #ico_education {
         background-color: #E1E6EB;
         border-color: #C9D4DF;
     }
@@ -21,7 +21,7 @@
 @Html.Partial("Partial_HrMaintain")
 <div class="data_nav">
     <div class="data_title">
-        <h2>家庭成员</h2>
+        <h2>教育信息</h2>
     </div>
     <div class="data_con">
         <div class="photo">
@@ -37,54 +37,47 @@
             </div>
             <div class="form_line">
                 <div class="form_line_left">
-                    <label class="label">姓 名 :</label>
+                    <label class="label" for="School">学 校 :</label>
                     <div class="element">
-                        <input type="text" name="Name" class="text" size="18" placeholder="家庭成员姓名" />
+                        <input type="text" name="School" class="text" size="18" />
                     </div>
                 </div>
                 <div class="form_line_right">
-                    <label class="label" for="RelationCode">与本人关系 :</label>
+                    <label class="label" for="DegreeCode">学 历 :</label>
                     <div class="element">
-                        <select name="RelationCode" style="width: 150px">
-                            <option value="01">父子</option>
+                        <select name="DegreeCode" style="width: 150px">
+                            <option value="01">大专</option>
+                            <option value="02">本科</option>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="form_line">
                 <div class="form_line_left">
-                    <label class="label" for="ContactPhone">联系电话 :</label>
+                    <label class="label" for="EduStartDate">开始时间 :</label>
                     <div class="element">
-                        <input type="text" name="ContactPhone" class="text" size="25" />
+                        <input type="text" name="EduStartDate" class="text date" size="15" />
                     </div>
                 </div>
                 <div class="form_line_right">
-                    <label class="label" for="Birthday">出生年月 :</label>
+                    <label class="label" for="EduEndDate">结束时间 :</label>
                     <div class="element">
-                        <input type="text" name="Birthday" id="Birthday" class="text date" size="15" />
+                        <input type="text" name="EduEndDate" class="text date" size="15" />
                     </div>
                 </div>
             </div>
             <div class="form_line">
-                <label class="label" for="ContactAddress">联系地址 :</label>
+                <label class="label" for="LearnContent">备 注 :</label>
                 <div class="element">
-                    <input type="text" name="ContactAddress" class="text" size="50" />
+                    <textarea name="LearnContent" rows="5" cols="60" class="text"></textarea>
                 </div>
             </div>
             <div class="form_line">
-                <label class="label" for="Company">工作单位 :</label>
-                <div class="element">
-                    <input type="text" name="Company" class="text" size="40" />
-                </div>
-            </div>
-            <div class="form_line">
-                <label class="label">政治面貌 :</label>
-                <div class="element">
-                    <select name="PoliticalCode" style="width: 150px">
-                        <option value="01">团员</option>
-                        <option value="02">党员</option>
-                    </select>
-                </div>
+                <label class="label" for="LearnResult">结 果 :</label>
+                <select name="LearnResult" style="width: 150px">
+                    <option value="01">毕业</option>
+                    <option value="02">肄业</option>
+                </select>
             </div>
             <div class="split_hr"></div>
             <div class="form_line form_bottom">
@@ -93,9 +86,3 @@
         </form>
     </div>
 </div>
-<script type="text/javascript">
-    $("#Birthday").Calendar();
-</script>
-
-
-

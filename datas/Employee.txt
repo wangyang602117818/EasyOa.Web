@@ -42,14 +42,14 @@ create table EmpFamilyMember(
        LogDate           datetime     default(getdate()) not null,    --入库时间
 )
 --人事-教育学习情况
-create table EmpEducationExperience(
+create table EmpEducation(
        Id        int     primary key identity(1,1)       not null,    --主键id
        EmployeeId            int                         not null,    --人员id
        EduStartDate          date                        not null,    --开始时间
        EduEndDate            date                        not null,    --结束时间
        School                nvarchar(30)                not null,    --学校
        DegreeCode            tinyint                     not null,    --学历id
-       LearnContent          nvarchar(100)               null,        --学习内容
+       LearnContent          nvarchar(100)               null,        --备注
        LearnResult           nvarchar(100)               null,        --学习结果
        CredentialId          varchar(50)                 null,        --证件号码
        LogDate           datetime     default(getdate()) not null,    --入库时间

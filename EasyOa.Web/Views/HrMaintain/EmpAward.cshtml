@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_HrLayout.cshtml";
+}
+@section Header
+{
+    <link href="~/Content/css/hr/hr_maintain.css" rel="stylesheet" />
+    <link href="~/Content/css/hr/hr_maintain_form.css" rel="stylesheet" />
+    <link href="~/Content/date/calendar.css" rel="stylesheet" />
+}
+<style type="text/css">
+    #award_add {
+        background-color: #f3f3f3;
+        color: #4e4e4e;
+    }
+
+    #ico_award {
+        background-color: #E1E6EB;
+        border-color: #C9D4DF;
+    }
+</style>
+@Html.Partial("Partial_HrMaintain")
+<div class="data_nav">
+    <div class="data_title">
+        <h2>奖惩信息</h2>
+    </div>
+    <div class="data_con">
+        <div class="photo">
+            <img src="" style="border: 0px solid #ccc" />
+        </div>
+        <form name="frm1">
+            <div class="form_line">
+                <label class="label" for="EmpName">员工姓名 : </label>
+                <div class="element">
+                    <input type="text" name="EmpName" class="text" tabindex="1" size="30" placeholder="" />
+                    <input type="hidden" name="EmployeeId" id="EmployeeId" />
+                </div>
+            </div>
+            <div class="form_line">
+                <label class="label" for="AwardTypeCode">奖惩类型 :</label>
+                <div class="element">
+                    <select name="AwardTypeCode" style="width: 120px">
+                        <option value="01">奖励</option>
+                        <option value="01">惩罚</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form_line">
+                <label class="label">奖惩内容 :</label>
+                <div class="element">
+                    <textarea name="Content" rows="5" cols="60" class="text"></textarea>
+                </div>
+            </div>
+            <div class="form_line">
+                <label class="label">奖惩时间 :</label>
+                <div class="element">
+                    <input type="text" name="AwardDate" class="text date" size="15" />
+                </div>
+            </div>
+            <div class="split_hr"></div>
+            <div class="form_line form_bottom">
+                <input type="button" value="提 交" class="form_button submit_button" />
+            </div>
+        </form>
+    </div>
+</div>

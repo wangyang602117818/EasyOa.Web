@@ -33,5 +33,37 @@ namespace EasyOa.Web.Controllers.Hr
         {
             return View();
         }
+        /// <summary>
+        /// 教育信息添加
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult EmpEducation()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 工作经历
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult EmpWorkExperience()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 奖惩信息添加
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult EmpAward()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 培训信息添加
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult EmpLearn()
+        {
+            return View();
+        }
     }
 }

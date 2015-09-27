@@ -4,10 +4,10 @@
     </div>
     <ul class="links">
         <li>
-            <a href="#" id="nav1" class="on">员工相关<span class="ico_menu"></span></a>
+            <a href="#" id="employee_relate" class="on" flag="1">员工相关<span class="ico_menu"></span></a>
         </li>
         <li>
-            <a href="#" id="nav2">人事相关<span class="ico_menu"></span></a>
+            <a href="#" id="hr_relate" flag="2">人事相关<span class="ico_menu"></span></a>
         </li>
     </ul>
 </div>
@@ -20,34 +20,38 @@
                     员工信息</a>
             </li>
             <li>
-                <a href="/HrMaintain/EmpContract" id="ico_contract">
-                    <span class="ico_contract"></span>
-                    人事合同</a>
-            </li>
-            <li>
                 <a href="/HrMaintain/EmpFamily" id="ico_family">
                     <span class="ico_family"></span>
                     家庭成员
                 </a>
             </li>
             <li>
-                <a href="#" id="ico_education">
+                <a href="/HrMaintain/EmpEducation" id="ico_education">
                     <span class="ico_education"></span>
                     教育信息
                 </a>
             </li>
             <li>
-                <a href="#" id="ico_experience">
+                <a href="/HrMaintain/EmpWorkExperience" id="ico_experience">
                     <span class="ico_experience"></span>
                     工作经历
                 </a>
             </li>
-            <li><a href="#" id="ico_award">
+        </ul>
+    </div>
+    <div class="dept_con" id="con2" style="display: none">
+        <ul>
+            <li>
+                <a href="/HrMaintain/EmpContract" id="ico_contract">
+                    <span class="ico_contract"></span>
+                    人事合同</a>
+            </li>
+            <li><a href="/HrMaintain/EmpAward" id="ico_award">
                 <span class="ico_award"></span>
                 奖惩信息
             </a>
             </li>
-            <li><a href="#" id="ico_learn">
+            <li><a href="/HrMaintain/EmpLearn" id="ico_learn">
                 <span class="ico_learn"></span>
                 培训信息
             </a>
@@ -57,10 +61,6 @@
                 调动信息
             </a>
             </li>
-        </ul>
-    </div>
-    <div class="dept_con" id="con2" style="display: none">
-        <ul>
             <li>
                 <a href="#" id="ico_notice">
                     <span class="ico_notice"></span>
@@ -70,24 +70,24 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(function () {
+    $(function() {
         //导航信息栏
-        var all_nav = $(".page_nav a");   //导航
-        var last_nav = all_nav.filter(".on");
-        all_nav.click(function () {
+        var all_nav = $(".page_nav a"); //导航
+        var last_nav = all_nav.filter(".on");  //上一次选中的响
+        all_nav.click(function() {
             var curr_nav = $(this);
             if (!curr_nav.hasClass("on")) {
                 curr_nav.addClass("on");
                 last_nav.removeClass("on");
-                con_change(last_nav, curr_nav);  //改变内容
+                con_change(last_nav, curr_nav); //改变内容
                 last_nav = curr_nav;
             }
             return false;
         });
-    })
+    });
     function con_change(last_nav, curr_nav) {
-        var last_con = $("#con" + last_nav.attr("id").substr(3));
-        var curr_con = $("#con" + curr_nav.attr("id").substr(3));
+        var last_con = $("#con" + last_nav.attr("flag"));
+        var curr_con = $("#con" + curr_nav.attr("flag"));
         last_con.hide(500);
         curr_con.show(500);
     }
