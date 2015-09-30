@@ -199,13 +199,13 @@
     <Content Include="WebResource\uploadfile\编码列表.xlsx" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\HrMaintain\EmpContract.cshtml" />
+    <Content Include="Views\HrMaintain\HrContract.cshtml" />
     <Content Include="Views\HrMaintain\EmpFamily.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\HrMaintain\EmpEducation.cshtml" />
     <Content Include="Views\HrMaintain\EmpWorkExperience.cshtml" />
-    <Content Include="Views\HrMaintain\EmpAward.cshtml" />
-    <Content Include="Views\HrMaintain\EmpLearn.cshtml" />
+    <Content Include="Views\HrMaintain\HrAward.cshtml" />
+    <Content Include="Views\HrMaintain\HrLearn.cshtml" />
     <None Include="xsd\provider.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -139,6 +139,7 @@ h1, h2, h3, h4, h5, h6, input, textarea, select, button, label {
         position: relative;
         display: inline-block;
         margin-top: 27px;
+        height: 42px;
     }
 
 .mainnav_link {

@@ -4,7 +4,7 @@
     </div>
     <ul class="links">
         <li>
-            <a href="#" id="employee_relate" class="on" flag="1">员工相关<span class="ico_menu"></span></a>
+            <a href="#" id="employee_relate" flag="1">员工相关<span class="ico_menu"></span></a>
         </li>
         <li>
             <a href="#" id="hr_relate" flag="2">人事相关<span class="ico_menu"></span></a>
@@ -12,7 +12,7 @@
     </ul>
 </div>
 <div class="content_nav">
-    <div class="emp_con" id="con1">
+    <div class="emp_con" id="con1" style="display: none">
         <ul>
             <li>
                 <a href="/HrMaintain/EmpAdd" id="ico_user">
@@ -42,16 +42,17 @@
     <div class="dept_con" id="con2" style="display: none">
         <ul>
             <li>
-                <a href="/HrMaintain/EmpContract" id="ico_contract">
+                <a href="/HrMaintain/HrContract" id="ico_contract">
                     <span class="ico_contract"></span>
-                    人事合同</a>
+                    人事合同
+                </a>
             </li>
-            <li><a href="/HrMaintain/EmpAward" id="ico_award">
+            <li><a href="/HrMaintain/HrAward" id="ico_award">
                 <span class="ico_award"></span>
                 奖惩信息
             </a>
             </li>
-            <li><a href="/HrMaintain/EmpLearn" id="ico_learn">
+            <li><a href="/HrMaintain/HrLearn" id="ico_learn">
                 <span class="ico_learn"></span>
                 培训信息
             </a>
@@ -70,11 +71,21 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(function() {
+    $(function () {
+        var relate;
+        if (location.href.indexOf("Emp") > -1) {
+            relate = $("#employee_relate").addClass("on");
+        } else if (location.href.indexOf("Hr") > -1) {
+            relate = $("#hr_relate").addClass("on");
+        } else {
+            relate = $("#employee_relate").addClass("on");
+        }
+        var emp_con = $("#con" + relate.attr("flag"));
+        emp_con.show();
         //导航信息栏
         var all_nav = $(".page_nav a"); //导航
-        var last_nav = all_nav.filter(".on");  //上一次选中的响
-        all_nav.click(function() {
+        var last_nav = all_nav.filter(".on");  //上一次选中的项
+        all_nav.click(function () {
             var curr_nav = $(this);
             if (!curr_nav.hasClass("on")) {
                 curr_nav.addClass("on");

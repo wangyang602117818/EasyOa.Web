@@ -18,14 +18,6 @@ namespace EasyOa.Web.Controllers.Hr
             return View();
         }
         /// <summary>
-        /// 合同添加
-        /// </summary>
-        /// <returns></returns>
-        public ActionResult EmpContract()
-        {
-            return View();
-        }
-        /// <summary>
         /// 家庭成员添加
         /// </summary>
         /// <returns></returns>
@@ -50,10 +42,18 @@ namespace EasyOa.Web.Controllers.Hr
             return View();
         }
         /// <summary>
+        /// 合同添加
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult HrContract()
+        {
+            return View();
+        }
+        /// <summary>
         /// 奖惩信息添加
         /// </summary>
         /// <returns></returns>
-        public ActionResult EmpAward()
+        public ActionResult HrAward()
         {
             return View();
         }
@@ -61,7 +61,7 @@ namespace EasyOa.Web.Controllers.Hr
         /// 培训信息添加
         /// </summary>
         /// <returns></returns>
-        public ActionResult EmpLearn()
+        public ActionResult HrLearn()
         {
             return View();
         }
