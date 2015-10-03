@@ -1,0 +1,100 @@
+﻿@{
+    Layout = "~/Views/Shared/_HrLayout.cshtml";
+}
+@section Header
+{
+    <link href="~/Content/css/hr/hr_maintain.css" rel="stylesheet" />
+    <link href="~/Content/css/hr/hr_maintain_form.css" rel="stylesheet" />
+    <link href="~/Content/date/calendar.css" rel="stylesheet" />
+}
+<style type="text/css">
+    #transfer_add {
+        background-color: #f3f3f3;
+        color: #4e4e4e;
+    }
+
+    #ico_transfer {
+        background-color: #E1E6EB;
+        border-color: #C9D4DF;
+    }
+</style>
+@Html.Partial("Partial_HrMaintain")
+<div class="data_nav">
+    <div class="data_title">
+        <h2>培训信息</h2>
+    </div>
+    <div class="data_con">
+        <div class="photo ">
+            <img src="" style="border: 0px solid #ccc" />
+        </div>
+        <form name="frm1">
+            <div class="form_line">
+                <label class="label" for="EmpName">员工姓名 : </label>
+                <div class="element">
+                    <input type="text" name="EmpName" class="text" tabindex="1" size="30" placeholder="" />
+                    <input type="hidden" name="EmployeeId" id="EmployeeId" />
+                </div>
+            </div>
+            <div class="form_line">
+                <label class="label" for="TransferTypeCode">调动类型 :</label>
+                <div class="element">
+                    <select name="TransferTypeCode" style="width: 100px">
+                        <option value="01">升值</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form_line">
+                <div  class="form_line_left">
+                    <label class="label"> 原部门 :</label>
+                    <div class="element">
+                        <select name="OldDeptCode" style="width: 110px">
+                            <option value="01">开发部</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label">原职位 :</label>
+                    <div class="element">
+                        <select name="OldJTCode" style="width: 110px">
+                            <option value="01">程序员</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form_line">
+                <div  class="form_line_left">
+                    <label class="label"> 新部门 :</label>
+                    <div class="element">
+                        <select name="NewDeptCode" style="width: 150px">
+                            <option value="01">开发部</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label"> 新职位 :</label>
+                    <div class="element">
+                        <select name="NewJTCode" style="width: 150px">
+                            <option value="01">程序员</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form_line">
+                <label class="label">生效时间 :</label>
+                <div class="element">
+                    <input type="text" name="FireDate" class="text date" size="15"/>
+                </div>
+            </div>
+            <div class="form_line">
+                <label class="label">备注 :</label>
+                <div class="element">
+                    <textarea name="Remark" rows="5" cols="60" class="text"></textarea>
+                </div>
+            </div>
+            <div class="split_hr"></div>
+            <div class="form_line form_bottom">
+                <input type="button" value="提 交" class="form_button submit_button" />
+            </div>
+        </form>
+    </div>
+</div>
