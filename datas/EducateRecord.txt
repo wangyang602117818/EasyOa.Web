@@ -7,8 +7,7 @@ create table EducateRecord(
        LContent          nvarchar(500)                   not null,    --培训内容
        LAddress          nvarchar(100)                   not null,    --培训地址
        IsInnerTeacher      bit                           not null,    --是否内部老师培训
-       InnerTeacherId    int                             null,        --内部老师
-       OuterTeacherName  nvarchar(20)                    null,        --外部老师（公司外部老师培训）
+       TeacherName       nvarchar(20)                    null,        --老师姓名
        LStartTime          datetime                      not null,    --开始时间
        LEndTime            datetime                      not null,    --结束时间
        Integral            int                           null,        --该次培训积分

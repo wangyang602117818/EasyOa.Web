@@ -65,5 +65,13 @@ namespace EasyOa.Web.Controllers.Hr
         {
             return View();
         }
+        /// <summary>
+        /// 添加调用信息
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult HrTransfer()
+        {
+            return View();
+        }
     }
 }

@@ -28,7 +28,76 @@
             <img src="" style="border: 0px solid #ccc" />
         </div>
         <form name="frm1">
-            
+            <div class="form_line">
+                <label class="label" for="EmpName">员工姓名 : </label>
+                <div class="element">
+                    <input type="text" name="EmpName" class="text" tabindex="1" size="30" placeholder="" />
+                    <input type="hidden" name="EmployeeId" id="EmployeeId" />
+                </div>
+            </div>
+            <div class="form_line">
+                <label class="label" for="LTitle">培训主题 :</label>
+                <div class="element">
+                    <input type="text" name="LTitle" class="text" size="25" />
+                </div>
+            </div>
+            <div class="form_line">
+                <label class="label" for="LContent">培训内容 :</label>
+                <div class="element">
+                    <textarea name="LContent" rows="5" cols="60" class="text"></textarea>
+                </div>
+            </div>
+            <div class="form_line">
+                <div class="form_line_left">
+                    <label class="label">开始时间 :</label>
+                    <div class="element">
+                        <input type="text" name="LStartTime" class="text date" size="15"/>
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label" for="LEndTime">结束时间 :</label>
+                    <div class="element">
+                        <input type="text" name="LEndTime" class="text date" size="15"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form_line">
+                <div class="form_line_left">
+                    <label class="label" for="LearnTypeCode">培训类型 :</label>
+                    <div class="element">
+                        <select name="LearnTypeCode" style="width: 150px">
+                            <option value="01">入职培训</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form_line_right">
+                    <label class="label" for="LearnMethodCode">培训方式 :</label>
+                    <div class="element">
+                        <select name="LearnMethodCode" style="width: 200px">
+                            <option value="01">座谈交流</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form_line">
+                <label class="label">老师类型 :</label>
+                <div class="element">
+                    <input type="radio" name="IsInnerTeacher" value="1" />
+                    内部老师&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="IsInnerTeacher" value="0" />
+                    外部老师
+                </div>
+            </div>
+            <div class="form_line">
+                <label class="label">培训老师 :</label>
+                <div class="element">
+                    <input type="text" class="text" name="TeacherName" size="25" />
+                </div>
+            </div>
+            <div class="split_hr"></div>
+            <div class="form_line form_bottom">
+                <input type="button" value="提 交" class="form_button submit_button" />
+            </div>
         </form>
     </div>
 </div>

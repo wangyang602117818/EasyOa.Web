@@ -206,6 +206,7 @@
     <Content Include="Views\HrMaintain\EmpWorkExperience.cshtml" />
     <Content Include="Views\HrMaintain\HrAward.cshtml" />
     <Content Include="Views\HrMaintain\HrLearn.cshtml" />
+    <Content Include="Views\HrMaintain\HrTransfer.cshtml" />
     <None Include="xsd\provider.xsd">
       <SubType>Designer</SubType>
     </None>

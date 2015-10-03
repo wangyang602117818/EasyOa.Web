@@ -103,8 +103,8 @@ form .split_hr {
 .form_button {
     width: 75px;
     height: 28px;
-    line-height: 27px;
     font-size: 14px;
+    text-align: center;
     font-weight: bold;
     color: #fff;
     cursor: pointer;
@@ -112,18 +112,18 @@ form .split_hr {
     -webkit-box-shadow: 0px 1px 2px #999;
     -moz-box-shadow: 0px 1px 2px #999;
     border-bottom: 1px solid #09527D;
-    border-radius: 0.2em;
+    border-radius: 0.1em;
     outline: none;
 }
 
 .submit_button {
     border: 1px solid #406185;
-    background: #3C5A7B;
-    background-image: linear-gradient(bottom, #406185 40%, #1180C4 70%);
-    background-image: -o-linear-gradient(bottom, #406185 40%, #1180C4 70%);
-    background-image: -moz-linear-gradient(bottom, #406185 40%, #1180C4 70%);
-    background-image: -webkit-linear-gradient(bottom, #406185 40%, #557597 70%);
-    background-image: -ms-linear-gradient(bottom, #406185 40%, #1180C4 70%);
+    background-color: #3C5A7B;
+    background-image: linear-gradient(bottom, #406185 40%, #1180C4 100%);
+    background-image: -o-linear-gradient(bottom, #406185 40%, #1180C4 100%);
+    background-image: -moz-linear-gradient(bottom, #406185 01%, #607E9E 100%);
+    background-image: -webkit-linear-gradient(bottom, #406185 01%, #607E9E 100%);
+    background-image: -ms-linear-gradient(bottom, #406185 40%, #1180C4 100%);
 }
 
     .submit_button:hover {
