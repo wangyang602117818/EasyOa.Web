@@ -1,7 +1,0 @@
---家庭成员关系表
-create table FamilyRelationShip(
-        Id          int     identity(1,1)  primary key   not null,     --主键id
-	FName       nvarchar(10)                         not null,     --关系名称
-	FCode       int                                  not null,     --关系代码
-	FDefault    bit     default(0)                   null,         --是否默认
-)

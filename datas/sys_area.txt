@@ -1,10 +1,4 @@
-create table sys_area(
-     id          int     identity(1,1)  primary key   not null,     --主键id
-     a_name      nvarchar(20)                         not null,     --名称
-     a_code      int     unique                       not null,     --编码
-     qpin        varchar(50)                          null,         --全拼
-     jpin        varchar(20)                          null,         --简拼
-)
+
 
 insert into sys_area(a_name, a_code, qpin, jpin)values('北京市',110000,'beijingshi','bjs')
 insert into sys_area(a_name, a_code, qpin, jpin)values('市辖区',110100,'shixiaqu','sxq')

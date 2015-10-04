@@ -1,10 +1,4 @@
---培训方式
-create table LearnMethod(
-     Id        int     primary key identity(1,1)       not null,    --主键id
-     LMName          nvarchar(50)                      not null,    --培训方式
-     LMCode          int                               not null,    --培训方式代码
-     LDefault        bit    default(0)                 not null,    --是否默认
-)
+
 insert into LearnMethod(LMName,LMCode)values('课堂演讲',10)
 insert into LearnMethod(LMName,LMCode)values('操作示范',11)
 insert into LearnMethod(LMName,LMCode)values('多媒体视听',12)

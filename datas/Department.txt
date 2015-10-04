@@ -1,11 +1,3 @@
-create table Department(
-        Id          int     identity(1,1)  primary key   not null,     --主键id
-	DeName     nvarchar(20)                         not null,     --部门名称
-	DeCode     varchar(20) unique                   not null,     --部门代码（一个部门占2位）
-	QPin        varchar(50)                          null,         --全拼
-	JPin        varchar(20)                          null,         --简拼
-        Sort        smallint  default(0)                 null,         --部门排序
-)
 
 Insert into [Department](DeName,DeCode,QPin,JPin)values('总公司','10','zonggongsi','zgs')
 Insert into [Department](DeName,DeCode,QPin,JPin)values('总裁办','1001','zongcaiban','zcb')

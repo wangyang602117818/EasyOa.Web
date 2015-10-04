@@ -1,10 +1,4 @@
-drop table sys_state
-create table sys_state(
-    id          int     identity(1,1)  primary key   not null,     --主键id
-    st_name    nvarchar(20)                         not null,     --国籍名称
-    st_code    char(3)        unique                not null,     --国籍代码(3位)
-    s_default   bit     default(0)                   null,         --是否默认   
-)
+
 
 insert into sys_state(st_name,st_code)
 values

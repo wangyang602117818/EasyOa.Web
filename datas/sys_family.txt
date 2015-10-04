@@ -1,11 +1,4 @@
 
-drop table sys_family
-create table sys_family(
-  id          int     identity(1,1)  primary key   not null,     --主键id
-  fa_name     nvarchar(20)                         not null,      --名称
-  fa_code     tinyint    unique                    not null,      --代码
-  f_default   bit     default(0)                   null,         --是否默认  
-)
 insert into sys_family(fa_name,fa_code)
 values('汉族',1),
 ('蒙古族',2),

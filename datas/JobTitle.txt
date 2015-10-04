@@ -1,12 +1,4 @@
---职位表
-create table JobTitle(
-        Id          int     identity(1,1)  primary key   not null,     --主键id
-	JTName      nvarchar(20)                         not null,     --职位名称
-	JTCode      varchar(20) unique                   not null,     --职位代码（一个职位占2位）
-	QPin        varchar(50)                          null,         --全拼
-	JPin        varchar(20)                          null,         --简拼
-        Sort        smallint  default(0)                 null,         --职位排序
-)
+
 insert into JobTitle(JTName,JTCode,QPin,JPin)values('总经理','10','zongjingli','zjl')
 insert into JobTitle(JTName,JTCode,QPin,JPin)values('技术总监','1010','jishuzongjian','jszj')
 insert into JobTitle(JTName,JTCode,QPin,JPin)values('项目经理','101010','xiangmujingli','xmjl')

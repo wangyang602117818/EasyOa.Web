@@ -1,11 +1,4 @@
 
-create table Degree(
-    Id          int     identity(1,1)  primary key   not null,     --主键id
-    DeName      nvarchar(20)                         not null,     --学历名称
-    DeCode      tinyint    unique                    not null,     --学历代码
-    DeDefault    bit     default(0)                   null,         --是否默认   
-)
-
 insert into Degree(DeName,DeCode)
 values
 ('研究生',10),
