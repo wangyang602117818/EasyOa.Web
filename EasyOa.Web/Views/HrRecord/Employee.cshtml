@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_HrLayout.cshtml";
+}
+@section Header{
+    <link href="~/Content/css/hr/hr_record.css" rel="stylesheet" />
+}
+<style type="text/css">
+    #employee_record {
+        background-color: #f3f3f3;
+        color: #4e4e4e;
+    }
+    #employee_list {
+        background-color: #fff;
+        border-color: #ddd;
+        cursor:default;
+    }
+</style>
+@Html.Partial("Partial_HrRecord")
+

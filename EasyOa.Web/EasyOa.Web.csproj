@@ -123,6 +123,7 @@
     <Content Include="Content\css\hr\hr_maintain.css" />
     <Content Include="Content\css\hr\hr_maintain_form.css" />
     <Content Include="Content\css\hr\hr_layout.css" />
+    <Content Include="Content\css\hr\hr_record.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\date\calendar.css" />
@@ -207,6 +208,9 @@
     <Content Include="Views\HrMaintain\HrAward.cshtml" />
     <Content Include="Views\HrMaintain\HrLearn.cshtml" />
     <Content Include="Views\HrMaintain\HrTransfer.cshtml" />
+    <Content Include="Views\HrRecord\Employee.cshtml" />
+    <Content Include="Views\HrRecord\Partial_HrRecord.cshtml" />
+    <Content Include="Views\HrRecord\Contract.cshtml" />
     <None Include="xsd\provider.xsd">
       <SubType>Designer</SubType>
     </None>
