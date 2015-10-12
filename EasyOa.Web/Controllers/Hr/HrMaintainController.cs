@@ -13,6 +13,7 @@ namespace EasyOa.Web.Controllers.Hr
         /// 员工信息添加
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public ActionResult EmpAdd()
         {
             return View();

@@ -29,15 +29,17 @@
             <img src="~/Content/imgs/c01.jpg" style="border:0px solid #ccc" />
         </div>
         <form name="frm1">
-            <div class="form_line">
+            <div class="form_line form_line_top">
                 <div class="form_line_left">
-                    <label class="label" for="Name">姓  名 : </label>
+                    <label class="label" for="Name"><span class="txt_required">*</span> 姓  名 : </label>
                     <div class="element">
-                        <input type="text" name="Name" class="text" tabindex="1" size="25" />
+                        
+                        <input type="text" name="Name" class="text invalid_input" tabindex="1" size="25"/>
+                        @*<div id="" class="err_msg">错误信息</div>*@
                     </div>
                 </div>
                 <div class="form_line_right">
-                    <label class="label right" for="Sex">性 别 : </label>
+                    <label class="label" for="Sex">性 别 : </label>
                     <div class="element">
                         男
                         <input type="radio" name="Sex" value="m" checked="checked" />&nbsp;&nbsp;&nbsp;&nbsp;
@@ -216,7 +218,7 @@
                 </div>
             </div>
             <div class="split_hr"></div>
-            <div class="form_line form_bottom">
+            <div class="form_line form_line_bottom">
                 <input type="button" value="提 交" class="form_button submit_button"/>
             </div>
         </form>

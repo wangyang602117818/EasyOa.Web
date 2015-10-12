@@ -37,14 +37,21 @@
 }
 
 .form_line {
-    margin-top: 20px;
+    margin-top: 25px;
     width: 80%;
     /*border: 1px solid red;*/
 }
-
-.form_bottom {
+.form_line_top {
+    margin-top: 20px;
+}
+.form_line_bottom {
     padding-left: 170px;
     padding-bottom: 20px;
+}
+
+.form_line .txt_required {
+    display: inline-block;
+    color: #C00;
 }
 
 .form_line .form_line_left {
@@ -93,6 +100,19 @@ form .text {
         background-color: #fff;
         box-shadow: 0 0 5px rgba(103, 166, 217, 0.5);
     }
+
+form .invalid_input {
+    background-color: #FBE2E2;
+    border: 1px solid #C66161;
+}
+
+form .err_msg {
+    /*border: 1px solid #ccc;*/
+    position: absolute;
+    width: 50px;
+    height: 15px;
+    color: #CC0000;
+}
 
 form .split_hr {
     margin-top: 15px;
