@@ -17,7 +17,7 @@ namespace EasyOa.Web.Controllers
     {
         public ActionResult Index()
         {
-            LogHelper.WriteException("sd ");
+            LogHelper.ErrorLog(new Exception("sd "));
             return View();
         }
     }
