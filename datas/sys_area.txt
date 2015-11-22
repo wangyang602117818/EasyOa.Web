@@ -1,5 +1,3 @@
-
-
 insert into sys_area(a_name, a_code, qpin, jpin)values('北京市',110000,'beijingshi','bjs')
 insert into sys_area(a_name, a_code, qpin, jpin)values('市辖区',110100,'shixiaqu','sxq')
 insert into sys_area(a_name, a_code, qpin, jpin)values('东城区',110101,'dongchengqu','dcq')
