@@ -116,6 +116,7 @@
     <Compile Include="Controllers\Hr\HrStatisticController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Filters\MyHandleErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -164,7 +165,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="config\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
