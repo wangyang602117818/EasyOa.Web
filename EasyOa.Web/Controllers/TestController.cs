@@ -12,9 +12,9 @@ namespace EasyOa.Web.Controllers
         //
         // GET: /Test/
 
-        public ActionResult Index()
+        public ActionResult Index(string name,int? age)
         {
-           
+           Response.Write("<br>ok");
             
             return View();
         }

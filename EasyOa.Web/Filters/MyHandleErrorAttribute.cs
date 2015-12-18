@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using EasyOa.Common;
 
-namespace EasyOa.Web
+namespace EasyOa.Web.Filters
 {
     ///<summary>
     ///自定义mvc异常处理
