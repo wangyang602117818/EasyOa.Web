@@ -28,6 +28,7 @@ namespace EasyOa.Web.Filters
 
             Dictionary<string, string> valid_result = CheckParams(actionContext.ActionParameters);
 
+            var s = "";
             //IEnumerable<HttpFilter> filters = FilterProviders.Providers.GetFilters(actionContext.ActionDescriptor.ControllerDescriptor, actionContext.ActionDescriptor);
             //if (valid_result.Count > 0)
             //{
