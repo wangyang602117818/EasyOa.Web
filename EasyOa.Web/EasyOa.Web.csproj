@@ -152,11 +152,18 @@
     <Content Include="Content\imgs\logo.png" />
     <Content Include="Scripts\Calendar.js" />
     <Content Include="uitest\getcookied.html" />
+    <Content Include="uitest\isscroll\bootstrap-theme.css" />
+    <Content Include="uitest\isscroll\iscroll.css" />
+    <Content Include="uitest\isscroll\iscroll.js" />
+    <Content Include="uitest\isscroll\jquery-1.7.1.min.js" />
+    <Content Include="uitest\isscroll\bootstrap.css" />
     <Content Include="uitest\test.html" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jqPlugFun.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="uitest\isscroll\wap01.html" />
+    <Content Include="uitest\zepto.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
