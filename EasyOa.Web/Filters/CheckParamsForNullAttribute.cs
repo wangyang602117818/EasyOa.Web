@@ -51,20 +51,6 @@ namespace EasyOa.Web.Filters
             }
             return invalid_params;
         }
-        /// <summary>
-        /// Action方法运行结束后返回值
-        /// </summary>
-        /// <param name="actionExecutedContext"></param>
-        //public override void OnExecuted(ActionExecutedContext actionExecutedContext)
-        //{
-        //    //if (actionExecutedContext.Response != null)
-        //    //{
-        //    //    var httpContext = (actionExecutedContext.Response.Content as ObjectContent).Value;
-        //    //    //返回日志
-        //    //    LogHelper.InfoLog("响应:" + JsonSerializerHelper.Serialize(httpContext));
-        //    //}
-
-
-        //}
+ 
     }
 }
