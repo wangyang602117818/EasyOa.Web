@@ -15,9 +15,9 @@ namespace EasyOa.Web.Filters
         public override void OnException(ExceptionContext filterContext)
         {
             //设置错误已处理
-            filterContext.ExceptionHandled = true;
+            //filterContext.ExceptionHandled = true;
             //记录错误日志
-            LogHelper.ErrorLog(filterContext.Exception);
+            //LogHelper.ErrorLog(filterContext.Exception);
             //返回
             
         }

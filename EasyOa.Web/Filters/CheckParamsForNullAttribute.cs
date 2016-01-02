@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Reflection;
 using EasyOa.Common;
 using EasyOa.Model;
 using System.Web.Mvc;
+using EasyOa.Web.Extentions;
 
 namespace EasyOa.Web.Filters
 {
@@ -19,14 +23,24 @@ namespace EasyOa.Web.Filters
         /// <param name="actionContext"></param>
         public override void OnActionExecuting(ActionExecutingContext actionContext)
         {
-            string userIp = actionContext.HttpContext.Request.UserHostAddress;  //用户ip地址
-            string controller = actionContext.RouteData.Values["controller"].ToString();  //用户访问的controller
-            string action = actionContext.RouteData.Values["action"].ToString();  //用户访问的action 
-            // actionContext.Result=new ContentResult(){Content = ""};
-            //访问日志，遇到不合法的Json格式，参数也会是null
-            LogHelper.InfoLog("用户[" + userIp + "]请求[/" + controller + "/" + action + "],参数:" + JsonSerializerHelper.Serialize(actionContext.ActionParameters));
+            ParameterDescriptor[] pmsDescriptors = actionContext.ActionDescriptor.GetParameters();
+            foreach (ParameterDescriptor parameterDescriptor in pmsDescriptors)
+            {
+                ModelMetadata metadata = ModelMetadataProviders.Current.GetMetadataForType(null, parameterDescriptor.ParameterType);
+                ControllerContext controllerContext = actionContext.Controller.ControllerContext;
+                //获取应用在参数上的Attribute
+                IEnumerable<Attribute> attribute = parameterDescriptor.GetCustomAttributes(true).OfType<Attribute>();
+                //自定义ModelValidatorProvider
+                MyParamsValidatorProvider myModelValidator = new MyParamsValidatorProvider();
+                IEnumerable<ModelValidator> myValidators = myModelValidator.GetValidators(metadata, controllerContext, attribute);
+                foreach (ModelValidator modelValidator in myValidators)
+                {
+                    IEnumerable<ModelValidationResult> validationResults = modelValidator.Validate(null);
 
-            Dictionary<string, string> valid_result = CheckParams(actionContext.ActionParameters);
+                }
+                //IEnumerable<ModelValidator> modelValidators = dataAnnotationsModelValidatorProvider.GetValidators(metadata, actionContext.Controller.ControllerContext, attribute);
+            }
+            //Dictionary<string, string> valid_result = CheckParams();
 
             var s = "";
             //IEnumerable<HttpFilter> filters = FilterProviders.Providers.GetFilters(actionContext.ActionDescriptor.ControllerDescriptor, actionContext.ActionDescriptor);
@@ -44,27 +58,27 @@ namespace EasyOa.Web.Filters
         /// <returns></returns>
         public Dictionary<string, string> CheckParams(IDictionary<string, object> dictionary)
         {
-            Dictionary<string, string> invalid_params = new Dictionary<string, string>();
-            foreach (KeyValuePair<string, object> keyValuePair in dictionary)
-            {
-                if (keyValuePair.Value == null) invalid_params.Add(keyValuePair.Key, keyValuePair.Value.ToString());
-            }
-            return invalid_params;
+
+            //Dictionary<string, string> invalid_params = new Dictionary<string, string>();
+            //foreach (KeyValuePair<string, object> keyValuePair in dictionary)
+            //{
+            //    if (keyValuePair.Value == null) invalid_params.Add(keyValuePair.Key, keyValuePair.Value.ToString());
+            //}
+            //return invalid_params;
+            return null;
         }
         /// <summary>
-        /// Action方法运行结束后返回值
+        /// 请求日后
         /// </summary>
-        /// <param name="actionExecutedContext"></param>
-        //public override void OnExecuted(ActionExecutedContext actionExecutedContext)
-        //{
-        //    //if (actionExecutedContext.Response != null)
-        //    //{
-        //    //    var httpContext = (actionExecutedContext.Response.Content as ObjectContent).Value;
-        //    //    //返回日志
-        //    //    LogHelper.InfoLog("响应:" + JsonSerializerHelper.Serialize(httpContext));
-        //    //}
-
-
-        //}
+        /// <param name="actionContext"></param>
+        public void ReqLog(ActionExecutingContext actionContext)
+        {
+            string userIp = actionContext.HttpContext.Request.UserHostAddress;  //用户ip地址
+            string controller = actionContext.RouteData.Values["controller"].ToString();  //用户访问的controller
+            string action = actionContext.RouteData.Values["action"].ToString();  //用户访问的action 
+            // actionContext.Result=new ContentResult(){Content = ""};
+            //访问日志，遇到不合法的Json格式，参数也会是null
+            LogHelper.InfoLog("用户[" + userIp + "]请求[/" + controller + "/" + action + "],参数:" + JsonSerializerHelper.Serialize(actionContext.ActionParameters));
+        }
     }
 }
