@@ -19,7 +19,7 @@ namespace EasyOa.Web.Controllers
         public ActionResult Index(
             [MinLength(3, ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Required")]
             string name,
-            int? age
+            int? age 
         )
         {
 
