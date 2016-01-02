@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +36,7 @@ namespace EasyOa.Web.Filters
                 foreach (ModelValidator modelValidator in myValidators)
                 {
                     IEnumerable<ModelValidationResult> validationResults = modelValidator.Validate(null);
-
+                    
                 }
                 //IEnumerable<ModelValidator> modelValidators = dataAnnotationsModelValidatorProvider.GetValidators(metadata, actionContext.Controller.ControllerContext, attribute);
             }
