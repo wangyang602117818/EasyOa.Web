@@ -17,7 +17,7 @@ namespace EasyOa.Web.Controllers
     {
         public ActionResult Index(string name ,int? age)
         {
-            
+          Response.Write(SMSHelper.Send("18518317472", new[] { "152122", "saa" })); 
             
             return View();
         }
