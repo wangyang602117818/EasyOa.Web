@@ -17,9 +17,6 @@ namespace EasyOa.Web.Controllers
     {
         public ActionResult Index(string name ,int? age)
         {
-
-            int a = 1, b = 0;
-            int c = a / b;
             return View();
         }
     }
