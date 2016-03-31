@@ -15,9 +15,15 @@ namespace EasyOa.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string name ,int? age)
+        public ActionResult Index(string name, int? age)
         {
-          Response.Write(SMSHelper.Send("18518317472", new[] { "152122", "saa" })); 
+            DateTime dt = new DateTime(1970, 1, 1, 0, 0, 0);
+            string str = new DateTime().UTCTimeStamp();
+
+            Response.Write(str);
+            Response.Write("<br>");
+            Response.Write(str.ToDateTime());
+
             
             return View();
         }
