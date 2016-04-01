@@ -15,7 +15,7 @@ namespace EasyOa.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string name ,int? age)
+        public ActionResult Index(string name, int? age)
         {
             return View();
         }
