@@ -4,6 +4,7 @@ using EasyOa.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -15,17 +16,22 @@ namespace EasyOa.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string name, int? age)
+        public ActionResult Index(Cat cat)
         {
-            DateTime dt = new DateTime(1970, 1, 1, 0, 0, 0);
-            string str = new DateTime().UTCTimeStamp();
 
-            Response.Write(str);
-            Response.Write("<br>");
-            Response.Write(str.ToDateTime());
 
-            
             return View();
         }
+    }
+
+    public class Cat
+    {
+        [Required(ErrorMessage = "name is required")]
+        [StringLength(3, MinimumLength = 2, ErrorMessage = "范围错误")]
+        public string Name { get; set; }
+        [Range(10,50,ErrorMessage = "数据范围错误")]
+        public int Age { get; set; }
+        [Required(ErrorMessage = "必填想")]
+        public string Email { get; set; }
     }
 }

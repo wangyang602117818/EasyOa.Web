@@ -5,10 +5,11 @@ using System.Web;
 
 namespace EasyOa.Web.Models
 {
-    //用于验证ModelState的结果，呈现到前台
-    public class ResponseModel
+    public class ResponseBaseModel<T>
     {
-        public bool IsValid { get; set; }   //验证结果
-        public Dictionary<string, string> Results { get; set; }  //验证的内容,只保留不合法的参数
+        public Enum code { get; set; }
+        public string msg { get; set; }
+        public T result { get; set; }
+
     }
 }

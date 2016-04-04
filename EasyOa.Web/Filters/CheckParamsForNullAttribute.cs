@@ -68,7 +68,7 @@ namespace EasyOa.Web.Filters
             return null;
         }
         /// <summary>
-        /// 请求日后
+        /// 请求后
         /// </summary>
         /// <param name="actionContext"></param>
         public void ReqLog(ActionExecutingContext actionContext)

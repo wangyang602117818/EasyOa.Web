@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Http.Controllers;
 using System.Web.Mvc;
-using System.Web.Http.ModelBinding;
 using EasyOa.Common;
+using EasyOa.Web.Models;
 
 namespace EasyOa.Web.Filters
 {
@@ -17,15 +17,27 @@ namespace EasyOa.Web.Filters
         /// <param name="actionContext"></param>
         public override void OnActionExecuting(ActionExecutingContext actionContext)
         {
-            List<string> valid_result = new List<string>();
-            //if (!actionContext.ModelState.IsValid)
-            //{
-            //    foreach (KeyValuePair<string, ModelState> item in actionContext.ModelState)
-            //    {
-            //        if (item.Value.Errors.Count > 0) valid_result.Add(item.Value.Errors[0].ErrorMessage);
-            //    }
-            //    //throw new ParamsException(ErrorCode.General.params_valid_fault, valid_result);
-            //}
+            Controller controller = (Controller)actionContext.Controller;
+
+            Dictionary<string, string> dictionary = new Dictionary<string, string>();
+
+            if (!controller.ModelState.IsValid)
+            {
+                foreach (KeyValuePair<string, ModelState> item in controller.ModelState)
+                {
+                    if (item.Value.Errors.Count > 0) dictionary.Add(item.Key, item.Value.Errors[0].ErrorMessage);
+                }
+                actionContext.Result = new JsonResult()
+                {
+                    Data = new ResponseBaseModel<Dictionary<string, string>>()
+                    {
+                        code = ErrorCode.General.params_valid_fault,
+                        msg = ErrorCode.General.params_valid_fault.ToString(),
+                        result = dictionary
+                    },
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                };
+            }
         }
 
     }
