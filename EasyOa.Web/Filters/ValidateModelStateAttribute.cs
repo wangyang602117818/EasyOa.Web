@@ -18,9 +18,7 @@ namespace EasyOa.Web.Filters
         public override void OnActionExecuting(ActionExecutingContext actionContext)
         {
             Controller controller = (Controller)actionContext.Controller;
-
             Dictionary<string, string> dictionary = new Dictionary<string, string>();
-
             if (!controller.ModelState.IsValid)
             {
                 foreach (KeyValuePair<string, ModelState> item in controller.ModelState)

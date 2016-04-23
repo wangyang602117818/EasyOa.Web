@@ -11,6 +11,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using EasyOa.Common.Properties;
 
 namespace EasyOa.Web.Controllers
 {
@@ -20,16 +21,28 @@ namespace EasyOa.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Index1(
+            [Required(ErrorMessage = "name is required")]
+            string Name)
+        {
+            string str = null;
+            RequiredAttribute requiredAttribute = new RequiredAttribute() { ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Required" };
+            bool b = requiredAttribute.IsValid(str);
+            ValidationContext validationContext=new ValidationContext(typeof(string));
+            ValidationResult validation = requiredAttribute.GetValidationResult(str, validationContext);
+            return Content("ok");
+        }
     }
 
     public class Cat
     {
-        [Required(ErrorMessage = "name is required")]
-        [StringLength(3, MinimumLength = 2, ErrorMessage = "范围错误")]
+        [Required(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Required")]
+        [StringLength(3, MinimumLength = 2, ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "StringLength")]
         public string Name { get; set; }
-        [Range(10,50,ErrorMessage = "数据范围错误")]
+        [Range(10, 50, ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Range")]
         public int Age { get; set; }
-        [Required(ErrorMessage = "必填想")]
+        [Required(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Required")]
         public string Email { get; set; }
     }
 }
