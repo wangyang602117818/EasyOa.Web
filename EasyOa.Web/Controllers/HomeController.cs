@@ -19,7 +19,7 @@ namespace EasyOa.Web.Controllers
     {
         public ActionResult Index(Cat cat)
         {
-            return View();  
+            return View();
         }
 
         public ActionResult Index1(
