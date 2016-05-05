@@ -17,11 +17,21 @@ namespace EasyOa.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(Cat cat)
+        public ActionResult Index()
         {
+            //var url = "http://127.0.0.1:1111/Handler1.ashx?a=111&b=222";
+            //var url = "http://127.0.0.1:1111/WebForm1.aspx?a=111&b=222";
+            var url = "http://127.0.0.1:1111/Home/Test?a=111&b=222";
+            HttpRequestHelper.Post(url, "c=333&d=444",null,RequestContentType.UrlEncoded,null);
+            //HttpRequestHelper.Get("http://localhost:26530/rtfapi/imageDMZ.ashx", "aid=111&fid=222");
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Test(string a,string b,string c,string d)
+        {
+            return null;
+        }
         public ActionResult Index1(
             [Required(ErrorMessage = "name is required")]
             string Name)

@@ -124,8 +124,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handler1.ashx.cs">
+      <DependentUpon>Handler1.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -198,6 +208,7 @@
     <Content Include="Views\HrMaintain\EmpAdd.cshtml" />
     <Content Include="Views\Shared\_HrLayout.cshtml" />
     <Content Include="Views\HrMaintain\Partial_HrMaintain.cshtml" />
+    <Content Include="WebForm1.aspx" />
     <Content Include="WebResource\uploadfile\Data Mapper Guide-1.6.2.chm" />
     <Content Include="WebResource\uploadfile\rabbitmq-dotnet-client-1.5.0-user-guide.pdf" />
     <Content Include="WebResource\uploadfile\UNICODE编码表.pdf" />
@@ -215,6 +226,7 @@
     <Content Include="Views\HrRecord\Employee.cshtml" />
     <Content Include="Views\HrRecord\Partial_HrRecord.cshtml" />
     <Content Include="Views\HrRecord\Contract.cshtml" />
+    <Content Include="Handler1.ashx" />
     <None Include="xsd\provider.xsd">
       <SubType>Designer</SubType>
     </None>
