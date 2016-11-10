@@ -1,0 +1,119 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 12px/1.5 Tahoma,Arial,\5b8b\4f53;
+}
+
+.topnav {
+    display: flex;
+    justify-content: center;
+    background-color: #2C2C2C;
+    height: 29px;
+    line-height: 29px;
+    min-width: 996px;
+}
+
+.topnav_container {
+    width: 80%;
+    display: flex;
+    color: #B5B5B5;
+}
+
+.banner_left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.banner_right {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bannerlink {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    .bannerlink:hover {
+        cursor: pointer;
+        background-color: #3E3E3E;
+        color: #CECECE;
+    }
+
+        .bannerlink:hover .ico_down {
+            transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+        }
+
+.link_split {
+    border-right: 1px solid #3A3A3A;
+}
+
+.ico_down {
+    background: url('../Content/imgs/icon.png') no-repeat;
+    background-position: 0 -62px;
+    display: inline-block;
+    width: 7px;
+    height: 5px;
+    margin-bottom: 1px;
+    margin-left: 3px;
+    margin-right: -4px;
+    transition: transform 0.4s;
+}
+
+.mainnav {
+    display: flex;
+    justify-content: center;
+    background-color: #f8f8f8;
+    height: 70px;
+    min-width: 996px;
+    border-bottom: 1px solid #bbb;
+}
+
+.mainnav_container {
+    width: 80%;
+    display: flex;
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 10px;
+    padding-bottom: 3px;
+}
+
+.navigator {
+    flex: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.navigatorlink {
+    height: 36px;
+    width: 60px;
+    margin-left: 10px;
+    text-align: center;
+    font: 17px/36px \5fae\8f6f\96c5\9ed1,\5b8b\4f53;
+    border-bottom: 3px solid transparent;
+}
+
+    .navigatorlink:hover {
+        cursor: pointer;
+        color: #005CB5;
+        border-bottom: 3px solid #005CB5;
+    }
+
+.navigator .on {
+    color: #005CB5;
+    border-bottom: 3px solid #005CB5;
+}

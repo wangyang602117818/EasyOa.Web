@@ -33,7 +33,7 @@ namespace EasyOa.Web.Controllers
             string Name)
         {
             string str = null;
-            RequiredAttribute requiredAttribute = new RequiredAttribute() { ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Required" };
+            RequiredAttribute requiredAttribute = new RequiredAttribute(){ ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Required" };
             bool b = requiredAttribute.IsValid(str);
             ValidationContext validationContext=new ValidationContext(typeof(string));
             ValidationResult validation = requiredAttribute.GetValidationResult(str, validationContext);

@@ -152,6 +152,7 @@
     <Content Include="Content\date\Calendar.js" />
     <Content Include="Content\date\calendar.png" />
     <Content Include="Content\date\date.png" />
+    <Content Include="Content\imgs\02.png" />
     <Content Include="Content\imgs\c01.jpg" />
     <Content Include="Content\imgs\c02.jpg" />
     <Content Include="Content\imgs\c03.jpg" />
@@ -159,12 +160,12 @@
     <Content Include="Content\imgs\icon.png" />
     <Content Include="Content\imgs\bank_ico.png" />
     <Content Include="Content\imgs\iconfont-yuangongdangan.png" />
-    <Content Include="uitest\calendar.html" />
+    <Content Include="Content\imgs\logo1.png" />
     <Content Include="Content\imgs\index_partner.png" />
     <Content Include="Content\imgs\logo.png" />
     <Content Include="Scripts\Calendar.js" />
-    <Content Include="uitest\getcookied.html" />
-    <Content Include="uitest\test.html" />
+    <Content Include="uitest\login.css" />
+    <Content Include="uitest\login.html" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jqPlugFun.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
