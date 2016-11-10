@@ -19,11 +19,7 @@ namespace EasyOa.Web.Controllers
     {
         public ActionResult Index()
         {
-            //var url = "http://127.0.0.1:1111/Handler1.ashx?a=111&b=222";
-            //var url = "http://127.0.0.1:1111/WebForm1.aspx?a=111&b=222";
-            var url = "http://127.0.0.1:1111/Home/Test?a=111&b=222";
-            HttpRequestHelper.Post(url, "c=333&d=444",null,RequestContentType.UrlEncoded,null);
-            //HttpRequestHelper.Get("http://localhost:26530/rtfapi/imageDMZ.ashx", "aid=111&fid=222");
+            Response.Write(SymmetricEncryptHelper.GenerateAESKey);
             return View();
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EasyOa.Common;
 
 namespace EasyOa.Web
 {
@@ -11,6 +12,7 @@ namespace EasyOa.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            LogEnqueue.Enqueue("xxxxx");
             Response.Write("xx");
         }
     }

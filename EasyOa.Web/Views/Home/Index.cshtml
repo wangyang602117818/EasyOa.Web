@@ -8,6 +8,12 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script>
+        $.post('http://localhost:46618/api/document/M1/0000', function (data) {
+            alert(data);
+        });
+    </script>
 </head>
 <body>
     <div>
